@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <!-- Drop and re-create the database on startup -->
-        <property name="hibernate.hbm2ddl.auto"> create </property>
+        <property name="hibernate.hbm2ddl.auto"> validate </property>
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
@@ -20,7 +20,12 @@
         <property name="hibernate.format_sql" >true </property>
 
         <!--   Mapping entity file -->
-        <mapping class="VenPalMo.database.model.User"/>
+        <mapping class="VenPalMo.database.model.Account"/>
+        <mapping class="VenPalMo.database.model.Currency"/>
         <mapping class="VenPalMo.database.model.Message"/>
+        <mapping class="VenPalMo.database.model.Transaction"/>
+        <mapping class="VenPalMo.database.model.TransactionStatus"/>
+        <mapping class="VenPalMo.database.model.User"/>
+
     </session-factory>
 </hibernate-configuration>

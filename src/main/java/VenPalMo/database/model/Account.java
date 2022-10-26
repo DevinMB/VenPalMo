@@ -3,6 +3,8 @@ package VenPalMo.database.model;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "account")
 public class Account {
 
     @Column(name = "id")

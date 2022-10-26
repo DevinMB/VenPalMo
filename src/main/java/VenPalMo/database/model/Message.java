@@ -18,7 +18,6 @@ public class Message {
     @ManyToOne
     private User toUser;
 
-
     @ManyToOne
     private User fromUser;
 
