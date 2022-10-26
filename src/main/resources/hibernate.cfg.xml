@@ -4,8 +4,8 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <!-- Drop and re-create the database on startup -->
-        <property name="hibernate.hbm2ddl.auto"> validate </property>
+        <!-- update the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto"> update </property>
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
@@ -14,13 +14,14 @@
         <property name="connection.password">W@ffles02</property>
 
         <!-- MySQL DB dialect -->
-        <property name="dialect">org.hibernate.dialect.MySQL5Dialect   </property>
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect   </property>
         <!-- print all executed SQL on console -->
         <property name="hibernate.show_sql" >true </property>
         <property name="hibernate.format_sql" >true </property>
 
         <!--   Mapping entity file -->
         <mapping class="VenPalMo.database.model.Account"/>
+        <mapping class="VenPalMo.database.model.Address"/>
         <mapping class="VenPalMo.database.model.Currency"/>
         <mapping class="VenPalMo.database.model.Message"/>
         <mapping class="VenPalMo.database.model.Transaction"/>
