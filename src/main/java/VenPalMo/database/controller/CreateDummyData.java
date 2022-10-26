@@ -1,5 +1,6 @@
 package VenPalMo.database.controller;
 
+import VenPalMo.database.model.Currency;
 import VenPalMo.database.model.TransactionStatus;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,17 +15,24 @@ public class CreateDummyData {
         Transaction t = session.beginTransaction();
 
         //SET TRANSACTION STATUS TYPES
-        TransactionStatus approved = new TransactionStatus();
-        approved.setName("APPROVED");
+        TransactionStatus approved = new TransactionStatus("APPROVED");
         session.save(approved);
 
-        TransactionStatus pending = new TransactionStatus();
-        pending.setName("PENDING");
+        TransactionStatus pending = new TransactionStatus("PENDING");
         session.save(pending);
 
-        TransactionStatus rejected = new TransactionStatus();
-        rejected.setName("REJECTED");
+        TransactionStatus rejected = new TransactionStatus("REJECTED");
         session.save(rejected);
+
+        //SET A FEW CURRENCIES
+        Currency usd = new Currency("USD");
+        session.save(usd);
+
+        //CREATE SOME USERS
+
+
+
+
 
 
 

@@ -17,6 +17,10 @@ public class TransactionStatus {
     public TransactionStatus() {
     }
 
+    public TransactionStatus(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
