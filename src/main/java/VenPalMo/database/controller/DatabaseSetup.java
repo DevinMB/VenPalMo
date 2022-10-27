@@ -8,15 +8,16 @@ import org.hibernate.cfg.Configuration;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-
-public class CreateDummyData {
-
+public class DatabaseSetup {
     public static void main(String[] args) {
-        populate();
+
+        populateData();
+
+
     }
 
-
-    public static void populate() {
+    
+    public static void populateData() {
         SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
@@ -38,15 +39,15 @@ public class CreateDummyData {
         //CREATE SOME USERS
         //Devin
         User u1 = new User("Devin",
-                            "Butts",
-                            "devinmbutts@gmail.com",
-                            "test",
-                            "248-505-3913",
-                            new Address("1185 Code St.","Grand Rapids","MI","49534"),
-                            LocalDate.of(2010,11,2),
-                            LocalDate.of(1993,7,2),
-                            "ADMIN",
-                            true);
+                "Butts",
+                "devinmbutts@gmail.com",
+                "test",
+                "248-505-3913",
+                new Address("1185 Code St.","Grand Rapids","MI","49534"),
+                LocalDate.of(2010,11,2),
+                LocalDate.of(1993,7,2),
+                "ADMIN",
+                true);
         Account a1 = new Account(u1,usd,new BigDecimal("253.21"),true);
         u1.addAccount(a1);
         session.save(u1);
@@ -84,12 +85,13 @@ public class CreateDummyData {
 
 
 
+
+
         t.commit();
         System.out.println("successfully created dummy data");
         factory.close();
         session.close();
     }
-
 
 
 }
