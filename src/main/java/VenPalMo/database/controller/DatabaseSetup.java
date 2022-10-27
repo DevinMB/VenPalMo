@@ -16,7 +16,7 @@ public class DatabaseSetup {
 
     }
 
-    
+
     public static void populateData() {
         SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();

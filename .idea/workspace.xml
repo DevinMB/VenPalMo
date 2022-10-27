@@ -76,8 +76,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateUsersTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VenPalMo.database.controller.CreateUsersTable" />
+    <configuration name="DatabaseSetup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VenPalMo.database.controller.DatabaseSetup" />
       <module name="VenPalMo" />
       <extension name="coverage">
         <pattern>
@@ -92,10 +92,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.DatabaseSetup" />
         <item itemvalue="Application.CreateAllTables" />
         <item itemvalue="Application.CreateMessageTable" />
         <item itemvalue="Application.CreateUserTable" />
-        <item itemvalue="Application.CreateUsersTable" />
       </list>
     </recent_temporary>
   </component>
@@ -109,16 +109,5 @@
       <updated>1666798500490</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
