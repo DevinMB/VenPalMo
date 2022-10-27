@@ -1,7 +1,11 @@
 package VenPalMo.database.model;
 
 
+import net.bytebuddy.asm.Advice;
+
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,10 +35,10 @@ public class User {
     private Address address;
 
     @Column(name = "joined_date")
-    private Date joinedDate;
+    private LocalDate joinedDate;
 
     @Column(name = "birth_date")
-    private Date birthDate;
+    private LocalDate birthDate;
 
     @OneToMany(targetEntity = Account.class, cascade = {CascadeType.ALL})
     private List<Account> accounts;
@@ -47,7 +51,7 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, String email, String password, String phoneNumber, Address address, Date joinedDate, Date birthDate, List<Account> accounts, String role, boolean active) {
+    public User(String firstName, String lastName, String email, String password, String phoneNumber, Address address, LocalDate joinedDate, LocalDate birthDate,  String role, boolean active) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -56,10 +60,13 @@ public class User {
         this.address = address;
         this.joinedDate = joinedDate;
         this.birthDate = birthDate;
-        this.accounts = accounts;
+        this.accounts = new ArrayList<Account>();
         this.role = role;
         this.active = active;
     }
+
+
+
 
     public Integer getId() {
         return id;
@@ -117,19 +124,19 @@ public class User {
         this.address = address;
     }
 
-    public Date getJoinedDate() {
+    public LocalDate getJoinedDate() {
         return joinedDate;
     }
 
-    public void setJoinedDate(Date joinedDate) {
+    public void setJoinedDate(LocalDate joinedDate) {
         this.joinedDate = joinedDate;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -156,4 +163,12 @@ public class User {
     public void setActive(boolean active) {
         this.active = active;
     }
+
+    public void addAccount(Account newAccount) {
+
+        accounts.add(newAccount);
+
+    }
+
+
 }

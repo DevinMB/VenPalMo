@@ -27,6 +27,8 @@
         <mapping class="VenPalMo.database.model.Transaction"/>
         <mapping class="VenPalMo.database.model.TransactionStatus"/>
         <mapping class="VenPalMo.database.model.User"/>
-
     </session-factory>
 </hibernate-configuration>
+
+
+
