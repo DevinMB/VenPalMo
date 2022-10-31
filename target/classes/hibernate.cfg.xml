@@ -24,7 +24,7 @@
         <mapping class="VenPalMo.database.model.Address"/>
         <mapping class="VenPalMo.database.model.Currency"/>
         <mapping class="VenPalMo.database.model.Message"/>
-        <mapping class="VenPalMo.database.model.Transaction"/>
+        <mapping class="VenPalMo.database.model.Transact"/>
         <mapping class="VenPalMo.database.model.TransactionStatus"/>
         <mapping class="VenPalMo.database.model.User"/>
     </session-factory>

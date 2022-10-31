@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "transaction")
-public class Transaction {
+public class Transact {
 
     @Column(name = "id")
     @Id
@@ -30,7 +30,7 @@ public class Transaction {
     @ManyToOne
     private TransactionStatus status;
 
-    public Transaction(User sendingUser, User receivingUser, BigDecimal transactionAmount, Currency currency, Message message, TransactionStatus status) {
+    public Transact(User sendingUser, User receivingUser, BigDecimal transactionAmount, Currency currency, Message message, TransactionStatus status) {
         this.sendingUser = sendingUser;
         this.receivingUser = receivingUser;
         this.transactionAmount = transactionAmount;
@@ -39,8 +39,10 @@ public class Transaction {
         this.status = status;
     }
 
-    public Transaction() {
+    public Transact() {
     }
+
+
 
     public Integer getId() {
         return id;
