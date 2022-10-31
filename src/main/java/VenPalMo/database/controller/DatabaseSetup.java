@@ -78,7 +78,7 @@ public class DatabaseSetup {
                 LocalDate.of(1992,4,2),
                 "USER",
                 true);
-        Account a3 = new Account(u3,usd,new BigDecimal("233555.21"),true);
+        Account a3 = new Account(u3,usd,new BigDecimal("6533555.21"),true);
         u3.addAccount(a3);
         session.save(u3);
 
@@ -108,7 +108,7 @@ public class DatabaseSetup {
                 LocalDate.of(1990,3,22),
                 "USER",
                 true);
-        Account a5 = new Account(u5,usd,new BigDecimal("233555.21"),true);
+        Account a5 = new Account(u5,usd,new BigDecimal("133555.21"),true);
         u5.addAccount(a5);
         session.save(u5);
 
@@ -123,7 +123,7 @@ public class DatabaseSetup {
                 LocalDate.of(1973,3,22),
                 "USER",
                 true);
-        Account a6 = new Account(u6,usd,new BigDecimal("233555.21"),true);
+        Account a6 = new Account(u6,usd,new BigDecimal("933555.21"),true);
         u6.addAccount(a6);
         session.save(u6);
 
@@ -138,7 +138,7 @@ public class DatabaseSetup {
                 LocalDate.of(1983,3,22),
                 "USER",
                 true);
-        Account a7 = new Account(u7,usd,new BigDecimal("233555.21"),true);
+        Account a7 = new Account(u7,usd,new BigDecimal("433555.21"),true);
         u7.addAccount(a7);
         session.save(u7);
 
