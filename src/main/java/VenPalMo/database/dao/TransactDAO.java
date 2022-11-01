@@ -1,7 +1,6 @@
 package VenPalMo.database.dao;
 
-import VenPalMo.database.model.Transact;
-import VenPalMo.database.model.TransactionStatus;
+import VenPalMo.database.model.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -12,7 +11,33 @@ import javax.persistence.TypedQuery;
 
 public class TransactDAO {
 
-    public Transact getTransactionById(Integer transactId){
+    //TODO: Add Delete Method
+
+    public void insertTransaction(Transact transaction) {
+        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+        Session session = factory.openSession();
+        Transaction t = session.beginTransaction();
+
+        session.save(transaction);
+
+        t.commit();
+        factory.close();
+        session.close();
+    }
+
+    public void updateTransaction(Transact transaction) {
+        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+        Session session = factory.openSession();
+        Transaction t = session.beginTransaction();
+
+        session.merge(transaction);
+
+        t.commit();
+        factory.close();
+        session.close();
+    }
+
+    public Transact getTransactionById(Integer transactId) {
         SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
@@ -29,7 +54,6 @@ public class TransactDAO {
         return result;
     }
 
-
     public boolean changeTransactStatusTo(Transact transaction, String transactionStatusName) {
         SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
@@ -45,12 +69,12 @@ public class TransactDAO {
         Integer statusId = requestedStatus.getId();
 
         query.setParameter("statusId", statusId);
-        query.setParameter("transactId",transaction.getId());
+        query.setParameter("transactId", transaction.getId());
 
         int count = query.executeUpdate(); //return type wrong
 
         boolean success = false;
-        if(count==1){
+        if (count == 1) {
             success = true;
         }
 
@@ -60,5 +84,4 @@ public class TransactDAO {
 
         return success;
     }
-
 }

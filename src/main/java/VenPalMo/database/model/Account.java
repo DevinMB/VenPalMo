@@ -3,12 +3,16 @@ package VenPalMo.database.model;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-
+import lombok.ToString;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+/**
+ * Account holds balance for a user, many accounts can be tied to a single user.
+ */
 @Entity
 @EqualsAndHashCode(exclude = {"user"})
+@ToString(exclude = {"user"})
 @Getter
 @Setter
 @Table(name = "account")
@@ -39,5 +43,4 @@ public class Account {
         this.balance = balance;
         this.defaultAccount = defaultAccount;
     }
-
 }

@@ -1,13 +1,5 @@
 import VenPalMo.database.dao.TransactDAO;
 import VenPalMo.database.model.Transact;
-import VenPalMo.database.model.User;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-
-import javax.persistence.Query;
-import java.util.List;
 
 public class App {
 
@@ -35,18 +27,16 @@ public class App {
 
         System.out.println("now changing to approved");
 
-        td.changeTransactStatusTo(requestedTransaction,"APPROVED");
+        boolean success = td.changeTransactStatusTo(requestedTransaction,"REJECTED");
 
         Transact alteredTransaction = td.getTransactionById(1);
 
         System.out.println(alteredTransaction.getId() + "With a Status of : " + alteredTransaction.getStatus().getName());
 
-        //TODO:account dao
-        //Todo:address dao
-        //Todo:currency dao
-        //Todo:message dao
-        //Todo:user dao
 
+        //Todo:address dao
+        //Todo:message dao
+        //TODO: EACH CLASS SHOULD HAVE COMMENTS ON WHAT IT DOES
 
     }
 

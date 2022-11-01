@@ -67,6 +67,10 @@ public class User {
         this.active = active;
     }
 
+    /**
+     * Adds an account to the accounts list within a User.
+     * @param newAccount
+     */
     public void addAccount(Account newAccount) {
         accounts.add(newAccount);
     }

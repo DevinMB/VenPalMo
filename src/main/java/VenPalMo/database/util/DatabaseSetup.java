@@ -1,4 +1,4 @@
-package VenPalMo.database.controller;
+package VenPalMo.database.util;
 
 import VenPalMo.database.model.*;
 import org.hibernate.Session;

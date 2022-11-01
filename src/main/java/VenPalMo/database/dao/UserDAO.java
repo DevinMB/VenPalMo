@@ -1,6 +1,7 @@
 package VenPalMo.database.dao;
 
-import VenPalMo.database.model.TransactionStatus;
+import VenPalMo.database.model.Currency;
+import VenPalMo.database.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -8,23 +9,21 @@ import org.hibernate.cfg.Configuration;
 
 import javax.persistence.TypedQuery;
 
-public class TransactionStatusDAO {
+public class UserDAO {
 
     //TODO: Add Update Method
     //TODO: Add Delete Method
 
-
-    public TransactionStatus getFromStatusName(String transactionStatusName ) {
+    public User getUserById(Integer userId) {
         SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
 
-        String hql = "FROM TransactionStatus ts WHERE ts.name = :status";
+        String hql = "FROM User u WHERE u.id = :id";
+        TypedQuery<User> query = session.createQuery(hql, User.class);
+        query.setParameter("id", userId);
 
-        TypedQuery<TransactionStatus> query = session.createQuery(hql, TransactionStatus.class);
-        query.setParameter("status", transactionStatusName);
-
-        TransactionStatus result = query.getSingleResult();
+        User result = query.getSingleResult();
 
         t.commit();
         factory.close();
@@ -32,6 +31,7 @@ public class TransactionStatusDAO {
 
         return result;
     }
+
 
 
 }
