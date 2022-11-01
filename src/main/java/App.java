@@ -41,7 +41,11 @@ public class App {
 
         System.out.println(alteredTransaction.getId() + "With a Status of : " + alteredTransaction.getStatus().getName());
 
-
+        //TODO:account dao
+        //Todo:address dao
+        //Todo:currency dao
+        //Todo:message dao
+        //Todo:user dao
 
 
     }

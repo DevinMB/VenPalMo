@@ -1,8 +1,15 @@
 package VenPalMo.database.model;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@EqualsAndHashCode
+@Getter
+@Setter
 @Table(name = "currency")
 public class Currency {
 
@@ -22,16 +29,4 @@ public class Currency {
     }
 
 
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

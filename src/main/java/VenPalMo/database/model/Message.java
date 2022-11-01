@@ -1,9 +1,16 @@
 package VenPalMo.database.model;
 
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@EqualsAndHashCode(exclude = {"toUser","fromUser"})
+@Getter
+@Setter
 @Table(name = "message")
 public class Message {
 
@@ -13,7 +20,6 @@ public class Message {
     private Integer id;
 
     private String text;
-
 
     @ManyToOne
     private User toUser;
@@ -30,31 +36,4 @@ public class Message {
         this.fromUser = fromUser;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public User getToUser() {
-        return toUser;
-    }
-
-    public void setToUser(User toUser) {
-        this.toUser = toUser;
-    }
-
-    public User getFromUser() {
-        return fromUser;
-    }
-
-    public void setFromUser(User fromUser) {
-        this.fromUser = fromUser;
-    }
 }

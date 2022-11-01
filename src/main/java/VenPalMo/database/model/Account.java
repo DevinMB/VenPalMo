@@ -1,9 +1,16 @@
 package VenPalMo.database.model;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
+@EqualsAndHashCode(exclude = {"user"})
+@Getter
+@Setter
 @Table(name = "account")
 public class Account {
 
@@ -33,39 +40,4 @@ public class Account {
         this.defaultAccount = defaultAccount;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
-
-    public boolean isDefaultAccount() {
-        return defaultAccount;
-    }
-
-    public void setDefaultAccount(boolean defaultAccount) {
-        this.defaultAccount = defaultAccount;
-    }
 }

@@ -1,9 +1,16 @@
 package VenPalMo.database.model;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
+@EqualsAndHashCode(exclude = {"sendingUser", "receivingUser", "message", "status"})
+@Getter
+@Setter
 @Table(name = "transaction")
 public class Transact {
 
@@ -43,56 +50,4 @@ public class Transact {
     }
 
 
-
-    public Integer getId() {
-        return id;
-    }
-
-    public User getSendingUser() {
-        return sendingUser;
-    }
-
-    public void setSendingUser(User sendingUser) {
-        this.sendingUser = sendingUser;
-    }
-
-    public User getReceivingUser() {
-        return receivingUser;
-    }
-
-    public void setReceivingUser(User receivingUser) {
-        this.receivingUser = receivingUser;
-    }
-
-    public BigDecimal getTransactionAmount() {
-        return transactionAmount;
-    }
-
-    public void setTransactionAmount(BigDecimal transactionAmount) {
-        this.transactionAmount = transactionAmount;
-    }
-
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
-    }
-
-    public Message getMessage() {
-        return message;
-    }
-
-    public void setMessage(Message message) {
-        this.message = message;
-    }
-
-    public TransactionStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(TransactionStatus status) {
-        this.status = status;
-    }
 }
