@@ -28,6 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/2022-09-TEK-JAVA-54c5ae76988e0feb16b0f6db0ac5706fecf419bb/2022-09-TEK-JAVA-54c5ae76988e0feb16b0f6db0ac5706fecf419bb" />
   </component>
   <component name="RunManager" selected="JUnit.AccountDaoTest.getAccountTest">
