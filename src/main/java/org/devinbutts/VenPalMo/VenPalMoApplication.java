@@ -10,4 +10,10 @@ public class VenPalMoApplication {
 		SpringApplication.run(VenPalMoApplication.class, args);
 	}
 
+
+
+	//TODO: Add dao's for all four classes
+	//TODO: Unit Tests on all methods
+
+
 }
