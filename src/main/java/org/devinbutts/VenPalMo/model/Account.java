@@ -1,9 +1,7 @@
-package VenPalMo.database.model;
+package org.devinbutts.VenPalMo.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -12,6 +10,8 @@ import java.math.BigDecimal;
  */
 @Entity
 @EqualsAndHashCode(exclude = {"user"})
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString(exclude = {"user"})
 @Getter
 @Setter
@@ -27,9 +27,9 @@ public class Account {
     private User user;
 
     @ManyToOne
-    private Currency currency;
+    private String currency;
 
-    private BigDecimal balance;
+    private BigDecimal availableBalance;
 
     @Column(name = "default_acct")
     private boolean defaultAccount;
@@ -37,10 +37,10 @@ public class Account {
     public Account() {
     }
 
-    public Account(User user, Currency currency, BigDecimal balance, boolean defaultAccount) {
+    public Account(User user, String currency, BigDecimal availableBalance, boolean defaultAccount) {
         this.user = user;
         this.currency = currency;
-        this.balance = balance;
+        this.availableBalance = availableBalance;
         this.defaultAccount = defaultAccount;
     }
 }

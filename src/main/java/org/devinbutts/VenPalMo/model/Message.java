@@ -1,14 +1,15 @@
-package VenPalMo.database.model;
+package org.devinbutts.VenPalMo.model;
 
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @EqualsAndHashCode(exclude = {"toUser","fromUser"})
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Table(name = "message")
@@ -19,21 +20,19 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "created_date")
+    private Date createdDate;
+
     private String text;
 
     @ManyToOne
+    @JoinColumn(name = "to_user_id")
     private User toUser;
 
     @ManyToOne
+    @JoinColumn(name = "from_user_id")
     private User fromUser;
 
-    public Message() {
-    }
 
-    public Message(String text, User toUser, User fromUser) {
-        this.text = text;
-        this.toUser = toUser;
-        this.fromUser = fromUser;
-    }
 
 }
