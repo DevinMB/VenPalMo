@@ -26,21 +26,14 @@ public class Account {
     @ManyToOne
     private User user;
 
-    @ManyToOne
+    @Column(name = "currency")
     private String currency;
 
+    @Column(name = "balance")
     private BigDecimal availableBalance;
 
     @Column(name = "default_acct")
-    private boolean defaultAccount;
+    private Integer defaultAccount;
 
-    public Account() {
-    }
 
-    public Account(User user, String currency, BigDecimal availableBalance, boolean defaultAccount) {
-        this.user = user;
-        this.currency = currency;
-        this.availableBalance = availableBalance;
-        this.defaultAccount = defaultAccount;
-    }
 }

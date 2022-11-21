@@ -4,6 +4,7 @@ package org.devinbutts.VenPalMo.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -21,6 +22,7 @@ public class Message {
     private Integer id;
 
     @Column(name = "created_date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
     private String text;

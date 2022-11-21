@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -42,14 +43,17 @@ public class User {
 
     private String zip;
 
+
     @Column(name = "joined_date")
-    private LocalDate joinedDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date joinedDate;
 
     @Column(name = "birth_date")
-    private LocalDate birthDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date birthDate;
 
     private String role;
 
-    private boolean active;
+    private Integer active;
 
 }
