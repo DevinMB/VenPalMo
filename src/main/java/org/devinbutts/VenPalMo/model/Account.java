@@ -23,8 +23,12 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    private User user;
+    @Column(name = "user_id",insertable = false,updatable = false)
+    private Integer userId;
+
+//    @ManyToOne
+//    @JoinColumn(name="user_id")
+//    private User user;
 
     @Column(name = "currency")
     private String currency;

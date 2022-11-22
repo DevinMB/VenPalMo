@@ -43,7 +43,6 @@ public class User {
 
     private String zip;
 
-
     @Column(name = "joined_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date joinedDate;
@@ -55,5 +54,13 @@ public class User {
     private String role;
 
     private Integer active;
+
+    @OneToMany(mappedBy = "userId")
+    private List<Account> accounts;
+
+
+
+
+
 
 }

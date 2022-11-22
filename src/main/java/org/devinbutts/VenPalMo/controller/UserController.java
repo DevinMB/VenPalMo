@@ -1,13 +1,15 @@
 package org.devinbutts.VenPalMo.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
-import org.devinbutts.VenPalMo.model.User;
+import org.devinbutts.VenPalMo.model.DisplayUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 
 import java.util.List;
 
@@ -16,14 +18,11 @@ import java.util.List;
 public class UserController {
 
     @Autowired
+    DisplayUserDAO displayUserDAO;
+
+    @Autowired
     UserDAO userDAO;
 
-    @RequestMapping(value={"/"}, method = RequestMethod.GET)
-    @ResponseBody
-    public List<User> findAllUsers(){
-        List<User> users = userDAO.findAll();
-        return users;
-    }
 
 
 

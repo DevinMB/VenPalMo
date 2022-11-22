@@ -45,11 +45,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projects/Hopper/java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Devin.Butts\Documents\Programming\2022-TEK-JAVA-DMB\VenPalMo\src\main\resources\database" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.devinbutts.VenPalMo.dao" />
     </key>
   </component>
   <component name="RunManager" selected="Application.VenPalMoApplication">

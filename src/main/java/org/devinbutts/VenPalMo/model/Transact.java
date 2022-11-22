@@ -26,11 +26,19 @@ public class Transact {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
-    @ManyToOne
-    private User sendingUser;
+    @Column(name = "sending_user_id",insertable = false,updatable = false)
+    private Integer sendingUserId;
 
-    @ManyToOne
-    private User receivingUser;
+    @Column(name = "receiving_user_id",insertable = false,updatable = false)
+    private Integer receivingUserId;
+
+//    @ManyToOne()
+//    @JoinColumn(name = "sending_user_id")
+//    private User sendingUser;
+//
+//    @ManyToOne()
+//    @JoinColumn(name = "receiving_user_id")
+//    private User receivingUser;
 
     @Column(name = "amount")
     private BigDecimal transactionAmount;
