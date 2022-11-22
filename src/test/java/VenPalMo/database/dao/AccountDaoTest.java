@@ -30,8 +30,8 @@ public class AccountDaoTest {
 //            Currency c = currencyDAO.getCurrencyById(currencyId);
 //            testAccount.setCurrency(c);
 //
-//            UserDAO userDAO = new UserDAO();
-//            User u = userDAO.getUserById(userId);
+//            UserDAO UserDAO = new UserDAO();
+//            User u = UserDAO.getUserById(userId);
 //
 //            //Get Account By Id
 //            AccountDAO accountDAO = new AccountDAO();
