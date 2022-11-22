@@ -9,10 +9,10 @@ import java.math.BigDecimal;
  * Account holds balance for a user, many accounts can be tied to a single user.
  */
 @Entity
-@EqualsAndHashCode(exclude = {"user"})
+@EqualsAndHashCode()
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = {"user"})
+@ToString()
 @Getter
 @Setter
 @Table(name = "account")
