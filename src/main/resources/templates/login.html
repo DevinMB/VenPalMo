@@ -15,6 +15,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,400;1,500;1,700&display=swap');
     </style>
     <title>Login</title>
+
 </head>
 
 <body class="gradient-custom">
@@ -28,7 +29,7 @@
         <div class="login_card card-body p-5 text-center">
 
             <!-- login form -->
-            <form onsubmit="login(event)" class="mb-md-3 mt-md-4 pb-1">
+            <form th:onsubmit="login(event)" class="mb-md-3 mt-md-4 pb-1">
                 <h2 class="fw-bold mb-2 ">Login</h2>
                 <p class="text-black-50 mb-2">Please enter your login and password!</p>
 
@@ -55,23 +56,8 @@
         </div>
     </div>
 
-    <script>
-        // document.addEventListener("submit", login(event));
-        function login(event) {
-            event.preventDefault();
-            let username = document.getElementById("email_input");
-            let password = document.getElementById("password_input");
 
-            console.log(username.value);
-            console.log(password.value);
-            
-            window.location.replace("welcome.html");
-
-        }
-
-
-    </script>
-
+    <script type="text/javascript" th:src="@{js/login.js}"></script>
 </body>
 
 </html>

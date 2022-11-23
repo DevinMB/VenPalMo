@@ -19,14 +19,14 @@
     <div></div>
     <nav>
         <div class="nav_logo">
-            <img src="/resources/images/Favicon-White.png" alt="">
+            <img src="images/Favicon-White.png" alt="">
             <h1>Welcome, Devin!</h1>
         </div>
         <div class="nav_buttons">
             <ul>
                 <li><a href="#">Settings? idk</a></li>
                 <li><a href="#">🔔</a></li>
-                <li><a href="login.html">Logout</a></li>
+                <li><a th:href="login.html">Logout</a></li>
             </ul>
         </div>
     </nav>
@@ -89,7 +89,7 @@
 
 </div>
 
-<script src="/resources/js/home.js"></script>
+<script type="text/javascript" th:src="@{js/home.js}"></script>
 </body>
 
 </html>
