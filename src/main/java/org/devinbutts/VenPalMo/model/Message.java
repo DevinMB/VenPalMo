@@ -9,6 +9,7 @@ import java.util.Date;
 
 @Entity
 @EqualsAndHashCode(exclude = {"toUser","fromUser"})
+@ToString(exclude = {"toUser","fromUser"})
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

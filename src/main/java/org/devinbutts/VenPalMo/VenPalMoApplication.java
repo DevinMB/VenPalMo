@@ -12,7 +12,7 @@ public class VenPalMoApplication {
 
 	}
 
-	//TODO: Add dao's for all four classes
+
 	//TODO: Unit Tests on all methods
 
 

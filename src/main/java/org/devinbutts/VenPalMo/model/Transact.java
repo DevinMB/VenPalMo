@@ -14,6 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString(exclude = {"sendingUser","receivingUser"})
 @Table(name = "transaction")
 public class Transact {
 
@@ -32,13 +33,13 @@ public class Transact {
     @Column(name = "receiving_user_id",insertable = false,updatable = false)
     private Integer receivingUserId;
 
-//    @ManyToOne()
-//    @JoinColumn(name = "sending_user_id")
-//    private User sendingUser;
-//
-//    @ManyToOne()
-//    @JoinColumn(name = "receiving_user_id")
-//    private User receivingUser;
+    @ManyToOne()
+    @JoinColumn(name = "sending_user_id")
+    private User sendingUser;
+
+    @ManyToOne()
+    @JoinColumn(name = "receiving_user_id")
+    private User receivingUser;
 
     @Column(name = "amount")
     private BigDecimal transactionAmount;

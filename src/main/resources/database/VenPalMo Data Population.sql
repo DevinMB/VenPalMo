@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `VenPalMo`.`user` (
   `last_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
+   phone VARCHAR(10) NOT NULL,
   `address` VARCHAR(45) NULL DEFAULT NULL,
   `city` VARCHAR(45) NULL DEFAULT NULL,
   `state` VARCHAR(45) NULL DEFAULT NULL,
@@ -41,22 +42,22 @@ CREATE TABLE IF NOT EXISTS `VenPalMo`.`account` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
-  
-  
+
+
 CREATE TABLE IF NOT EXISTS `VenPalMo`.`transaction` (
   `id` INT NOT NULL AUTO_INCREMENT,
   created_date DATETIME DEFAULT CURRENT_TIMESTAMP,
   `sending_user_id` INT NOT NULL,
-  `recieving_user_id` INT NOT NULL,
+  `receiving_user_id` INT NOT NULL,
   `amount` DECIMAL(10,2) NOT NULL,
   `currency` VARCHAR(45) NOT NULL,
   `note` VARCHAR(1000) NULL DEFAULT NULL,
   `status` VARCHAR(45) NOT NULL,
   UNIQUE INDEX `i_UNIQUE` (`id` ASC) VISIBLE,
   INDEX `sending_id_idx` (`sending_user_id` ASC) VISIBLE,
-  INDEX `recieving_id_idx` (`recieving_user_id` ASC) VISIBLE,
-  CONSTRAINT `recieving_id`
-    FOREIGN KEY (`recieving_user_id`)
+  INDEX `receiving_id_idx` (`receiving_user_id` ASC) VISIBLE,
+  CONSTRAINT `receiving_id`
+    FOREIGN KEY (`receiving_user_id`)
     REFERENCES `VenPalMo`.`user` (`id`),
   CONSTRAINT `sending_id`
     FOREIGN KEY (`sending_user_id`)
@@ -64,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `VenPalMo`.`transaction` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
-   
+
 CREATE TABLE IF NOT EXISTS `VenPalMo`.`message` (
   `id` INT NOT NULL AUTO_INCREMENT,
   created_date DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -88,12 +89,12 @@ COLLATE = utf8mb4_unicode_ci;
 
 -- Create Users
 
-INSERT INTO user (first_name,last_name,email,password,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Devin','Butts','devinmbutts@gmail.com','test','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1993-07-02','ADMIN',1);
-INSERT INTO user (first_name,last_name,email,password,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Nick','Rufus','nick@gmail.com','test','1188 Code St.','Grand Rapids','MI','49534',CURDATE(),'1994-02-24','USER',1);
-INSERT INTO user (first_name,last_name,email,password,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Chris','Channells','cc@gmail.com','test','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1992-07-05','USER',1);
-INSERT INTO user (first_name,last_name,email,password,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Tori','Butts','tori.butts@gmail.com','test','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1994-02-24','USER',1);
-INSERT INTO user (first_name,last_name,email,password,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Justin','Frank','frankjustin@gmail.com','test','1190 Code St.','Grand Rapids','MI','49534',CURDATE(),'1993-06-02','USER',1);
-INSERT INTO user (first_name,last_name,email,password,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Cookie','Knopf','knopfcook@gmail.com','test','1191 Code St.','Grand Rapids','MI','49534',CURDATE(),'1990-08-04','USER',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Devin','Butts','devinmbutts@gmail.com','test','2485053913','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1993-07-02','ADMIN',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Nick','Rufus','nick@gmail.com','test','2485053913','1188 Code St.','Grand Rapids','MI','49534',CURDATE(),'1994-02-24','USER',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Chris','Channells','cc@gmail.com','test','2485053913','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1992-07-05','USER',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Tori','Butts','tori.butts@gmail.com','test','2485053913','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1994-02-24','USER',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Justin','Frank','frankjustin@gmail.com','test','2485053913','1190 Code St.','Grand Rapids','MI','49534',CURDATE(),'1993-06-02','USER',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Cookie','Knopf','knopfcook@gmail.com','test','2485053913','1191 Code St.','Grand Rapids','MI','49534',CURDATE(),'1990-08-04','USER',1);
 
 
 -- Create Accounts
@@ -123,15 +124,13 @@ INSERT INTO message (text,to_user_id,from_user_id) VALUES ('sending rent',(SELEC
 
 -- Create Transactions
 
-INSERT INTO transaction (sending_user_id,recieving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),(SELECT id FROM user WHERE email like 'tori.butts@gmail.com'),40.22,'USD','Suprise!','CLEARED');
-INSERT INTO transaction (sending_user_id,recieving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'nick@gmail.com'),(SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),1000.22,'USD','Rent for May','REQUESTED');
-INSERT INTO transaction (sending_user_id,recieving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'nick@gmail.com'),(SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),6540.22,'USD','Please Pay','DENIED');
-INSERT INTO transaction (sending_user_id,recieving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'cc@gmail.com'),(SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),1000.55,'USD','Rent for May','CLEARED');
-INSERT INTO transaction (sending_user_id,recieving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'frankjustin@gmail.com'),(SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),300.22,'USD','Dinner','CLEARED');
-INSERT INTO transaction (sending_user_id,recieving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'knopfcook@gmail.com'),(SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),60.22,'USD','Repairs','CLEARED');
-INSERT INTO transaction (sending_user_id,recieving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),(SELECT id FROM user WHERE email like 'knopfcook@gmail.com'),60.22,'USD','No worries','CLEARED');
-
-
+INSERT INTO transaction (sending_user_id,receiving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),(SELECT id FROM user WHERE email like 'tori.butts@gmail.com'),40.22,'USD','Suprise!','CLEARED');
+INSERT INTO transaction (sending_user_id,receiving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'nick@gmail.com'),(SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),1000.22,'USD','Rent for May','REQUESTED');
+INSERT INTO transaction (sending_user_id,receiving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'nick@gmail.com'),(SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),6540.22,'USD','Please Pay','DENIED');
+INSERT INTO transaction (sending_user_id,receiving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'cc@gmail.com'),(SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),1000.55,'USD','Rent for May','CLEARED');
+INSERT INTO transaction (sending_user_id,receiving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'frankjustin@gmail.com'),(SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),300.22,'USD','Dinner','CLEARED');
+INSERT INTO transaction (sending_user_id,receiving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'knopfcook@gmail.com'),(SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),60.22,'USD','Repairs','CLEARED');
+INSERT INTO transaction (sending_user_id,receiving_user_id,amount,currency,note,status) VALUES ((SELECT id FROM user WHERE email like 'devinmbutts@gmail.com'),(SELECT id FROM user WHERE email like 'knopfcook@gmail.com'),60.22,'USD','No worries','CLEARED');
 
 
 SELECT * FROM user;
@@ -147,8 +146,7 @@ SELECT * FROM transaction;
 
 
 
-   
-  
+
 
 
 
