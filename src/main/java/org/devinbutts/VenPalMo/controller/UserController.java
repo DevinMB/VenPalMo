@@ -6,6 +6,7 @@ import org.devinbutts.VenPalMo.dao.UserDAO;
 import org.devinbutts.VenPalMo.model.DisplayUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,8 +26,12 @@ public class UserController {
     @Autowired
     UserDAO userDAO;
 
+    @RequestMapping(value="/register")
+    public ModelAndView registerUser(){
+        
 
-
+        return "";
+    }
 
 
 

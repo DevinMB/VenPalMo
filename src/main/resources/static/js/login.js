@@ -7,6 +7,6 @@ function login(event) {
     console.log(username.value);
     console.log(password.value);
     
-    window.location.replace("index.html");
+    window.location.replace("welcome.html");
 
 }

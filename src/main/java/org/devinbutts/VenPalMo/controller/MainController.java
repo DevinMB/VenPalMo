@@ -20,7 +20,7 @@ public class MainController {
 //    TransactDAO transactDAO;
 
 
-    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/","login.html"}, method = RequestMethod.GET)
     public ModelAndView slash() {
         System.out.println("Index Controller Request");
 
