@@ -3039,3 +3039,240 @@ Unconditional classes:
 2022-11-28 13:32:08.144 DEBUG 8708 --- [http-nio-8080-exec-5] o.d.VenPalMo.controller.MainController   : Main Controller Login Request
 2022-11-28 13:32:09.388 DEBUG 8708 --- [http-nio-8080-exec-9] o.d.VenPalMo.controller.MainController   : Main Controller Welcome Request
 2022-11-28 13:33:10.770 DEBUG 8708 --- [http-nio-8080-exec-6] o.d.VenPalMo.controller.MainController   : Main Controller Login Request
+2022-11-28 13:33:11.938 DEBUG 8708 --- [http-nio-8080-exec-10] o.d.VenPalMo.controller.MainController   : Main Controller Welcome Request
+2022-11-28 13:58:18.602  INFO 8708 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 16 class path changes (0 additions, 13 deletions, 3 modifications)
+2022-11-28 13:58:18.693  INFO 8708 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 13:58:18.695  INFO 8708 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-28 13:58:18.705  INFO 8708 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 13:58:18.710  INFO 8708 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 13:58:18.736  INFO 8708 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 13:58:18.860  INFO 8708 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 8708 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-11-28 13:58:18.860 DEBUG 8708 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-28 13:58:18.860  INFO 8708 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 13:58:19.073  INFO 8708 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 13:58:19.074  INFO 8708 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2022-11-28 13:58:19.163  INFO 8708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 13:58:19.165  INFO 8708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 13:58:19.165  INFO 8708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 13:58:19.202  INFO 8708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 13:58:19.203  INFO 8708 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 340 ms
+2022-11-28 13:58:19.272  INFO 8708 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 13:58:19.279  INFO 8708 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-11-28 13:58:19.332  INFO 8708 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-11-28 13:58:19.334  INFO 8708 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-11-28 13:58:19.373  INFO 8708 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 13:58:19.374  INFO 8708 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 13:58:19.416  WARN 8708 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 13:58:19.663  INFO 8708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 13:58:19.684  INFO 8708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 13:58:19.691  INFO 8708 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 0.867 seconds (JVM running for 1587.739)
+2022-11-28 13:58:19.695  INFO 8708 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 13:58:21.112  INFO 8708 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 13 class path changes (13 additions, 0 deletions, 0 modifications)
+2022-11-28 13:58:21.176  INFO 8708 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 13:58:21.183  INFO 8708 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 13:58:21.184  INFO 8708 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-11-28 13:58:21.203  INFO 8708 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-11-28 13:58:21.288  INFO 8708 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 8708 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-11-28 13:58:21.288 DEBUG 8708 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-28 13:58:21.288  INFO 8708 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 13:58:21.481  INFO 8708 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 13:58:21.503  INFO 8708 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 5 JPA repository interfaces.
+2022-11-28 13:58:21.575  INFO 8708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 13:58:21.576  INFO 8708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 13:58:21.576  INFO 8708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 13:58:21.593  INFO 8708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 13:58:21.594  INFO 8708 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 303 ms
+2022-11-28 13:58:21.621  INFO 8708 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 13:58:21.626  INFO 8708 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-11-28 13:58:21.652  INFO 8708 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-11-28 13:58:21.653  INFO 8708 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-11-28 13:58:21.745  INFO 8708 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 13:58:21.746  INFO 8708 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 13:58:21.834  WARN 8708 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 13:58:22.000  INFO 8708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 13:58:22.010  INFO 8708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 13:58:22.013  INFO 8708 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 0.752 seconds (JVM running for 1590.061)
+2022-11-28 13:58:22.014  INFO 8708 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 14:00:53.702  INFO 8708 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 14:00:53.704  INFO 8708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-11-28 14:00:53.722  INFO 8708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2022-11-28 14:03:58.275  INFO 11244 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 11244 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-11-28 14:03:58.277 DEBUG 11244 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-28 14:03:58.278  INFO 11244 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 14:03:58.345  INFO 11244 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 14:03:58.346  INFO 11244 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 14:03:58.950  INFO 11244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 14:03:59.006  INFO 11244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 5 JPA repository interfaces.
+2022-11-28 14:03:59.786  INFO 11244 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 14:03:59.801  INFO 11244 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 14:03:59.801  INFO 11244 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 14:03:59.881  INFO 11244 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 14:03:59.881  INFO 11244 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1534 ms
+2022-11-28 14:04:00.123  INFO 11244 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 14:04:00.173  INFO 11244 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 14:04:00.320  INFO 11244 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 14:04:00.402  INFO 11244 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 14:04:00.705  INFO 11244 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 14:04:00.723  INFO 11244 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-11-28 14:04:01.490  INFO 11244 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 14:04:01.499  INFO 11244 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 14:04:01.881  WARN 11244 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 14:04:02.706  INFO 11244 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 14:04:02.753  INFO 11244 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 14:04:02.766  INFO 11244 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 4.945 seconds (JVM running for 5.473)
+2022-11-28 14:04:18.303  INFO 11244 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 14:04:18.307  INFO 11244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 14:04:18.327  INFO 11244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 14:04:20.119  INFO 13160 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 13160 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-11-28 14:04:20.121 DEBUG 13160 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-28 14:04:20.122  INFO 13160 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 14:04:20.197  INFO 13160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 14:04:20.198  INFO 13160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 14:04:20.785  INFO 13160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 14:04:20.852  INFO 13160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 5 JPA repository interfaces.
+2022-11-28 14:04:21.675  INFO 13160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 14:04:21.687  INFO 13160 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 14:04:21.688  INFO 13160 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 14:04:21.772  INFO 13160 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 14:04:21.772  INFO 13160 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1573 ms
+2022-11-28 14:04:22.094  INFO 13160 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 14:04:22.149  INFO 13160 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 14:04:22.290  INFO 13160 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 14:04:22.380  INFO 13160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 14:04:22.674  INFO 13160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 14:04:22.689  INFO 13160 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-11-28 14:04:23.469  INFO 13160 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 14:04:23.478  INFO 13160 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 14:04:23.862  WARN 13160 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 14:04:24.711  INFO 13160 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 14:04:24.780  INFO 13160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 14:04:24.794  INFO 13160 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 5.173 seconds (JVM running for 5.659)
+2022-11-28 14:04:32.589  INFO 13160 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-28 14:04:32.590  INFO 13160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-28 14:04:32.592  INFO 13160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-11-28 14:04:32.614 DEBUG 13160 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : Main Controller Login Request
+2022-11-28 14:09:41.006 DEBUG 13160 --- [http-nio-8080-exec-7] o.d.VenPalMo.controller.MainController   : Main Controller Welcome Request
+2022-11-28 14:09:54.676 DEBUG 13160 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : Main Controller Login Request
+2022-11-28 14:09:55.960 DEBUG 13160 --- [http-nio-8080-exec-6] o.d.VenPalMo.controller.MainController   : Main Controller Welcome Request
+2022-11-28 14:11:20.191  INFO 13160 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 14:11:20.194  INFO 13160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 14:11:20.215  INFO 13160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 14:11:24.361  INFO 26968 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 26968 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-11-28 14:11:24.364 DEBUG 26968 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-28 14:11:24.364  INFO 26968 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 14:11:24.437  INFO 26968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 14:11:24.438  INFO 26968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 14:11:25.050  INFO 26968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 14:11:25.115  INFO 26968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 5 JPA repository interfaces.
+2022-11-28 14:11:25.884  INFO 26968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 14:11:25.895  INFO 26968 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 14:11:25.895  INFO 26968 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 14:11:25.969  INFO 26968 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 14:11:25.969  INFO 26968 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1531 ms
+2022-11-28 14:11:26.234  INFO 26968 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 14:11:26.293  INFO 26968 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 14:11:26.452  INFO 26968 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 14:11:26.547  INFO 26968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 14:11:26.864  INFO 26968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 14:11:26.879  INFO 26968 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-11-28 14:11:27.654  INFO 26968 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 14:11:27.663  INFO 26968 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 14:11:28.051  WARN 26968 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 14:11:29.019  INFO 26968 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 14:11:29.076  INFO 26968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 14:11:29.089  INFO 26968 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 5.189 seconds (JVM running for 5.677)
+2022-11-28 14:11:50.258  INFO 26968 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 14:11:50.263  INFO 26968 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 14:11:50.281  INFO 26968 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 14:11:54.107  INFO 27464 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 27464 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-11-28 14:11:54.109 DEBUG 27464 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-28 14:11:54.109  INFO 27464 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 14:11:54.179  INFO 27464 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 14:11:54.179  INFO 27464 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 14:11:54.798  INFO 27464 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 14:11:54.869  INFO 27464 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 5 JPA repository interfaces.
+2022-11-28 14:11:55.729  INFO 27464 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 14:11:55.741  INFO 27464 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 14:11:55.741  INFO 27464 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 14:11:55.824  INFO 27464 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 14:11:55.824  INFO 27464 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1644 ms
+2022-11-28 14:11:56.116  INFO 27464 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 14:11:56.232  INFO 27464 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 14:11:56.409  INFO 27464 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 14:11:56.505  INFO 27464 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 14:11:56.815  INFO 27464 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 14:11:56.832  INFO 27464 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-11-28 14:11:57.586  INFO 27464 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 14:11:57.593  INFO 27464 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 14:11:57.992  WARN 27464 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 14:11:58.812  INFO 27464 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 14:11:58.858  INFO 27464 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 14:11:58.869  INFO 27464 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 5.2 seconds (JVM running for 5.7)
+2022-11-28 14:12:52.493  INFO 27464 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-28 14:12:52.494  INFO 27464 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-28 14:12:52.495  INFO 27464 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-28 14:12:52.522 DEBUG 27464 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : Main Controller Login Request
+2022-11-28 14:13:50.802  INFO 27464 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 14:13:50.805  INFO 27464 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 14:13:50.825  INFO 27464 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 14:13:54.558  INFO 4856 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 4856 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-11-28 14:13:54.560 DEBUG 4856 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-28 14:13:54.561  INFO 4856 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 14:13:54.635  INFO 4856 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 14:13:54.636  INFO 4856 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 14:13:55.217  INFO 4856 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 14:13:55.282  INFO 4856 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 5 JPA repository interfaces.
+2022-11-28 14:13:56.072  INFO 4856 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 14:13:56.087  INFO 4856 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 14:13:56.088  INFO 4856 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 14:13:56.160  INFO 4856 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 14:13:56.160  INFO 4856 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1523 ms
+2022-11-28 14:13:56.400  INFO 4856 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 14:13:56.462  INFO 4856 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 14:13:56.612  INFO 4856 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 14:13:56.702  INFO 4856 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 14:13:56.994  INFO 4856 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 14:13:57.010  INFO 4856 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-11-28 14:13:57.741  INFO 4856 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 14:13:57.749  INFO 4856 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 14:13:58.132  WARN 4856 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 14:13:58.935  INFO 4856 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 14:13:58.989  INFO 4856 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 14:13:59.003  INFO 4856 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 4.903 seconds (JVM running for 5.403)
+2022-11-28 14:14:13.552  INFO 4856 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-28 14:14:13.553  INFO 4856 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-28 14:14:13.555  INFO 4856 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-28 14:15:18.105 DEBUG 4856 --- [http-nio-8080-exec-7] o.d.VenPalMo.controller.MainController   : Main Controller Login Request
+2022-11-28 14:18:52.559 DEBUG 4856 --- [http-nio-8080-exec-3] o.d.VenPalMo.controller.MainController   : Main Controller Welcome Request
+2022-11-28 14:18:55.219 DEBUG 4856 --- [http-nio-8080-exec-7] o.d.VenPalMo.controller.MainController   : Main Controller Login Request
+2022-11-28 14:18:56.324 DEBUG 4856 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : Main Controller Register Request
+2022-11-28 15:19:53.468  INFO 4856 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 14 class path changes (0 additions, 13 deletions, 1 modification)
+2022-11-28 15:19:53.562  INFO 4856 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:19:53.566  INFO 4856 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-28 15:19:53.578  INFO 4856 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:53.582  INFO 4856 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 15:19:53.607  INFO 4856 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 15:19:53.739  INFO 4856 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 4856 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-11-28 15:19:53.739 DEBUG 4856 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-28 15:19:53.740  INFO 4856 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:19:53.911  INFO 4856 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:19:53.912  INFO 4856 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2022-11-28 15:19:54.034  INFO 4856 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:19:54.037  INFO 4856 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:19:54.038  INFO 4856 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:19:54.086  INFO 4856 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:19:54.086  INFO 4856 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 343 ms
+2022-11-28 15:19:54.161  INFO 4856 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:19:54.171  INFO 4856 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-11-28 15:19:54.202  INFO 4856 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-11-28 15:19:54.203  INFO 4856 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-11-28 15:19:54.230  INFO 4856 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:19:54.231  INFO 4856 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:54.256  WARN 4856 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:19:54.464  INFO 4856 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:19:54.486  INFO 4856 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:19:54.495  INFO 4856 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 0.801 seconds (JVM running for 3960.895)
+2022-11-28 15:19:54.506  INFO 4856 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:19:54.694  INFO 4856 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:54.696  INFO 4856 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-11-28 15:19:54.722  INFO 4856 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

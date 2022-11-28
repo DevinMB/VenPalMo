@@ -31,8 +31,17 @@ public class UserController {
             model.addAttribute("firstName", user.getFirstName());
             model.addAttribute("lastName",user.getLastName());
 
-
         return "login";
+    }
+
+
+    @ResponseBody
+    @GetMapping(value="/display_users")
+    public List<DisplayUser> getAllUsers(){
+
+        List<DisplayUser> displayUsers = displayUserDAO.findAll();
+
+        return displayUsers;
     }
 
 
