@@ -1,36 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/home.css">
-
-    <!-- INTERNAL STYLE -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,400;1,500;1,700&display=swap');
-    </style>
-    <title>Welcome</title>
-</head>
+<head th:replace="fragments :: main_html_head"></head>
 
 <body>
-<header class="main_header">
-    <div></div>
-    <nav>
-        <div class="nav_logo">
-            <img src="images/Favicon-White.png" alt="">
-            <h1>Welcome, Devin!</h1>
-        </div>
-        <div class="nav_buttons">
-            <ul>
-                <li><a href="#">Settings? idk</a></li>
-                <li><a href="#">🔔</a></li>
-                <li><a th:href="login.html">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+
+<header th:replace="fragments :: main_header" class="main_header"></header>
+   
+
 <div class="main_app_container">
 
     <!-- INLINE STYLE TAG -->

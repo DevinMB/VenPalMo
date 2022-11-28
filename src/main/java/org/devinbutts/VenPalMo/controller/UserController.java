@@ -4,12 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
 import org.devinbutts.VenPalMo.model.DisplayUser;
+import org.devinbutts.VenPalMo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
@@ -26,12 +25,18 @@ public class UserController {
     @Autowired
     UserDAO userDAO;
 
-//    @RequestMapping(value="/register")
-//    public ModelAndView registerUser(){
-//
-//
-//        return "login";
-//    }
+    @PostMapping(value="/register")
+    public String registerUser(@ModelAttribute("user") User user, ModelMap model){
+
+            model.addAttribute("firstName", user.getFirstName());
+            model.addAttribute("lastName",user.getLastName());
+
+
+        return "login";
+    }
+
+
+
 
 
 

@@ -1,6 +1,7 @@
 package org.devinbutts.VenPalMo.controller;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.TransactDAO;
 import org.devinbutts.VenPalMo.model.Transact;
 import org.devinbutts.VenPalMo.model.User;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+@Slf4j
 @Controller
 public class MainController {
 
@@ -22,7 +24,7 @@ public class MainController {
 
     @RequestMapping(value = {"/","login.html"}, method = RequestMethod.GET)
     public ModelAndView slash() {
-        System.out.println("Index Controller Request");
+        log.debug("Main Controller Login Request");
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("login");
@@ -32,7 +34,7 @@ public class MainController {
 
     @RequestMapping(value = {"/welcome","/welcome.html"} ,  method = RequestMethod.GET)
     public ModelAndView welcome(){
-        System.out.println("Index Controller Request");
+        log.debug("Main Controller Welcome Request");
 
         ModelAndView modelAndView  = new ModelAndView();
         modelAndView.setViewName("welcome");
@@ -42,7 +44,8 @@ public class MainController {
 
     @RequestMapping(value = {"/register","/register.html"} ,  method = RequestMethod.GET)
     public ModelAndView register(){
-        System.out.println("Index Controller Request");
+
+        log.debug("Main Controller Register Request");
 
         ModelAndView modelAndView  = new ModelAndView();
         modelAndView.setViewName("register");
