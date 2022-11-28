@@ -26,12 +26,12 @@ public class UserController {
     @Autowired
     UserDAO userDAO;
 
-    @RequestMapping(value="/register")
-    public ModelAndView registerUser(){
-        
-
-        return "";
-    }
+//    @RequestMapping(value="/register")
+//    public ModelAndView registerUser(){
+//
+//
+//        return "login";
+//    }
 
 
 
