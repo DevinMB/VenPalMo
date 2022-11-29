@@ -24,4 +24,7 @@ public interface TransactDAO extends JpaRepository<Transact,Integer> {
 
     @Override
     void delete(Transact entity);
+
+
+
 }

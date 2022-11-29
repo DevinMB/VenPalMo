@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface MessageDAO extends JpaRepository<Message,Integer> {
 
-    @Query("SELECT m FROM Message m WHERE m.toUser = :userId OR m.fromUser = :userId")
+    @Query("SELECT m FROM Message m WHERE m.toUser.id = :userId OR m.fromUser.id = :userId")
     List<Message> findUserMessages(Integer userId);
 
     @Override

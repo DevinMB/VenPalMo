@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name = "user")
-public class DisplayUser {
+public class UserDTO {
 
 
 

@@ -27,8 +27,8 @@
 
         <div class="quick_actions">
             <!-- <p>Quick Actions</p> -->
-            <button>Send</button>
-            <button>Request</button>
+            <button><a th:href="send.html">Send</a></button>
+            <button><a th:href="request.html">Request</a></button>
 
 
             
@@ -44,27 +44,12 @@
         <div class="activity">
             <table>
                 <div id="table_title">
-                    <p>Activity</p>
+                    <p>Recent Activity</p>
                 </div>
-                <tr>
-                    <td>Chris C</td>
-                    <td>Sent</td>
-                    <td>$40</td>
-                </tr>
-                <tr>
-                    <td>Nick T</td>
-                    <td>Recieved</td>
-                    <td>$1000</td>
-                </tr>
-                <tr>
-                    <td>Tori B</td>
-                    <td>Sent</td>
-                    <td>$25</td>
-                </tr>
-                <tr>
-                    <td>Lynnm H</td>
-                    <td>Recieved</td>
-                    <td>$50</td>
+                <tr th:each="transaction: ${transactions}">
+                    <td th:text="${transaction.user.firstName}"/>
+                    <td th:text="${transaction.transactionType}"/>
+                    <td th:text="${#numbers.formatCurrency(transaction.transactionAmount)}"/>
                 </tr>
             </table>
         </div>

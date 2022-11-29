@@ -3,14 +3,12 @@ package org.devinbutts.VenPalMo.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
-import org.devinbutts.VenPalMo.model.DisplayUser;
+import org.devinbutts.VenPalMo.model.UserDTO;
 import org.devinbutts.VenPalMo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,11 +36,11 @@ public class UserController {
 
     @ResponseBody
     @GetMapping(value="/display_users")
-    public List<DisplayUser> getAllUsers(){
+    public List<UserDTO> getAllUsers(){
 
-        List<DisplayUser> displayUsers = displayUserDAO.findAll();
+        List<UserDTO> userDTOS = displayUserDAO.findAll();
 
-        return displayUsers;
+        return userDTOS;
     }
 
     @RequestMapping(value = {"/search"}, method = RequestMethod.GET)
@@ -57,7 +55,7 @@ public class UserController {
 
         modelAndView.setViewName("search");
 
-        List<DisplayUser> users = new ArrayList<>();
+        List<UserDTO> users = new ArrayList<>();
 
         users = displayUserDAO.findByFirstLastEmail("%" + firstName + "%", "%" + lastName + "%","%" + email + "%");
 

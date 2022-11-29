@@ -181,6 +181,11 @@ body .main_app_container{
     color: white;
 }
 
+.quick_actions button a{
+    text-decoration: none;
+    color: white;
+}
+
 .quick_actions button:hover{
    
     background-color: #75B24C;

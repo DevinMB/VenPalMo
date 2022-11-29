@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: main_html_head"></head>
+
+<body>
+
+<header th:replace="fragments :: main_header" class="main_header"></header>
+
+<div class="send_form">
+
+    <form th:onsubmit="send(event)" method="post">
+
+
+
+
+
+
+    </form>
+
+</div>
+
+<script type="text/javascript" th:src="@{js/home.js}"></script>
+</body>
+
+</html>
