@@ -6,7 +6,7 @@
 body{
     margin: 0px;
     padding: 0px;
-    
+    min-width: 50em;
     background-color: rgb(249, 250, 249);
     
     display: flex;
@@ -20,12 +20,12 @@ body header{
     width: 100%;
     max-width: 110em;
     min-width: 50em;
-    margin-top: 1em;
+    /* margin-top: 1em; */
   
 }
 
 body .main_app_container{
-    max-width: 105em;
+   
     min-width: 50em;
 }
 
@@ -45,7 +45,7 @@ body .main_app_container{
     align-items: center;
     
     background: linear-gradient(to right,#009F47,#8BC53F);
-    border-radius: 1.5em;   
+    /* border-radius: 1.5em;    */
    
 }
 
@@ -109,7 +109,7 @@ body .main_app_container{
     display:flex;
     justify-content: center;
     
-    background-color: grey;
+    /* background-color: grey; */
     height: 100%;
     width: 100%;
 
@@ -123,9 +123,10 @@ body .main_app_container{
 
 .main_content{
     flex: 2;
-    background-color: rgba(214, 212, 209, 0.719);
+    /* background-color: rgba(214, 212, 209, 0.719); */
     display: flex;
     flex-direction: column;
+    background-color: #4ba1723e;
 }
 
 .main_content p{
@@ -146,7 +147,7 @@ body .main_app_container{
     flex: 1;
     width: 100%;
     display: flex;
-    background-color: rgb(137, 131, 132);
+    /* background-color: rgb(137, 131, 132); */
     justify-content: start;
     flex-direction: column;
     
@@ -157,13 +158,34 @@ body .main_app_container{
 
 
 .quick_actions{
-    margin-left: 1em
+    
+    display: flex;
+    justify-content: space-evenly;
+    
 }
 
 .quick_actions p{
     font-size: larger;
     font-weight: 800;
     font-style: italic;
+}
+
+.quick_actions button{
+    margin: 1em;
+    padding: 1em;
+    width: 15em;
+    border: none;
+    background-color: #8BC53F;
+    border-radius: 2em;
+    font-weight: 800;
+    color: white;
+}
+
+.quick_actions button:hover{
+   
+    background-color: #75B24C;
+    transition: background-color 1s;
+   
 }
 
 

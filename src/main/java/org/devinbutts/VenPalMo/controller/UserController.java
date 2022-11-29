@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -44,7 +45,29 @@ public class UserController {
         return displayUsers;
     }
 
+    @RequestMapping(value = {"/search"}, method = RequestMethod.GET)
+    public ModelAndView searchForUser(
+            @RequestParam(required = false) String firstName,
+            @RequestParam(required = false) String lastName,
+            @RequestParam(required = false) String email) {
 
+        log.debug("Search Request " + firstName + " " + lastName + " " + email);
+
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.setViewName("search");
+
+        List<DisplayUser> users = new ArrayList<>();
+
+        users = displayUserDAO.findByFirstLastEmail("%" + firstName + "%", "%" + lastName + "%","%" + email + "%");
+
+        modelAndView.addObject("firstName", firstName);
+        modelAndView.addObject("lastName", lastName);
+        modelAndView.addObject("email", email);
+        modelAndView.addObject("users", users);
+
+        return modelAndView;
+    }
 
 
 
