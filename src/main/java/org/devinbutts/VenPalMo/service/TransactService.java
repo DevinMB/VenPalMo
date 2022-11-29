@@ -1,7 +1,7 @@
 package org.devinbutts.VenPalMo.service;
 
 import org.devinbutts.VenPalMo.dao.TransactDAO;
-import org.devinbutts.VenPalMo.model.TransactDTO;
+import org.devinbutts.VenPalMo.model.dto.TransactDTO;
 import org.devinbutts.VenPalMo.model.Transact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

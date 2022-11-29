@@ -1,10 +1,9 @@
 package org.devinbutts.VenPalMo.controller;
 
-
 import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.TransactDAO;
-import org.devinbutts.VenPalMo.model.UserDTO;
+import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.model.Transact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.util.List;
+
+//TODO: Build Send.html file
+//TODO: Build Receive.html file
+//TODO: Build Transaction.html file
 
 @Controller
 @Slf4j

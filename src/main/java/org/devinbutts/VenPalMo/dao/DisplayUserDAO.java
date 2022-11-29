@@ -1,6 +1,6 @@
 package org.devinbutts.VenPalMo.dao;
 
-import org.devinbutts.VenPalMo.model.UserDTO;
+import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

@@ -28,34 +28,36 @@
         <div class="discription">
             <p>Create an Account:</p>
         </div>
-        <form class="register_form_container" th:onsubmit="register(event)">
+        <form class="register_form_container" method="post" th:action="@{/user/register}" th:object="${user}">
             <div class="first_last">
-                <input type="text" id="first_name_input" placeholder="First Name" />
-                <input type="text" id="last_name_input" placeholder="Last Name" />
+                <input type="text" id="first_name_input" placeholder="First Name" th:field="*{firstName}" />
+                <input type="text" id="last_name_input" placeholder="Last Name" th:field="*{lastName}" />
             </div>
+            
+            <!-- NEED TO FIX -->
+            <div th:if="${errors != null && errors.nameError != null}">ERROR</div>
 
-            <input type="email" id="email_input" placeholder="Email" />
-            <input type="password" id="password_input" placeholder="Password" />
+            <input type="email" id="email_input" placeholder="Email" th:field="*{email}" />
+            <input type="password" id="password_input" placeholder="Password" th:field="*{password}"/>
             <input type="password" id="password_confirm_input" placeholder="Confirm Password" />
-            <input type="phone" id="phone_input" placeholder="Phone Number" />
+            <input type="phone" id="phone_input" placeholder="Phone Number" th:field="*{phoneNumber}"/>
 
 
-            <input type="text" id="address_input" placeholder="Address" />
+            <input type="text" id="address_input" placeholder="Address" th:field="*{address}"/>
 
             <div class="city_state_zip">
-                <input type="text" id="city_input" placeholder="City" />
-                <input type="text" id="state_input" placeholder="State" />
-                <input type="text" id="zip_input" placeholder="Zip" />
+                <input type="text" id="city_input" placeholder="City" th:field="*{city}"/>
+                <input type="text" id="state_input" placeholder="State" th:field="*{state}"/>
+                <input type="text" id="zip_input" placeholder="Zip" th:field="*{zip}"/>
             </div>
 
             <div class="birth_date">
                 <label>Birth Date</label>
-                <input type="date" id="birth_date_input" placeholder="Birth Date" />
+                <input type="date" id="birth_date_input" placeholder="Birth Date" th:field="*{birthDate}"/>
 
             </div>
 
             <div class="register_button">
-
                 <button class="" type="submit">Register</button>
             </div>
 

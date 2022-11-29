@@ -3,7 +3,8 @@ package org.devinbutts.VenPalMo.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.MessageDAO;
-import org.devinbutts.VenPalMo.model.TransactDTO;
+import org.devinbutts.VenPalMo.model.User;
+import org.devinbutts.VenPalMo.model.dto.TransactDTO;
 import org.devinbutts.VenPalMo.model.Message;
 import org.devinbutts.VenPalMo.service.TransactService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,6 +60,8 @@ public class MainController {
 
         ModelAndView modelAndView  = new ModelAndView();
         modelAndView.setViewName("register");
+
+        modelAndView.addObject("user", new User());
 
         return modelAndView;
     }

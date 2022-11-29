@@ -1,9 +1,10 @@
-package org.devinbutts.VenPalMo.model;
+package org.devinbutts.VenPalMo.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.devinbutts.VenPalMo.model.User;
 
 import java.math.BigDecimal;
 import java.util.Date;

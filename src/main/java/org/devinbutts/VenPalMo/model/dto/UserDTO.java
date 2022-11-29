@@ -1,4 +1,4 @@
-package org.devinbutts.VenPalMo.model;
+package org.devinbutts.VenPalMo.model.dto;
 
 
 import lombok.*;

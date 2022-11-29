@@ -1,7 +1,14 @@
+let errors = {
+    
+
+};
+
 function register(event) {
     event.preventDefault();
 
     let user = {};
+
+    errors = {};
 
     user.firstName = document.getElementById("first_name_input");
     user.lastName = document.getElementById("last_name_input");
@@ -27,7 +34,7 @@ function register(event) {
     }else{
         console.log("wrong!")
         console.log(user);
-
+        console.log(errors);
     }
 
 
@@ -39,11 +46,15 @@ function validateUser(user) {
     let valid = false;
 
     if (validateName(user)
-        && validateEmail(user)
-        && validatePassword(user)
-        && validatePhone(user)
-        && validateLocation(user)
-        && validateBirthDate(user)) {
+        & validateEmail(user)
+        & validatePassword(user)
+        & validatePhone(user)
+        & validateBirthDate(user)
+        & validateAddress(user)
+        & validateCity(user)
+        & validateState(user)
+        & validateZip(user)
+        ) {
         valid = true;
     }
 
@@ -54,17 +65,32 @@ function validateName(user) {
     if (user.firstName.value != '' && user.lastName.value != '') {
         return true;
     } else {
+        errors.nameError = "Invalid Username: Must Be Not Blank";
         return false;
     }
 }
 
 function validateEmail(user) {
-    return String(user.username.value).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
+    let valid = String(user.username.value).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    if(valid){
+        return true;
+    }else{
+        errors.emailError = "Invalid Email Address";
+        return false;
+    }
+    
+    
 }
 
 function validatePassword(user){
-    return user.password.value == user.passwordConfirm.value;
+    let valid = user.password.value == user.passwordConfirm.value;
+
+    if(valid){
+        return true;
+    }else{
+        errors.passwordConfirmError = "Passwords Must Match";
+        return false;
+    }
 }
 
 function validatePhone(user){
@@ -72,18 +98,8 @@ function validatePhone(user){
     if(user.phone.value.match(phoneno)){
         return true;
     }else{
+        errors.phoneError = "Invalid Phone Number"
         return  false;
-    }
-}
-
-function validateLocation(user){
-    if (user.address.value != '' 
-        && user.city.value != ''
-        && user.state.value != ''
-        && user.zip.value != '') {
-        return true;
-    } else {
-        return false;
     }
 }
 
@@ -91,6 +107,59 @@ function validateBirthDate(user){
     if (user.birthDate.value) {
         return true;
     }else{
+        errors.birthDateError = "Invalid Birthdate"
         return false;
     }
 }
+
+// function validateLocation(user){
+//     if (user.address.value != '' 
+//         && user.city.value != ''
+//         && user.state.value != ''
+//         && user.zip.value != '') {
+//         return true;
+//     } else {
+//         error
+//         return false;
+//     }
+// }
+
+function validateAddress(user){
+    if (user.address.value != '') {
+        return true;
+    } else {
+        errors.addressError = "Address Must Not Be Blank";
+        return false;
+    }
+}
+
+function validateCity(user){
+    if (user.city.value != '') {
+        return true;
+    } else {
+        errors.cityError = "Address Must Not Be Blank";
+        return false;
+    }
+}
+
+function validateState(user){
+    if (user.state.value != '') {
+        return true;
+    } else {
+        errors.stateError = "State Must Not Be Blank";
+        return false;
+    }
+}
+
+function validateZip(user){
+    if (user.zip.value != '') {
+        return true;
+    } else {
+        errors.zipError = "Zip Must Not Be Blank";
+        return false;
+    }
+}
+
+
+
+

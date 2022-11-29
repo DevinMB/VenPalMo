@@ -3,7 +3,7 @@ package org.devinbutts.VenPalMo.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
-import org.devinbutts.VenPalMo.model.UserDTO;
+import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -25,10 +26,15 @@ public class UserController {
     UserDAO userDAO;
 
     @PostMapping(value="/register")
-    public String registerUser(@ModelAttribute("user") User user, ModelMap model){
+    public String registerUser(@ModelAttribute(value = "user") User user){
 
-            model.addAttribute("firstName", user.getFirstName());
-            model.addAttribute("lastName",user.getLastName());
+//TODO: Fix Phone Not Pulling Through To Object
+        user.setRole("USER");
+        user.setActive(1);
+        user.setJoinedDate(new Date());
+
+        userDAO.save(user);
+
 
         return "login";
     }

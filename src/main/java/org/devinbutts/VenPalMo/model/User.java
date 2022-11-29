@@ -1,6 +1,7 @@
 package org.devinbutts.VenPalMo.model;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -14,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString(exclude = "accounts")
 @Table(name = "user")
 public class User {
 
@@ -49,6 +51,7 @@ public class User {
 
     @Column(name = "birth_date")
     @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;
 
     private String role;
