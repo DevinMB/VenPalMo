@@ -28,19 +28,19 @@
         <div class="discription">
             <p>Create an Account:</p>
         </div>
-        <form class="register_form_container" method="post" th:action="@{/user/register}" th:object="${user}">
+        <form class="register_form_container" method="post" th:action="@{/register}" th:object="${user}">
             <div class="first_last">
                 <input type="text" id="first_name_input" placeholder="First Name" th:field="*{firstName}" />
                 <input type="text" id="last_name_input" placeholder="Last Name" th:field="*{lastName}" />
             </div>
             
             <!-- NEED TO FIX -->
-            <div th:if="${errors != null && errors.nameError != null}">ERROR</div>
+            <div th:if="${#fields.hasErrors('firstName')}">ERROR</div>
 
             <input type="email" id="email_input" placeholder="Email" th:field="*{email}" />
             <input type="password" id="password_input" placeholder="Password" th:field="*{password}"/>
-            <input type="password" id="password_confirm_input" placeholder="Confirm Password" />
-            <input type="phone" id="phone_input" placeholder="Phone Number" th:field="*{phoneNumber}"/>
+            <input type="password" id="password_confirm_input" placeholder="Confirm Password" th:field="*{confirmPassword}" />
+            <input type="tel" id="phone_input" placeholder="Phone Number" th:field="*{phoneNumber}"/>
 
 
             <input type="text" id="address_input" placeholder="Address" th:field="*{address}"/>

@@ -53,18 +53,7 @@ public class MainController {
         return modelAndView;
     }
 
-    @RequestMapping(value = {"/register","/register.html"} ,  method = RequestMethod.GET)
-    public ModelAndView register(){
 
-        log.debug("Main Controller Register Request");
-
-        ModelAndView modelAndView  = new ModelAndView();
-        modelAndView.setViewName("register");
-
-        modelAndView.addObject("user", new User());
-
-        return modelAndView;
-    }
 
 
 
