@@ -3410,3 +3410,118 @@ org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method cal
 2022-12-01 15:26:11.631  INFO 21108 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2022-12-01 15:26:11.671 DEBUG 21108 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : Main Controller Welcome Request
 2022-12-01 15:26:11.764 DEBUG 21108 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : UserDTO(userId=1, firstName=Devin, lastName=Butts, email=devinmbutts@gmail.com)
+2022-12-01 15:41:55.349  INFO 25372 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 25372 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-12-01 15:41:55.350 DEBUG 25372 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-12-01 15:41:55.351  INFO 25372 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 15:41:55.421  INFO 25372 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-01 15:41:55.421  INFO 25372 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-01 15:41:56.125  INFO 25372 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-01 15:41:56.181  INFO 25372 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2022-12-01 15:41:57.033  INFO 25372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-01 15:41:57.047  INFO 25372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-01 15:41:57.048  INFO 25372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-01 15:41:57.127  INFO 25372 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-01 15:41:57.128  INFO 25372 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1706 ms
+2022-12-01 15:41:57.466  INFO 25372 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-01 15:41:57.549  INFO 25372 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-01 15:41:57.766  INFO 25372 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-01 15:41:57.876  INFO 25372 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-01 15:41:58.188  INFO 25372 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-01 15:41:58.203  INFO 25372 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-12-01 15:41:59.007  INFO 25372 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-01 15:41:59.016  INFO 25372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-01 15:41:59.904  INFO 25372 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@19c0f76, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2bb46817, org.springframework.security.web.context.SecurityContextPersistenceFilter@67709c6, org.springframework.security.web.header.HeaderWriterFilter@10e8a912, org.springframework.security.web.authentication.logout.LogoutFilter@234282bd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@506f5db7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38c4d9be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68445e85, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@79296010, org.springframework.security.web.session.SessionManagementFilter@3d954d7e, org.springframework.security.web.access.ExceptionTranslationFilter@73bc0ade, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79a12415]
+2022-12-01 15:41:59.921  WARN 25372 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-01 15:41:59.921  INFO 25372 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/css/**']
+2022-12-01 15:41:59.922  WARN 25372 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-01 15:41:59.923  INFO 25372 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/js/**']
+2022-12-01 15:41:59.923  WARN 25372 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-01 15:41:59.923  INFO 25372 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/images/**']
+2022-12-01 15:42:00.030  WARN 25372 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-01 15:42:00.530  INFO 25372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-01 15:42:00.568  INFO 25372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-01 15:42:00.583  INFO 25372 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 5.659 seconds (JVM running for 6.169)
+2022-12-01 15:48:48.648  INFO 25372 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-01 15:48:48.652  INFO 25372 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-01 15:48:48.671  INFO 25372 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-01 15:48:52.479  INFO 3048 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 3048 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-12-01 15:48:52.481 DEBUG 3048 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-12-01 15:48:52.482  INFO 3048 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 15:48:52.550  INFO 3048 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-01 15:48:52.551  INFO 3048 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-01 15:48:53.290  INFO 3048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-01 15:48:53.360  INFO 3048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 5 JPA repository interfaces.
+2022-12-01 15:48:54.459  INFO 3048 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-01 15:48:54.475  INFO 3048 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-01 15:48:54.476  INFO 3048 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-01 15:48:54.573  INFO 3048 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-01 15:48:54.574  INFO 3048 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2022 ms
+2022-12-01 15:48:54.900  INFO 3048 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-01 15:48:54.948  INFO 3048 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-01 15:48:55.119  INFO 3048 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-01 15:48:55.224  INFO 3048 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-01 15:48:55.527  INFO 3048 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-01 15:48:55.545  INFO 3048 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-12-01 15:48:56.337  INFO 3048 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-01 15:48:56.345  INFO 3048 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-01 15:48:57.270  INFO 3048 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7a41499e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19694ecf, org.springframework.security.web.context.SecurityContextPersistenceFilter@34f1050f, org.springframework.security.web.header.HeaderWriterFilter@244e1a59, org.springframework.security.web.authentication.logout.LogoutFilter@521827f0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4a8d195b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b7e2fd9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ef1fdc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@452ade25, org.springframework.security.web.session.SessionManagementFilter@3841a85, org.springframework.security.web.access.ExceptionTranslationFilter@45f7aa12, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31d8977e]
+2022-12-01 15:48:57.277  WARN 3048 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-01 15:48:57.277  INFO 3048 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/css/**']
+2022-12-01 15:48:57.278  WARN 3048 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-01 15:48:57.278  INFO 3048 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/js/**']
+2022-12-01 15:48:57.278  WARN 3048 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-01 15:48:57.278  INFO 3048 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/images/**']
+2022-12-01 15:48:57.376  WARN 3048 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-01 15:48:58.043  INFO 3048 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-01 15:48:58.105  INFO 3048 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-01 15:48:58.121  INFO 3048 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 6.109 seconds (JVM running for 6.653)
+2022-12-01 15:48:58.215  INFO 3048 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-01 15:48:58.216  INFO 3048 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-01 15:48:58.217  INFO 3048 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-01 15:48:58.274 DEBUG 3048 --- [http-nio-8080-exec-2] o.d.VenPalMo.controller.MainController   : Main Controller Login Request
+2022-12-01 16:04:51.640 DEBUG 3048 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : Main Controller Welcome Request
+2022-12-01 16:04:51.694 DEBUG 3048 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : UserDTO(userId=1, firstName=Devin, lastName=Butts, email=devinmbutts@gmail.com)
+2022-12-01 16:05:42.597  INFO 3048 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-01 16:05:42.601  INFO 3048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-01 16:05:42.622  INFO 3048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-01 16:05:46.377  INFO 11992 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Starting VenPalMoApplication using Java 11.0.17 on rangerBUTTS with PID 11992 (C:\Users\Devin.Butts\Documents\Programming\VenPalMo\target\classes started by Devin.Butts in C:\Users\Devin.Butts\Documents\Programming\VenPalMo)
+2022-12-01 16:05:46.378 DEBUG 11992 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-12-01 16:05:46.379  INFO 11992 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 16:05:46.445  INFO 11992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-01 16:05:46.446  INFO 11992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-01 16:05:47.119  INFO 11992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-01 16:05:47.188  INFO 11992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 5 JPA repository interfaces.
+2022-12-01 16:05:48.132  INFO 11992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-01 16:05:48.147  INFO 11992 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-01 16:05:48.147  INFO 11992 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-01 16:05:48.241  INFO 11992 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-01 16:05:48.241  INFO 11992 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1794 ms
+2022-12-01 16:05:48.569  INFO 11992 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-01 16:05:48.625  INFO 11992 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-01 16:05:48.787  INFO 11992 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-01 16:05:48.895  INFO 11992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-01 16:05:49.228  INFO 11992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-01 16:05:49.242  INFO 11992 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-12-01 16:05:50.062  INFO 11992 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-01 16:05:50.072  INFO 11992 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-01 16:05:50.945  INFO 11992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6d00f2c4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43dc2cd4, org.springframework.security.web.context.SecurityContextPersistenceFilter@707298e5, org.springframework.security.web.header.HeaderWriterFilter@675cab80, org.springframework.security.web.authentication.logout.LogoutFilter@7410a928, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7f3a2911, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68b65646, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e246d8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6af1f8ff, org.springframework.security.web.session.SessionManagementFilter@5c06b2bc, org.springframework.security.web.access.ExceptionTranslationFilter@35eedb5e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41ec24c]
+2022-12-01 16:05:50.956  WARN 11992 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-01 16:05:50.956  INFO 11992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/css/**']
+2022-12-01 16:05:50.957  WARN 11992 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-01 16:05:50.957  INFO 11992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/js/**']
+2022-12-01 16:05:50.957  WARN 11992 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-01 16:05:50.957  INFO 11992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/images/**']
+2022-12-01 16:05:51.034  WARN 11992 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-01 16:05:51.535  INFO 11992 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-01 16:05:51.574  INFO 11992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-01 16:05:51.586  INFO 11992 --- [restartedMain] o.d.VenPalMo.VenPalMoApplication         : Started VenPalMoApplication in 5.632 seconds (JVM running for 6.136)
+2022-12-01 16:05:51.772  INFO 11992 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-01 16:05:51.773  INFO 11992 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-01 16:05:51.774  INFO 11992 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-01 16:05:51.816 DEBUG 11992 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : Main Controller Login Request
+2022-12-01 16:05:56.281 DEBUG 11992 --- [http-nio-8080-exec-7] o.d.VenPalMo.controller.MainController   : Main Controller Welcome Request
+2022-12-01 16:05:56.308 DEBUG 11992 --- [http-nio-8080-exec-7] o.d.VenPalMo.controller.MainController   : UserDTO(userId=1, firstName=Devin, lastName=Butts, email=devinmbutts@gmail.com)
+2022-12-01 16:05:58.294 DEBUG 11992 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : Main Controller Login Request
+2022-12-01 16:06:02.361 DEBUG 11992 --- [http-nio-8080-exec-7] o.d.VenPalMo.controller.MainController   : Main Controller Welcome Request
+2022-12-01 16:06:02.365 DEBUG 11992 --- [http-nio-8080-exec-7] o.d.VenPalMo.controller.MainController   : UserDTO(userId=2, firstName=Nick, lastName=Rufus, email=nick@gmail.com)
+2022-12-01 16:06:08.504 DEBUG 11992 --- [http-nio-8080-exec-1] o.d.VenPalMo.controller.MainController   : Main Controller Login Request

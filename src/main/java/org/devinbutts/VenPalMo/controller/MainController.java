@@ -1,6 +1,5 @@
 package org.devinbutts.VenPalMo.controller;
 
-
 import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.MessageDAO;
@@ -34,7 +33,6 @@ public class MainController {
     @Autowired
     DisplayUserDAO displayUserDAO;
 
-
     @RequestMapping(value = {"/","/login.html"}, method = RequestMethod.GET)
     public ModelAndView slash() {
         log.debug("Main Controller Login Request");
@@ -52,17 +50,18 @@ public class MainController {
         ModelAndView modelAndView  = new ModelAndView();
         modelAndView.setViewName("welcome");
 
-        //TODO: update this with actual logged in user id using Spring Principal
-        List<TransactDTO> userTransactions = transactService.findTransactionsForDisplayByUserId(1);
-        modelAndView.addObject("transactions",userTransactions);
 
-        List<Message> userMessages = messageDAO.findUserMessages(1);
-        modelAndView.addObject("messages",userMessages);
 
         UserDTO loggedInUser = displayUserDAO.findUserByEmail(principal.getName());
         log.debug(loggedInUser.toString());
 
+        List<TransactDTO> userTransactions = transactService.findTransactionsForDisplayByUserId(loggedInUser.getUserId());
+        modelAndView.addObject("transactions",userTransactions);
 
+
+        //TODO: Create MessageService and DTO to clean up data for chat 
+        List<Message> userMessages = messageDAO.findUserMessages(loggedInUser.getUserId());
+        modelAndView.addObject("messages",userMessages);
 
 
         return modelAndView;
