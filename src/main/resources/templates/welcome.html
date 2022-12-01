@@ -18,6 +18,22 @@
         <div id="loop">
 
         </div>
+
+        <div sec:authorize="isAuthenticated()">WE ARE AUTHENTICATED</div>
+        
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+            This content is only shown to administrators.
+        </div>
+        <div sec:authorize="hasRole('ROLE_USER')">
+            This content is only shown to users.
+        </div>
+        <div>
+            User: <span sec:authentication="name">NOT FOUND</span>
+            Spring Roles: <span sec:authentication="principal.authorities">NOT FOUND</span>
+        </div>
+        <div th:text="${loggedInUser}">
+        <p th:text="${loggedInUser}">${loggedInUser}</p></div>
+
     </div>
 
 

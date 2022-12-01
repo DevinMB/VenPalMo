@@ -6,12 +6,15 @@ import org.devinbutts.VenPalMo.dao.UserDAO;
 import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.PermitAll;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Date;
@@ -27,6 +30,11 @@ public class UserController {
 
     @Autowired
     UserDAO userDAO;
+
+    @Autowired
+    @Qualifier("passwordEncoder")
+    private PasswordEncoder passwordEncoder;
+
 
 
     @GetMapping(value = {"/register","/register.html"} )
@@ -63,6 +71,7 @@ public class UserController {
             modelAndView.setViewName("register");
         }else{
             modelAndView.setViewName("login");
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
             user.setRole("USER");
             user.setActive(1);
             user.setJoinedDate(new Date());

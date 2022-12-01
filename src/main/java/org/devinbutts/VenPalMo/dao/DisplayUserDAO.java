@@ -22,7 +22,8 @@ public interface DisplayUserDAO extends JpaRepository<UserDTO, Integer> {
     @Query("SELECT u FROM UserDTO u WHERE u.firstName like :firstName AND u.lastName like :lastName AND u.email like :email")
     public List<UserDTO> findByFirstLastEmail(String firstName, String lastName, String email);
 
-
+    @Query("SELECT u FROM UserDTO u WHERE u.email like :email")
+    public UserDTO findUserByEmail(String email);
 
 
 }

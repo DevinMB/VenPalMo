@@ -30,15 +30,16 @@
         <div class="login_card card-body p-5 text-center">
 
             <!-- login form -->
-            <form th:onsubmit="login(event)" class="mb-md-3 mt-md-4 pb-1">
+            <form method="POST" action="/login/submit"  class="mb-md-3 mt-md-4 pb-1">
                 <h2 class="fw-bold mb-2 ">Login</h2>
                 <p class="text-black-50 mb-2">Please enter your login and password!</p>
 
-                <input type="email" id="email_input" class="form-control form-control-lg" />
-                <label class="form-label text-black-50">Email</label>
-
-                <input type="password" id="password_input" class="form-control form-control-lg" />
-                <label class="form-label text-black-50 mb-3">Password</label>
+                <label for="username" class="form-label text-black-50">Email</label>
+                <input type="text" name="username" id="email_input" class="form-control form-control-lg" />
+                
+                <label for="password" class="form-label text-black-50 mb-3">Password</label>
+                <input type="password" name="password" id="password_input" class="form-control form-control-lg" />
+                
                 <br>
            
 

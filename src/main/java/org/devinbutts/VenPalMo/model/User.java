@@ -76,8 +76,7 @@ public class User {
     private List<Account> accounts;
 
 
-
-
-
-
+    public Boolean getActive() {
+        return this.active == 1;
+    }
 }
