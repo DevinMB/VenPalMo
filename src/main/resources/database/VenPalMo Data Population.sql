@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `VenPalMo`.`user` (
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(300) NOT NULL,
    phone VARCHAR(10) NOT NULL,
   `address` VARCHAR(45) NULL DEFAULT NULL,
   `city` VARCHAR(45) NULL DEFAULT NULL,
@@ -89,12 +89,12 @@ COLLATE = utf8mb4_unicode_ci;
 
 -- Create Users
 
-INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Devin','Butts','devinmbutts@gmail.com','test','2485053913','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1993-07-02','ADMIN',1);
-INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Nick','Rufus','nick@gmail.com','test','2485053913','1188 Code St.','Grand Rapids','MI','49534',CURDATE(),'1994-02-24','USER',1);
-INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Chris','Channells','cc@gmail.com','test','2485053913','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1992-07-05','USER',1);
-INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Tori','Butts','tori.butts@gmail.com','test','2485053913','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1994-02-24','USER',1);
-INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Justin','Frank','frankjustin@gmail.com','test','2485053913','1190 Code St.','Grand Rapids','MI','49534',CURDATE(),'1993-06-02','USER',1);
-INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Cookie','Knopf','knopfcook@gmail.com','test','2485053913','1191 Code St.','Grand Rapids','MI','49534',CURDATE(),'1990-08-04','USER',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Devin','Butts','devinmbutts@gmail.com','$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu','2485053913','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1993-07-02','ROLE_ADMIN',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Nick','Rufus','nick@gmail.com','$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu','2485053913','1188 Code St.','Grand Rapids','MI','49534',CURDATE(),'1994-02-24','ROLE_USER',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Chris','Channells','cc@gmail.com','$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu','2485053913','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1992-07-05','ROLE_USER',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Tori','Butts','tori.butts@gmail.com','$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu','2485053913','1185 Code St.','Grand Rapids','MI','49534',CURDATE(),'1994-02-24','ROLE_USER',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Justin','Frank','frankjustin@gmail.com','$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu','2485053913','1190 Code St.','Grand Rapids','MI','49534',CURDATE(),'1993-06-02','ROLE_USER',1);
+INSERT INTO user (first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active) VALUES ('Cookie','Knopf','knopfcook@gmail.com','$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu','2485053913','1191 Code St.','Grand Rapids','MI','49534',CURDATE(),'1990-08-04','ROLE_USER',1);
 
 
 -- Create Accounts
