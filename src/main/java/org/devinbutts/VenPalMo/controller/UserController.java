@@ -5,6 +5,8 @@ import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
 import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.model.User;
+import org.devinbutts.VenPalMo.model.form.UserForm;
+import org.devinbutts.VenPalMo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -32,66 +34,49 @@ public class UserController {
     UserDAO userDAO;
 
     @Autowired
-    @Qualifier("passwordEncoder")
-    private PasswordEncoder passwordEncoder;
+    UserService userService;
 
 
-
-    @GetMapping(value = {"/register","/register.html"} )
-    public ModelAndView registerPage(){
+    @GetMapping(value = {"/register", "/register.html"})
+    public ModelAndView registerPage() {
 
         log.debug("Main Controller Register Request");
 
-        ModelAndView modelAndView  = new ModelAndView();
+        ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("register");
 
-        modelAndView.addObject("user", new User());
+        modelAndView.addObject("userForm", new UserForm());
 
         return modelAndView;
     }
 
 
-    @PostMapping(value={"/register","/register.html"})
-    public ModelAndView createUser(@ModelAttribute(value = "user") @Valid User user, BindingResult bindingResult){
-
+    @PostMapping(value = {"/register", "/register.html"})
+    public ModelAndView createUser(@ModelAttribute(value = "userForm") @Valid UserForm userForm, BindingResult bindingResult) {
 
         ModelAndView modelAndView = new ModelAndView();
 
-        boolean valid = false;
-
         List<ObjectError> errors = bindingResult.getAllErrors();
 
-        for(ObjectError e : errors){
+        for (ObjectError e : errors) {
             log.debug(e.getDefaultMessage());
         }
 
-        //TODO: Validate User
-
-        if(errors.size()>0){
+        if (errors.size() > 0) {
             modelAndView.setViewName("register");
-        }else{
-            modelAndView.setViewName("login");
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
-            user.setRole("USER");
-            user.setActive(1);
-            user.setJoinedDate(new Date());
-
-            userDAO.save(user);
-
+        } else {
+            User newUser = userService.createUserFromForm(userForm);
+            userDAO.save(newUser);
             modelAndView.setViewName("login");
         }
 
-        return  modelAndView;
-
-
-
-
+        return modelAndView;
     }
 
 
     @ResponseBody
-    @GetMapping(value="/display_users")
-    public List<UserDTO> getAllUsers(){
+    @GetMapping(value = "/display_users")
+    public List<UserDTO> getAllUsers() {
 
         List<UserDTO> userDTOS = displayUserDAO.findAll();
 
@@ -113,7 +98,7 @@ public class UserController {
 
         List<UserDTO> users = new ArrayList<>();
 
-        users = displayUserDAO.findByFirstLastEmail("%" + firstName + "%", "%" + lastName + "%","%" + email + "%");
+        users = displayUserDAO.findByFirstLastEmail("%" + firstName + "%", "%" + lastName + "%", "%" + email + "%");
 
         modelAndView.addObject("firstName", firstName);
         modelAndView.addObject("lastName", lastName);
@@ -122,9 +107,6 @@ public class UserController {
 
         return modelAndView;
     }
-
-
-
 
 
 }
