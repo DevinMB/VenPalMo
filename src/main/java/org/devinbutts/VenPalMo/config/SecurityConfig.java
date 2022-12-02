@@ -28,17 +28,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
-//        http.csrf().disable().authorizeRequests()
-//                .antMatchers("/**").access("hasRole('ROLE_USER')")
-//                .and().formLogin().loginPage("/login").permitAll()
-//                .defaultSuccessUrl("/index").failureUrl("/loginError");
-//
-
-
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login.html","/register.html").permitAll()
+                .antMatchers("/login.html","/register.html","/css/**","/js/**","/images/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/register**").permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -55,11 +48,11 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().antMatchers("/css/**","/js/**","/images/**");
-
-    }
+//    @Bean
+//    public WebSecurityCustomizer webSecurityCustomizer() {
+//        return (web) -> web.ignoring().antMatchers();
+//
+//    }
 
 
 

@@ -59,7 +59,7 @@ public class MainController {
         modelAndView.addObject("transactions",userTransactions);
 
 
-        //TODO: Create MessageService and DTO to clean up data for chat 
+        //TODO: Create MessageService and DTO to clean up data for chat
         List<Message> userMessages = messageDAO.findUserMessages(loggedInUser.getUserId());
         modelAndView.addObject("messages",userMessages);
 
