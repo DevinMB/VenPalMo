@@ -1,13 +1,8 @@
 package org.devinbutts.VenPalMo.model;
 
 import lombok.*;
-import org.devinbutts.VenPalMo.validation.EmailUnique;
-import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
-
-import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 import java.util.List;
 
