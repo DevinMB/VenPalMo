@@ -133,8 +133,26 @@ body .main_app_container{
     margin-left: 1em;
 }
 
+.card{
+    margin: 2em;
+    
+    border-radius: 1em;
+    /* border-color: rgba(128, 128, 128, 0.233);
+    border: solid;
+    border-width: .15em; */
+    display: flex;
+    justify-content: space-around;
+    background-color: #F9FAF9;
+}
 
+.card_main{
+    flex-grow: 1;
+    padding: 1em;
+}
 
+.card_secondary{
+    padding: 1em;
+}
 
 
 
@@ -172,6 +190,7 @@ body .main_app_container{
 
 .quick_actions button{
     margin: 1em;
+    margin-top: 2em;
     padding: 1em;
     width: 15em;
     border: none;
@@ -202,7 +221,7 @@ body .main_app_container{
     border-collapse: collapse;
     
     margin-top: 1em;
-    margin-left: 1em;
+    margin-left: 2em;
     width: 25em;
 }
 
