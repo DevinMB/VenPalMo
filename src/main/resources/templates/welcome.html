@@ -12,30 +12,40 @@
 
     <!-- INLINE STYLE TAG -->
     <div class="main_content" style="font-size:800; font-style:italic;">
-        <p>GOOD MORNING</p>
-        <br>
-        <p>The weather is</p>
-        <div id="loop"></div>
+        
+        <div class="card">
+            <h3>Good Morning</h3>
+            <div><p>You have no new notifications</p></div>
+        </div>
+        
+        <!-- Need to clean up Account Card -->
+        <div class="card" th:each="account: ${accounts}" >
+            <h3>Available Balance:</h3>
+            <div class="card_details">
+                <div class="card_main"><p th:text="${account.currency}"></p></div>
+                <div class="card_secondary"><p th:text="${#numbers.formatCurrency(account.availableBalance)}"></div>
+            </div>
+            
+        </div>
+
 
         <div class="card">
-            <div class="card_main">Main Content Of Card</div>
-            <div class="card_secondary">Secondary Content</div>
-        </div>
-
-        <div sec:authorize="isAuthenticated()">WE ARE AUTHENTICATED</div>
+            <div sec:authorize="isAuthenticated()">WE ARE AUTHENTICATED</div>
         
-        <div sec:authorize="hasRole('ROLE_ADMIN')">
-            This content is only shown to administrators.
+            <div sec:authorize="hasRole('ROLE_ADMIN')">
+                This content is only shown to administrators.
+            </div>
+            <div sec:authorize="hasRole('ROLE_USER')">
+                This content is only shown to users.
+            </div>
+            <div>
+                User: <span sec:authentication="name">NOT FOUND</span>
+                Spring Roles: <span sec:authentication="principal.authorities">NOT FOUND</span>
+            </div>
+            <div th:text="${loggedInUser}">
+            <p th:text="${loggedInUser}">${loggedInUser}</p></div>
         </div>
-        <div sec:authorize="hasRole('ROLE_USER')">
-            This content is only shown to users.
-        </div>
-        <div>
-            User: <span sec:authentication="name">NOT FOUND</span>
-            Spring Roles: <span sec:authentication="principal.authorities">NOT FOUND</span>
-        </div>
-        <div th:text="${loggedInUser}">
-        <p th:text="${loggedInUser}">${loggedInUser}</p></div>
+        
 
     </div>
 
@@ -46,7 +56,7 @@
 
         <div class="quick_actions">
             <!-- <p>Quick Actions</p> -->
-            <button><a th:href="send.html">Send</a></button>
+            <button><a th:href="@{/search/send}">Send</a></button>
             <button><a th:href="request.html">Request</a></button>
 
 

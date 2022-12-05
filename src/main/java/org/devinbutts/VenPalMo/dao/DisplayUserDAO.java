@@ -17,8 +17,8 @@ public interface DisplayUserDAO extends JpaRepository<UserDTO, Integer> {
     @Override
     <S extends UserDTO> List<S> findAll(Example<S> example);
 
-    @Override
-    Optional<UserDTO> findById(Integer integer);
+    @Query("Select u FROM UserDTO u WHERE u.id = :id")
+    public UserDTO findById(int id);
 
     @Query("SELECT u FROM UserDTO u WHERE u.firstName like :firstName AND u.lastName like :lastName AND u.email like :email")
     public List<UserDTO> findByFirstLastEmail(String firstName, String lastName, String email);

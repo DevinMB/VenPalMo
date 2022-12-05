@@ -23,15 +23,13 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-//    Non Deprecated Version
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login.html","/register.html","/css/**","/js/**","/images/**").permitAll()
+                .antMatchers("/login.html","/register.html","/success.html","/css/**","/js/**","/images/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/register**").permitAll()
                 .anyRequest().authenticated()
                 .and()

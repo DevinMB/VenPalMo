@@ -3,6 +3,7 @@ package org.devinbutts.VenPalMo.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
+import org.devinbutts.VenPalMo.model.dto.TransactDTO;
 import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.model.User;
 import org.devinbutts.VenPalMo.model.form.UserForm;
@@ -67,8 +68,19 @@ public class UserController {
         } else {
             User newUser = userService.createUserFromForm(userForm);
             userDAO.save(newUser);
-            modelAndView.setViewName("login");
+            modelAndView = registerSuccessPage(modelAndView);
         }
+        return modelAndView;
+    }
+
+
+    //    @GetMapping(value = {"/success", "/success.html"})
+    public ModelAndView registerSuccessPage(ModelAndView modelAndView) {
+
+        log.debug("Register Success Request");
+        modelAndView.setViewName("success");
+        modelAndView.addObject("success_note", "User account has been created.");
+        modelAndView.addObject("redirect_location", "login");
 
         return modelAndView;
     }
@@ -83,14 +95,34 @@ public class UserController {
         return userDTOS;
     }
 
+    @RequestMapping(value = {"/search/send","/search/send.html"}, method = RequestMethod.GET)
+    public ModelAndView searchForUserToSendTo() {
 
-    @RequestMapping(value = {"/search"}, method = RequestMethod.GET)
-    public ModelAndView searchForUser(
-            @RequestParam(required = false) String firstName,
-            @RequestParam(required = false) String lastName,
-            @RequestParam(required = false) String email) {
+        ModelAndView modelAndView = new ModelAndView();
 
-        log.debug("Search Request " + firstName + " " + lastName + " " + email);
+        modelAndView.setViewName("search");
+
+        List<UserDTO> users = new ArrayList<>();
+        UserDTO searchUser = new UserDTO();
+
+        modelAndView.addObject("userDTO",searchUser);
+
+        modelAndView.addObject("users", users);
+
+        modelAndView.addObject("searchType", "SEND");
+
+        return modelAndView;
+
+    }
+
+
+    //TODO: create universal search page that will redirect to send page form or request page form depending on which button was clicked
+    @RequestMapping(value = {"/search/send","/search/send.html"}, method = RequestMethod.POST)
+    public ModelAndView submitSendUserToSearch(@ModelAttribute(value="userDTO") UserDTO searchUser) {
+
+
+
+        log.debug("Search User to Send Request " + searchUser.getFirstName() + " " + searchUser.getLastName() + " " + searchUser.getEmail());
 
         ModelAndView modelAndView = new ModelAndView();
 
@@ -98,15 +130,19 @@ public class UserController {
 
         List<UserDTO> users = new ArrayList<>();
 
-        users = displayUserDAO.findByFirstLastEmail("%" + firstName + "%", "%" + lastName + "%", "%" + email + "%");
+        users = displayUserDAO.findByFirstLastEmail("%" + searchUser.getFirstName() + "%", "%" + searchUser.getLastName() + "%", "%" + searchUser.getEmail() + "%");
 
-        modelAndView.addObject("firstName", firstName);
-        modelAndView.addObject("lastName", lastName);
-        modelAndView.addObject("email", email);
+        modelAndView.addObject("userDTO",searchUser);
+
         modelAndView.addObject("users", users);
 
+        modelAndView.addObject("searchType", "SEND");
+
         return modelAndView;
+
     }
+
+
 
 
 }

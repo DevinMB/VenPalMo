@@ -1,22 +1,20 @@
 package org.devinbutts.VenPalMo.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.devinbutts.VenPalMo.dao.AccountDAO;
 import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.MessageDAO;
-import org.devinbutts.VenPalMo.dao.UserDAO;
-import org.devinbutts.VenPalMo.model.User;
+import org.devinbutts.VenPalMo.model.Account;
 import org.devinbutts.VenPalMo.model.dto.TransactDTO;
 import org.devinbutts.VenPalMo.model.Message;
 import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.service.TransactService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.security.PermitAll;
 import java.security.Principal;
 import java.util.List;
 
@@ -33,7 +31,10 @@ public class MainController {
     @Autowired
     DisplayUserDAO displayUserDAO;
 
-    @RequestMapping(value = {"/","/login.html"}, method = RequestMethod.GET)
+    @Autowired
+    AccountDAO accountDAO;
+
+    @RequestMapping(value = {"/","/login.html","/login"}, method = RequestMethod.GET)
     public ModelAndView slash() {
         log.debug("Main Controller Login Request");
 
@@ -55,12 +56,14 @@ public class MainController {
         UserDTO loggedInUser = displayUserDAO.findUserByEmail(principal.getName());
         log.debug(loggedInUser.toString());
 
-        List<TransactDTO> userTransactions = transactService.findTransactionsForDisplayByUserId(loggedInUser.getUserId());
+        List<TransactDTO> userTransactions = transactService.findTransactionsForDisplayByUserId(loggedInUser.getId());
         modelAndView.addObject("transactions",userTransactions);
 
+        List<Account> accounts = accountDAO.findByUserId(loggedInUser.getId());
+        modelAndView.addObject("accounts",accounts);
 
         //TODO: Create MessageService and DTO to clean up data for chat
-        List<Message> userMessages = messageDAO.findUserMessages(loggedInUser.getUserId());
+        List<Message> userMessages = messageDAO.findUserMessages(loggedInUser.getId());
         modelAndView.addObject("messages",userMessages);
 
 

@@ -7,10 +7,10 @@ import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.model.Transact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.security.Principal;
 import java.util.List;
 
 //TODO: Build Send.html file
@@ -27,17 +27,31 @@ public class TransactController {
     @Autowired
     DisplayUserDAO displayUserDAO;
 
-    @RequestMapping(value = {"/send","/send.html"} ,  method = RequestMethod.GET)
-    public ModelAndView sendPage(){
+    @RequestMapping(value = {"/send/{id}"} ,  method = RequestMethod.GET)
+    public ModelAndView sendPage(@PathVariable int id, Principal principal){
 
         log.debug("Transact Controller Send Page");
 
         ModelAndView modelAndView  = new ModelAndView();
         modelAndView.setViewName("send");
 
-        List<UserDTO> userList = displayUserDAO.findAll();
+        UserDTO recievingUser = displayUserDAO.findById(id);
 
-        modelAndView.addObject("users",userList);
+        UserDTO sendingUser = displayUserDAO.findUserByEmail(principal.getName());
+
+        Transact newTransact = new Transact();
+
+        modelAndView.addObject("recievingUser", recievingUser);
+        modelAndView.addObject("sendingUser",sendingUser);
+        
+        //TODO: convert this to a transactionFORM, dont want to make the same mistakes as the user form...
+        modelAndView.addObject("transaction",newTransact);
+
+
+
+//        //TODO: FILL OUT NEW TRANSACTION
+//        newTransact.set
+//
 
         return modelAndView;
     }

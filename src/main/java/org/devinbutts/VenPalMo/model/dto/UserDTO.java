@@ -19,7 +19,7 @@ public class UserDTO {
 
     @Column(name = "id")
     @Id
-    private Integer userId;
+    private Integer id;
 
     @Column(name = "first_name")
     private String firstName;

@@ -39,5 +39,4 @@ public class Account {
     @Column(name = "default_acct")
     private Integer defaultAccount;
 
-
 }

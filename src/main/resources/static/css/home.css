@@ -134,24 +134,37 @@ body .main_app_container{
 }
 
 .card{
-    margin: 2em;
-    
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: 1em;
     border-radius: 1em;
     /* border-color: rgba(128, 128, 128, 0.233);
     border: solid;
     border-width: .15em; */
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     background-color: #F9FAF9;
+}
+
+.card_details{
+    display: flex;
+    justify-content: space-around;
+    margin: 0em;
 }
 
 .card_main{
     flex-grow: 1;
-    padding: 1em;
+    /* padding: 1em; */
 }
 
-.card_secondary{
-    padding: 1em;
+.card_secondary p{
+    font-weight: bold;
+    font-size: 1.875em;
+}
+
+.card h3{
+    margin: 0;
 }
 
 
@@ -248,6 +261,12 @@ body .main_app_container{
 }
 
 
+
+.users_list{
+
+    display: flex;
+    flex-direction: column;
+}
 
 
 

@@ -20,6 +20,7 @@ public interface UserDAO extends JpaRepository<User, Integer> {
     @Override
     Optional<User> findById(Integer integer);
 
+
     @Override
     <S extends User> S save(S entity);
 

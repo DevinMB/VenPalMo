@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: main_html_head"></head>
+
+<body style="background-color: #4ba1723e ;">
+
+<header th:replace="fragments :: main_header" class="main_header"></header>
+
+
+
+<div class="card">
+
+    <div class="search_form">
+
+        <form method="post" th:object="${userDTO}">
+    
+            <h3>Search for User</h3>
+           
+            <input type="text" placeholder="First Name" th:field="*{firstName}">
+            <br>
+            <input type="text" placeholder="Last Name" th:field="*{lastName}">
+            <br>
+            <input type="text" placeholder="Email" th:field="*{email}">
+
+            <div class="register_button">
+                <button class="" type="submit">Search</button>
+            </div>
+    
+        </form>
+
+        <div  class="users_list" th:if="${users}">
+            <table>
+              <tr th:each="user: ${users}">
+                    <!-- NEED TO FORMAT/STYLE THIS LIST -->
+                  <a th:href="@{/send/{user.id} (user.id=${user.id})}" th:text="${user.firstName} +'  '+ ${user.lastName} +'  ('+ ${user.email} + ')'">
+                    <!-- <td th:text="${user.firstName}"></td> -->
+                  </a>
+                
+              </tr>
+            </table>
+          </div>
+        
+        
+    
+    
+    </div>
+
+</div>
+
+</body>
+
+</html>
