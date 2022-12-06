@@ -54,11 +54,14 @@ public class MainController {
         UserDTO loggedInUser = displayUserDAO.findUserByEmail(principal.getName());
         log.debug(loggedInUser.toString());
 
-        List<TransactDTO> userTransactions = transactService.findTransactionsForDisplayByUserId(loggedInUser.getId());
+        List<TransactDTO> userTransactions = transactService.findClearedTransactionsForDisplayByUserId(loggedInUser.getId());
         modelAndView.addObject("transactions",userTransactions);
 
         List<Account> accounts = accountDAO.findByUserId(loggedInUser.getId());
         modelAndView.addObject("accounts",accounts);
+
+        Integer requestCount = transactService.findRequestedTransactionsForDisplayByUserId(loggedInUser.getId()).size();
+        modelAndView.addObject("requestCount",requestCount);
 
         //TODO: Create MessageService and DTO to clean up data for chat
         List<Message> userMessages = messageDAO.findUserMessages(loggedInUser.getId());

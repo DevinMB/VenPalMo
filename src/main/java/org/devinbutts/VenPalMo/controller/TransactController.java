@@ -41,18 +41,20 @@ public class TransactController {
         log.debug("Transact Controller Send Page");
 
         ModelAndView modelAndView  = new ModelAndView();
-        modelAndView.setViewName("send");
+        modelAndView.setViewName("send_request");
 
-        UserDTO recievingUser = displayUserDAO.findByUserId(id);
+        UserDTO receivingUser = displayUserDAO.findByUserId(id);
         UserDTO sendingUser = displayUserDAO.findUserByEmail(principal.getName());
 
         TransactForm transactForm = new TransactForm();
         transactForm.setReceivingUserId(id);
         transactForm.setSendingUserId(sendingUser.getId());
 
-        modelAndView.addObject("recievingUser", recievingUser);
+        modelAndView.addObject("receivingUser", receivingUser);
         modelAndView.addObject("sendingUser",sendingUser);
         modelAndView.addObject("transactForm",transactForm);
+        modelAndView.addObject("pageTitle","Send Money");
+        modelAndView.addObject("sendOrRequest","send");
 
         return modelAndView;
     }
@@ -80,6 +82,60 @@ public class TransactController {
             modelAndView.setViewName("redirect:/welcome");
             //Maybe use this to display success on welcome page...
             modelAndView.addObject("sent","true");
+
+        }
+        return modelAndView;
+    }
+
+
+    @RequestMapping(value = {"/request/{id}"} ,  method = RequestMethod.GET)
+    public ModelAndView requestPage(@PathVariable int id, Principal principal){
+
+        log.debug("Transact Controller Send Page");
+
+        ModelAndView modelAndView  = new ModelAndView();
+        modelAndView.setViewName("send_request");
+
+        UserDTO sendingUser = displayUserDAO.findByUserId(id);
+        UserDTO receivingUser = displayUserDAO.findUserByEmail(principal.getName());
+
+        TransactForm transactForm = new TransactForm();
+
+        transactForm.setReceivingUserId(receivingUser.getId());
+        transactForm.setSendingUserId(sendingUser.getId());
+
+        modelAndView.addObject("receivingUser", receivingUser);
+        modelAndView.addObject("sendingUser",sendingUser);
+        modelAndView.addObject("transactForm",transactForm);
+        modelAndView.addObject("pageTitle","Request Money");
+        modelAndView.addObject("sendOrRequest","request");
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value={"/request"},method = RequestMethod.POST)
+    public ModelAndView sendRequest(@ModelAttribute(value = "transactForm") @Valid TransactForm transactForm, BindingResult bindingResult){
+        ModelAndView modelAndView  = new ModelAndView();
+        log.debug("Request Transact Submitted");
+
+        transactForm.setStatus("REQUESTED");
+
+        List<ObjectError> errors = bindingResult.getAllErrors();
+        for (ObjectError e : errors) {
+            log.debug(e.getDefaultMessage());
+        }
+
+        if (errors.size() > 0) {
+            modelAndView.setViewName("/request/" + transactForm.getReceivingUserId());
+        } else {
+
+            Transact newTransact = transactService.createTransactionFromForm(transactForm);
+            transactDAO.save(newTransact);
+
+            //TODO: Decide if I want success page
+            modelAndView.setViewName("redirect:/welcome");
+            //Maybe use this to display success on welcome page...
+            modelAndView.addObject("request","true");
 
         }
         return modelAndView;

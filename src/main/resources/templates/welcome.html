@@ -15,7 +15,9 @@
         
         <div class="card">
             <h3>Good Morning</h3>
-            <div><p>You have no new notifications</p></div>
+            <div class="welcome_message">
+                <p  th:text="'You have '+ ${requestCount} +' new requests for payment.'"></p><a href="#" th:if="${requestCount}>0">Pay Here</a>
+            </div>
         </div>
         
         <!-- Need to clean up Account Card -->
@@ -57,7 +59,7 @@
         <div class="quick_actions">
             <!-- <p>Quick Actions</p> -->
             <button><a th:href="@{/search/send}">Send</a></button>
-            <button><a th:href="request.html">Request</a></button>
+            <button><a th:href="@{/search/request}">Request</a></button>
 
 
             

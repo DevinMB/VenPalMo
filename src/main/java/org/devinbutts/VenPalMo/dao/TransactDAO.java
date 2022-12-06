@@ -16,6 +16,12 @@ public interface TransactDAO extends JpaRepository<Transact,Integer> {
     @Query("SELECT t FROM Transact t WHERE t.sendingUserId = :userId OR t.receivingUserId = :userId")
     List<Transact> findAllUserTransactions(Integer userId);
 
+    @Query("SELECT t FROM Transact t WHERE (t.sendingUserId = :userId OR t.receivingUserId = :userId) AND t.status = 'CLEARED' ")
+    List<Transact> findAllClearedUserTransactions(Integer userId);
+
+    @Query("SELECT t FROM Transact t WHERE t.sendingUserId = :userId AND t.status = 'REQUESTED' ")
+    List<Transact> findAllRequestedUserTransactions(Integer userId);
+
     @Override
     <S extends Transact> S save(S entity);
 

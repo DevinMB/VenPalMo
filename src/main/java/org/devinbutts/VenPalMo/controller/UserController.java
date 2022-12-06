@@ -92,7 +92,7 @@ public class UserController {
         return userDTOS;
     }
 
-    @RequestMapping(value = {"/search/send","/search/send.html"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/search/send","/search/send_request.html"}, method = RequestMethod.GET)
     public ModelAndView searchForUserToSendTo() {
 
         ModelAndView modelAndView = new ModelAndView();
@@ -106,7 +106,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value = {"/search/send","/search/send.html"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/search/send","/search/send_request.html"}, method = RequestMethod.POST)
     public ModelAndView submitSendUserToSearch(@ModelAttribute(value="userDTO") UserDTO searchUser) {
 
         log.debug("Search User to Send Request " + searchUser.getFirstName() + " " + searchUser.getLastName() + " " + searchUser.getEmail());
@@ -121,8 +121,34 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequestMapping(value = {"/search/request","/search/request.html"}, method = RequestMethod.GET)
+    public ModelAndView searchForUserToRequestFrom() {
 
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("search");
+        List<UserDTO> users = new ArrayList<>();
+        UserDTO searchUser = new UserDTO();
+        modelAndView.addObject("userDTO",searchUser);
+        modelAndView.addObject("users", users);
+        modelAndView.addObject("searchType", "request");
 
+        return modelAndView;
+    }
+
+    @RequestMapping(value = {"/search/request","/search/request.html"}, method = RequestMethod.POST)
+    public ModelAndView submitSendUserToRequestFrom(@ModelAttribute(value="userDTO") UserDTO searchUser) {
+
+        log.debug("Search User to Send Request " + searchUser.getFirstName() + " " + searchUser.getLastName() + " " + searchUser.getEmail());
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("search");
+        List<UserDTO> users = new ArrayList<>();
+        users = displayUserDAO.findByFirstLastEmail("%" + searchUser.getFirstName() + "%", "%" + searchUser.getLastName() + "%", "%" + searchUser.getEmail() + "%");
+        modelAndView.addObject("userDTO",searchUser);
+        modelAndView.addObject("users", users);
+        modelAndView.addObject("searchType", "request");
+
+        return modelAndView;
+    }
 
 
 

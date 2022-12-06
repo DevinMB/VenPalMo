@@ -1,7 +1,6 @@
 package org.devinbutts.VenPalMo.service;
 
 import org.devinbutts.VenPalMo.dao.AccountDAO;
-import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.TransactDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
 import org.devinbutts.VenPalMo.model.Account;
@@ -29,14 +28,28 @@ public class TransactService  {
     @Autowired
     AccountDAO accountDAO;
 
-    public List<TransactDTO> findTransactionsForDisplayByUserId(Integer userId){
+    public List<TransactDTO> findClearedTransactionsForDisplayByUserId(Integer userId){
 
-        List<Transact> transactions = transactDAO.findAllUserTransactions(userId);
+        List<Transact> transactions = transactDAO.findAllClearedUserTransactions(userId);
         List<TransactDTO> transactDTOS = new ArrayList<>();
 
         for(Transact t : transactions){
              TransactDTO transactDTO = mapToDisplayTransact(t,userId);
              transactDTOS.add(transactDTO);
+        }
+
+        return transactDTOS;
+    }
+
+
+    public List<TransactDTO> findRequestedTransactionsForDisplayByUserId(Integer userId){
+
+        List<Transact> transactions = transactDAO.findAllRequestedUserTransactions(userId);
+        List<TransactDTO> transactDTOS = new ArrayList<>();
+
+        for(Transact t : transactions){
+            TransactDTO transactDTO = mapToDisplayTransact(t,userId);
+            transactDTOS.add(transactDTO);
         }
 
         return transactDTOS;

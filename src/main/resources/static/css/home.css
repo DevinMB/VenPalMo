@@ -168,6 +168,22 @@ body .main_app_container{
 }
 
 
+.welcome_message{
+    display: flex;
+    align-items: center;
+}
+.welcome_message a{
+    margin-left: 1em;
+    text-decoration: none;
+    background-color: #8BC53F;
+    border-radius: 1em;
+    padding: .5em;
+    color: white;
+    font-size: small;
+    
+    }
+
+
 
 
 
