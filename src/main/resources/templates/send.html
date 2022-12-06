@@ -14,15 +14,22 @@
 
     <div class="send_form">
 
-        <form th:onsubmit="send(event)" method="post">
+        <form method="post" th:action="@{/send}" th:object="${transactForm}">
     
             <h3>Send Money</h3>
+        
+            <input type="number" id="amount_input" placeholder="0.00" th:field="*{transactionAmount}" />
+            <p class="error" th:errors="*{note}"></p> 
             
+            <input type="text" id="note_input" placeholder="Add a note about your transaction here!" th:field="*{note}" />
+            <p class="error" th:errors="*{note}"></p> 
             
+            <input type="hidden" id="sendingUserId" th:field="*{sendingUserId}" />
+            <input type="hidden" id="receivingUserId" th:field="*{receivingUserId}" />
 
-    
-    
-    
+            <div class="register_button">
+                <button class="" type="submit">Register</button>
+            </div>
     
         </form>
     

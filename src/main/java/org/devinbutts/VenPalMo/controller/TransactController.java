@@ -57,10 +57,12 @@ public class TransactController {
         return modelAndView;
     }
 
-    @RequestMapping(value={"/send/submit","send/submit.html"},method = RequestMethod.POST)
+    @RequestMapping(value={"/send"},method = RequestMethod.POST)
     public ModelAndView sendSubmit(@ModelAttribute(value = "transactForm") @Valid TransactForm transactForm, BindingResult bindingResult){
         ModelAndView modelAndView  = new ModelAndView();
         log.debug("Send Transact Submitted");
+
+        transactForm.setStatus("CLEARED");
 
         List<ObjectError> errors = bindingResult.getAllErrors();
         for (ObjectError e : errors) {
@@ -70,12 +72,15 @@ public class TransactController {
         if (errors.size() > 0) {
             modelAndView.setViewName("/send/" + transactForm.getReceivingUserId());
         } else {
+
             Transact newTransact = transactService.createTransactionFromForm(transactForm);
             transactDAO.save(newTransact);
+
             //TODO: Decide if I want success page
-            modelAndView.setViewName("welcome");
+            modelAndView.setViewName("redirect:/welcome");
             //Maybe use this to display success on welcome page...
             modelAndView.addObject("sent","true");
+
         }
         return modelAndView;
     }

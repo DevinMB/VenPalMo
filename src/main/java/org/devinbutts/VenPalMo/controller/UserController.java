@@ -83,7 +83,6 @@ public class UserController {
         return modelAndView;
     }
 
-
     @ResponseBody
     @GetMapping(value = "/display_users")
     public List<UserDTO> getAllUsers() {
@@ -97,45 +96,35 @@ public class UserController {
     public ModelAndView searchForUserToSendTo() {
 
         ModelAndView modelAndView = new ModelAndView();
-
         modelAndView.setViewName("search");
-
         List<UserDTO> users = new ArrayList<>();
         UserDTO searchUser = new UserDTO();
-
         modelAndView.addObject("userDTO",searchUser);
-
         modelAndView.addObject("users", users);
-
-        modelAndView.addObject("searchType", "SEND");
+        modelAndView.addObject("searchType", "send");
 
         return modelAndView;
-
     }
 
-
-    //TODO: create universal search page that will redirect to send page form or request page form depending on which button was clicked
     @RequestMapping(value = {"/search/send","/search/send.html"}, method = RequestMethod.POST)
     public ModelAndView submitSendUserToSearch(@ModelAttribute(value="userDTO") UserDTO searchUser) {
 
         log.debug("Search User to Send Request " + searchUser.getFirstName() + " " + searchUser.getLastName() + " " + searchUser.getEmail());
-
         ModelAndView modelAndView = new ModelAndView();
-
         modelAndView.setViewName("search");
-
         List<UserDTO> users = new ArrayList<>();
-
         users = displayUserDAO.findByFirstLastEmail("%" + searchUser.getFirstName() + "%", "%" + searchUser.getLastName() + "%", "%" + searchUser.getEmail() + "%");
-
         modelAndView.addObject("userDTO",searchUser);
-
         modelAndView.addObject("users", users);
-
-        modelAndView.addObject("searchType", "SEND");
+        modelAndView.addObject("searchType", "send");
 
         return modelAndView;
-
     }
+
+
+
+
+
+
 
 }

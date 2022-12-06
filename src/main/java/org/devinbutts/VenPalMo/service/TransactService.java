@@ -1,8 +1,11 @@
 package org.devinbutts.VenPalMo.service;
 
+import org.devinbutts.VenPalMo.dao.AccountDAO;
 import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.TransactDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
+import org.devinbutts.VenPalMo.model.Account;
+import org.devinbutts.VenPalMo.model.User;
 import org.devinbutts.VenPalMo.model.dto.TransactDTO;
 import org.devinbutts.VenPalMo.model.Transact;
 import org.devinbutts.VenPalMo.model.form.TransactForm;
@@ -22,6 +25,9 @@ public class TransactService  {
 
     @Autowired
     UserDAO userDAO;
+
+    @Autowired
+    AccountDAO accountDAO;
 
     public List<TransactDTO> findTransactionsForDisplayByUserId(Integer userId){
 
@@ -71,10 +77,51 @@ public class TransactService  {
         newTransact.setTransactionAmount(transactForm.getTransactionAmount());
         newTransact.setCurrency("USD");
         newTransact.setNote(transactForm.getNote());
-        newTransact.setStatus(transactForm.getStatus());
+
+        setStatus(newTransact,transactForm.getStatus());
 
         return newTransact;
 
     }
+
+    public Transact setStatus(Transact transact,String status) {
+
+        if(status.equals("CLEARED")){
+
+            User sendingUser = transact.getSendingUser();
+            User receivingUser = transact.getReceivingUser();
+
+            BigDecimal transferAmt = transact.getTransactionAmount();
+
+            Account sendingUserDefaultAccount = getDefaultAccount(sendingUser);
+            Account receivingUserDefaultAccount = getDefaultAccount(receivingUser);
+
+            BigDecimal sendingCurrentBalance = sendingUserDefaultAccount.getAvailableBalance();
+            BigDecimal sendingUpdatedBalance = sendingCurrentBalance.subtract(transferAmt);
+
+            BigDecimal receivingCurrentBalance = receivingUserDefaultAccount.getAvailableBalance();
+            BigDecimal receivingUpdatedBalance = receivingCurrentBalance.add(transferAmt);
+
+            sendingUserDefaultAccount.setAvailableBalance(sendingUpdatedBalance);
+            receivingUserDefaultAccount.setAvailableBalance(receivingUpdatedBalance);
+
+        }
+        transact.setStatus(status);
+
+        return transact;
+
+    }
+
+    private Account getDefaultAccount(User sendingUser) {
+        List<Account> sendingUserAccounts = sendingUser.getAccounts();
+        Account sendingUserDefaultAccount = null;
+        for(Account acct : sendingUserAccounts){
+            if(acct.getDefaultAccount()==1){
+                sendingUserDefaultAccount = acct;
+            }
+        }
+        return sendingUserDefaultAccount;
+    }
+
 
 }

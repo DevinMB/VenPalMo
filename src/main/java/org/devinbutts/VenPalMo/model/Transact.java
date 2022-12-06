@@ -1,6 +1,9 @@
 package org.devinbutts.VenPalMo.model;
 
 import lombok.*;
+import org.devinbutts.VenPalMo.dao.AccountDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -14,6 +17,7 @@ import java.util.Date;
 @ToString(exclude = {"sendingUser","receivingUser"})
 @Table(name = "transaction")
 public class Transact {
+
 
     @Column(name = "id")
     @Id
@@ -49,5 +53,9 @@ public class Transact {
 
     @Column(name = "status")
     private String status;
+
+
+
+
 
 }
