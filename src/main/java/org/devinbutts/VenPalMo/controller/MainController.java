@@ -9,6 +9,7 @@ import org.devinbutts.VenPalMo.model.dto.TransactDTO;
 import org.devinbutts.VenPalMo.model.Message;
 import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.service.TransactService;
+import org.devinbutts.VenPalMo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +34,9 @@ public class MainController {
 
     @Autowired
     AccountDAO accountDAO;
+
+    @Autowired
+    UserService userService;
 
     @RequestMapping(value = {"/","/login.html","/login"}, method = RequestMethod.GET)
     public ModelAndView slash() {
@@ -62,6 +66,22 @@ public class MainController {
 
         Integer requestCount = transactService.findRequestedTransactionsForDisplayByUserId(loggedInUser.getId()).size();
         modelAndView.addObject("requestCount",requestCount);
+
+        if(requestCount==0){
+            String requestsMessage = "You have no requests for payment at this time.";
+            modelAndView.addObject("requestsMessage",requestsMessage);
+        }else if(requestCount==1){
+            String requestsMessage = "You have one request for payment.";
+            modelAndView.addObject("requestsMessage",requestsMessage);
+        }else{
+            String requestsMessage = "You have "+requestCount+" requests for payment.";
+            modelAndView.addObject("requestsMessage",requestsMessage);
+        }
+
+        modelAndView.addObject("welcomeMessage",userService.getWelcomeMessageForUser(loggedInUser));
+
+
+
 
         //TODO: Create MessageService and DTO to clean up data for chat
         List<Message> userMessages = messageDAO.findUserMessages(loggedInUser.getId());

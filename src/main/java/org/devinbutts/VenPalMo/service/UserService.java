@@ -2,11 +2,14 @@ package org.devinbutts.VenPalMo.service;
 
 import org.devinbutts.VenPalMo.model.Account;
 import org.devinbutts.VenPalMo.model.User;
+import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.model.form.UserForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -41,6 +44,18 @@ public class UserService {
 
         return newUser;
 
+    }
+
+    public String getWelcomeMessageForUser(UserDTO user){
+        int hour = LocalTime.now().getHour();
+
+        if (hour >= 12 && hour < 18) {
+            return "Good afternoon, "+user.getFirstName();
+        } else if(hour>=18) {
+            return "Good evening, "+user.getFirstName();
+        } else {
+            return "Good morning, "+user.getFirstName();
+        }
     }
 
 

@@ -14,9 +14,9 @@
     <div class="main_content" style="font-size:800; font-style:italic;">
         
         <div class="card">
-            <h3>Good Morning</h3>
+            <h3 th:text="${welcomeMessage}">Welcome</h3>
             <div class="welcome_message">
-                <p  th:text="'You have '+ ${requestCount} +' new requests for payment.'"></p><a href="#" th:if="${requestCount}>0">Pay Here</a>
+                <p  th:text="${requestsMessage}"></p><a href="#" th:if="${requestCount}>0">Pay Here</a>
             </div>
         </div>
         

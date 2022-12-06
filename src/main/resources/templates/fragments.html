@@ -20,7 +20,13 @@
     <nav>
         <div class="nav_logo">
             <img th:src="@{/images/Favicon-White.png}" alt="logo">
-            <h1>Welcome!</h1>
+            <div th:if="${welcomeMessage == null}" class="nav_buttons">
+                <ul>
+                    <li>
+                        <a th:href="@{/welcome}">Home</a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="nav_buttons">
             <ul>
