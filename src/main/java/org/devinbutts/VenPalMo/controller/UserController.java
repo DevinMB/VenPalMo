@@ -73,8 +73,6 @@ public class UserController {
         return modelAndView;
     }
 
-
-    //    @GetMapping(value = {"/success", "/success.html"})
     public ModelAndView registerSuccessPage(ModelAndView modelAndView) {
 
         log.debug("Register Success Request");
@@ -120,8 +118,6 @@ public class UserController {
     @RequestMapping(value = {"/search/send","/search/send.html"}, method = RequestMethod.POST)
     public ModelAndView submitSendUserToSearch(@ModelAttribute(value="userDTO") UserDTO searchUser) {
 
-
-
         log.debug("Search User to Send Request " + searchUser.getFirstName() + " " + searchUser.getLastName() + " " + searchUser.getEmail());
 
         ModelAndView modelAndView = new ModelAndView();
@@ -141,8 +137,5 @@ public class UserController {
         return modelAndView;
 
     }
-
-
-
 
 }

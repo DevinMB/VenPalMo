@@ -51,8 +51,6 @@ public class MainController {
         ModelAndView modelAndView  = new ModelAndView();
         modelAndView.setViewName("welcome");
 
-
-
         UserDTO loggedInUser = displayUserDAO.findUserByEmail(principal.getName());
         log.debug(loggedInUser.toString());
 
@@ -69,13 +67,6 @@ public class MainController {
 
         return modelAndView;
     }
-
-
-
-
-
-
-
 
 
 }

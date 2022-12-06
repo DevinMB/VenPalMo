@@ -26,18 +26,19 @@ public class UserForm {
     private String lastName;
 
     @Length(max = 45, message = "Email name must be less than 45 characters.")
-    @Email(message = "Please provide a valid email")
-    @NotEmpty(message = "Please provide an email")
-    @EmailUnique(message = "Email is already in database")
+    @Email(message = "Please provide a valid email.")
+    @NotEmpty(message = "Please provide an email.")
+    @EmailUnique(message = "Email is already in database.")
     private String email;
 
     @Length(min = 8, message = "Password must be more than 8 characters.")
     @Length(max = 25, message = "Password must be less than 25 characters.")
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.*[A-Z])(?=.*[a-z]).{8,}$", message = "Password must contain a number, special character, and lower/uppercase letters.")
-    @NotEmpty(message = "Password is required")
+    @NotEmpty(message = "Password is required.")
     private String password;
 
-    @NotEmpty(message = "Password is required")
+    //TODO: Implement Custom Validation for confirm password
+    @NotEmpty(message = "Password is required.")
     private String confirmPassword;
 
     @NotEmpty(message = "Phone number is required.")

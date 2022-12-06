@@ -29,51 +29,49 @@
         <div class="discription">
             <p>Create an Account:</p>
         </div>
-        <form class="register_form_container" method="post" th:action="@{register}" th:object="${userForm}" >
+
+        <form class="register_form_container" method="post" th:action="@{register}" th:object="${userForm}">
             <div class="first_last">
                 <input type="text" id="first_name_input" placeholder="First Name" th:field="*{firstName}" />
-               
                 <input type="text" id="last_name_input" placeholder="Last Name" th:field="*{lastName}" />
-               
             </div>
-            
-            <!-- NEED TO FIX STYLE SOMEHOW -->
+
             <div class="first_last">
-                <div class="error" th:if="${#fields.hasErrors('firstName')}"><p th:text="${#fields.errors('firstName')[0]}">ERROR</p></div>
-                <div th:classappend="${#fields.hasErrors('lastName') ? 'error' : ''}" th:if="${#fields.hasErrors('lastName')}"><p th:text="${#fields.errors('lastName')[0]}">ERROR</p></div>
+                <p class="error" th:errors="*{firstName}"></p>
+                <p class="error" th:errors="*{lastName}"></p>
             </div>
 
             <input type="email" id="email_input" placeholder="Email" th:field="*{email}" />
-            <div th:if="${#fields.hasErrors('email')}"><p style="color: red" th:text="${#fields.errors('email')[0]}">ERROR</p></div>
+            <p class="error" th:errors="*{email}"></p>
 
-            <input type="password" id="password_input" placeholder="Password" th:field="*{password}"/>
-            <div th:if="${#fields.hasErrors('password')}"><p style="color: red" th:text="${#fields.errors('password')[0]}">ERROR</p></div>
-            
-            <input type="password" id="password_confirm_input" placeholder="Confirm Password" th:field="*{confirmPassword}" />
-            <div th:if="${#fields.hasErrors('confirmPassword')}"><p style="color: red" th:text="${#fields.errors('confirmPassword')[0]}">ERROR</p></div>
-            
-            <input type="tel" id="phone_input" placeholder="Phone Number" th:field="*{phoneNumber}"/>
-            <div th:if="${#fields.hasErrors('phoneNumber')}"><p style="color: red" th:text="${#fields.errors('phoneNumber')[0]}">ERROR</p></div>
+            <input type="password" id="password_input" placeholder="Password" th:field="*{password}" />
+            <p class="error" th:errors="*{password}"></p>
 
-            <input type="text" id="address_input" placeholder="Address" th:field="*{address}"/>
-            <div th:if="${#fields.hasErrors('address')}"><p style="color: red" th:text="${#fields.errors('address')[0]}">ERROR</p></div>
+            <input type="password" id="password_confirm_input" placeholder="Confirm Password"
+                th:field="*{confirmPassword}" />
+            <p class="error" th:errors="*{confirmPassword}"></p>
+
+            <input type="tel" id="phone_input" placeholder="Phone Number" th:field="*{phoneNumber}" />
+            <p class="error" th:errors="*{phoneNumber}"></p>
+
+            <input type="text" id="address_input" placeholder="Address" th:field="*{address}" />
+            <p class="error" th:errors="*{address}"></p>
 
             <div class="city_state_zip">
-                <input type="text" id="city_input" placeholder="City" th:field="*{city}"/>
-                <input type="text" id="state_input" placeholder="State" th:field="*{state}"/>
-                <input type="text" id="zip_input" placeholder="Zip" th:field="*{zip}"/>
+                <input type="text" id="city_input" placeholder="City" th:field="*{city}" />
+                <input type="text" id="state_input" placeholder="State" th:field="*{state}" />
+                <input type="text" id="zip_input" placeholder="Zip" th:field="*{zip}" />
             </div>
 
             <div class="city_state_zip">
-                <div th:if="${#fields.hasErrors('city')}"><p style="color: red" th:text="${#fields.errors('city')[0]}">ERROR</p></div>
-                <div th:if="${#fields.hasErrors('state')}"><p style="color: red" th:text="${#fields.errors('state')[0]}">ERROR</p></div>
-                <div th:if="${#fields.hasErrors('zip')}"><p style="color: red" th:text="${#fields.errors('zip')[0]}">ERROR</p></div>
+                <p class="error" th:errors="*{city}"></p>
+                <p class="error" th:errors="*{state}"></p>
+                <p class="error" th:errors="*{zip}"></p>
             </div>
 
             <div class="birth_date">
                 <label>Birth Date</label>
-                <input type="date" id="birth_date_input" placeholder="Birth Date" th:field="*{birthDate}"/>
-
+                <input type="date" id="birth_date_input" placeholder="Birth Date" th:field="*{birthDate}" />
             </div>
 
             <div class="register_button">
@@ -90,7 +88,7 @@
     </div>
 
 
-   <script type="text/javascript" th:src="@{js/register.js}"></script>
+    <script type="text/javascript" th:src="@{js/register.js}"></script>
 
 
 </body>

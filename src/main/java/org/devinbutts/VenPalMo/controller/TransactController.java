@@ -5,11 +5,16 @@ import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.TransactDAO;
 import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.model.Transact;
+import org.devinbutts.VenPalMo.model.form.TransactForm;
+import org.devinbutts.VenPalMo.service.TransactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.security.Principal;
 import java.util.List;
 
@@ -25,6 +30,9 @@ public class TransactController {
     TransactDAO transactDAO;
 
     @Autowired
+    TransactService transactService;
+
+    @Autowired
     DisplayUserDAO displayUserDAO;
 
     @RequestMapping(value = {"/send/{id}"} ,  method = RequestMethod.GET)
@@ -35,50 +43,41 @@ public class TransactController {
         ModelAndView modelAndView  = new ModelAndView();
         modelAndView.setViewName("send");
 
-        UserDTO recievingUser = displayUserDAO.findById(id);
-
+        UserDTO recievingUser = displayUserDAO.findByUserId(id);
         UserDTO sendingUser = displayUserDAO.findUserByEmail(principal.getName());
 
-        Transact newTransact = new Transact();
+        TransactForm transactForm = new TransactForm();
+        transactForm.setReceivingUserId(id);
+        transactForm.setSendingUserId(sendingUser.getId());
 
         modelAndView.addObject("recievingUser", recievingUser);
         modelAndView.addObject("sendingUser",sendingUser);
-        
-        //TODO: convert this to a transactionFORM, dont want to make the same mistakes as the user form...
-        modelAndView.addObject("transaction",newTransact);
-
-
-
-//        //TODO: FILL OUT NEW TRANSACTION
-//        newTransact.set
-//
+        modelAndView.addObject("transactForm",transactForm);
 
         return modelAndView;
     }
 
     @RequestMapping(value={"/send/submit","send/submit.html"},method = RequestMethod.POST)
-    public ModelAndView sendSubmit(@RequestBody(required = true)Transact transact){
-
+    public ModelAndView sendSubmit(@ModelAttribute(value = "transactForm") @Valid TransactForm transactForm, BindingResult bindingResult){
+        ModelAndView modelAndView  = new ModelAndView();
         log.debug("Send Transact Submitted");
 
-        ModelAndView modelAndView  = new ModelAndView();
-        modelAndView.setViewName("welcome");
+        List<ObjectError> errors = bindingResult.getAllErrors();
+        for (ObjectError e : errors) {
+            log.debug(e.getDefaultMessage());
+        }
 
-        transactDAO.save(transact);
-        modelAndView.addObject("sent","true");
-
-        //TODO: update this with actual logged in user id using Spring Principal
-        List<Transact> userTransactions = transactDAO.findAllUserTransactions(2);
-
-        modelAndView.addObject("transactions",userTransactions);
-
+        if (errors.size() > 0) {
+            modelAndView.setViewName("/send/" + transactForm.getReceivingUserId());
+        } else {
+            Transact newTransact = transactService.createTransactionFromForm(transactForm);
+            transactDAO.save(newTransact);
+            //TODO: Decide if I want success page
+            modelAndView.setViewName("welcome");
+            //Maybe use this to display success on welcome page...
+            modelAndView.addObject("sent","true");
+        }
         return modelAndView;
-
     }
-
-
-
-
-
 
 }

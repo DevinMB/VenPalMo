@@ -17,9 +17,8 @@ public interface UserDAO extends JpaRepository<User, Integer> {
     @Override
     <S extends User> List<S> findAll(Example<S> example);
 
-    @Override
-    Optional<User> findById(Integer integer);
-
+    @Query("Select u FROM User u WHERE u.id = :id")
+    User findByUserId(Integer integer);
 
     @Override
     <S extends User> S save(S entity);
