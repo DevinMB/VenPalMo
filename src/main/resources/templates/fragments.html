@@ -30,8 +30,8 @@
         </div>
         <div class="nav_buttons">
             <ul>
-                <li><a href="#">Settings? idk</a></li>
-                <li><a href="#">🔔</a></li>
+                <li sec:authorize="hasRole('ROLE_ADMIN')"><a href="#">Admin Settings</a></li>
+                <li><a href="#">Profile Settings</a></li>
                 <li><a th:href="@{/logout}">Logout</a></li>
             </ul>
         </div>
