@@ -19,7 +19,8 @@
             <h3 th:text="${pageTitle}">Send Money</h3>
         
             <input type="number" id="amount_input" placeholder="0.00" th:field="*{transactionAmount}" />
-            <p class="error" th:errors="*{note}"></p> 
+            <p class="error" th:errors="*{transactionAmount}"></p> 
+            <p class="error" th:if="${noFunds}" th:text="${noFunds}"></p>
             
             <input type="text" id="note_input" placeholder="Add a note about your transaction here!" th:field="*{note}" />
             <p class="error" th:errors="*{note}"></p> 
@@ -28,7 +29,7 @@
             <input type="hidden" id="receivingUserId" th:field="*{receivingUserId}" />
 
             <div class="register_button">
-                <button class="" type="submit">Register</button>
+                <button class="" th:text="${#strings.capitalize(sendOrRequest)}" type="submit"></button>
             </div>
     
         </form>

@@ -51,6 +51,9 @@ public class TransactService  {
             TransactDTO transactDTO = mapToDisplayTransact(t,userId);
             transactDTOS.add(transactDTO);
         }
+        for(TransactDTO t: transactDTOS){
+            t.setTransactionAmount(t.getTransactionAmount().abs());
+        }
 
         return transactDTOS;
     }
@@ -118,6 +121,9 @@ public class TransactService  {
             sendingUserDefaultAccount.setAvailableBalance(sendingUpdatedBalance);
             receivingUserDefaultAccount.setAvailableBalance(receivingUpdatedBalance);
 
+            accountDAO.save(sendingUserDefaultAccount);
+            accountDAO.save(receivingUserDefaultAccount);
+
         }
         transact.setStatus(status);
 
@@ -125,7 +131,7 @@ public class TransactService  {
 
     }
 
-    private Account getDefaultAccount(User sendingUser) {
+    public Account getDefaultAccount(User sendingUser) {
         List<Account> sendingUserAccounts = sendingUser.getAccounts();
         Account sendingUserDefaultAccount = null;
         for(Account acct : sendingUserAccounts){

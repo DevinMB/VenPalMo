@@ -16,7 +16,7 @@
         <div class="card">
             <h3 th:text="${welcomeMessage}">Welcome</h3>
             <div class="welcome_message">
-                <p  th:text="${requestsMessage}"></p><a href="#" th:if="${requestCount}>0">Pay Here</a>
+                <p  th:text="${requestsMessage}"></p><a th:href="@{/pending}" th:if="${requestCount}>0">Pay Here</a>
             </div>
         </div>
         

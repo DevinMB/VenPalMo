@@ -22,6 +22,9 @@ public interface TransactDAO extends JpaRepository<Transact,Integer> {
     @Query("SELECT t FROM Transact t WHERE t.sendingUserId = :userId AND t.status = 'REQUESTED' ")
     List<Transact> findAllRequestedUserTransactions(Integer userId);
 
+    @Query("SELECT t FROM Transact t WHERE t.id = :id")
+    Transact findByTransactId(Integer id);
+
     @Override
     <S extends Transact> S save(S entity);
 
