@@ -291,7 +291,6 @@ body .main_app_container{
     flex-direction: column;
 }
 
-
 .transaction_request{
     display: flex;
     margin-top: 1em;
@@ -302,8 +301,6 @@ body .main_app_container{
     padding-left: .50em;
 
 }
-
-
 
 .transaction_main{
     display: flex;

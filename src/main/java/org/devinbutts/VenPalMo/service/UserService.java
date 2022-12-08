@@ -1,8 +1,10 @@
 package org.devinbutts.VenPalMo.service;
 
+import org.devinbutts.VenPalMo.dao.UserDAO;
 import org.devinbutts.VenPalMo.model.Account;
 import org.devinbutts.VenPalMo.model.User;
 import org.devinbutts.VenPalMo.model.dto.UserDTO;
+import org.devinbutts.VenPalMo.model.form.EditUserForm;
 import org.devinbutts.VenPalMo.model.form.UserForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,6 +21,9 @@ public class UserService {
     @Autowired
     @Qualifier("passwordEncoder")
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    UserDAO userDAO;
 
     public User createUserFromForm(UserForm userForm) {
 
@@ -45,6 +50,40 @@ public class UserService {
         return newUser;
 
     }
+
+    public EditUserForm createUserFromEditUserForm(User user){
+        EditUserForm editUserForm = new EditUserForm();
+
+        editUserForm.setFirstName(user.getFirstName());
+        editUserForm.setLastName(user.getLastName());
+        editUserForm.setPhoneNumber(user.getPhoneNumber());
+        editUserForm.setAddress(user.getAddress());
+        editUserForm.setCity(user.getCity());
+        editUserForm.setState(user.getState());
+        editUserForm.setZip(user.getZip());
+        editUserForm.setBirthDate(user.getBirthDate());
+
+        return editUserForm;
+    }
+
+
+    public User updateUserFromForm(User user, EditUserForm form){
+
+        user.setFirstName(form.getFirstName());
+        user.setLastName(form.getLastName());
+        user.setPhoneNumber(form.getPhoneNumber());
+        user.setAddress(form.getAddress());
+        user.setCity(form.getCity());
+        user.setState(form.getState());
+        user.setZip(form.getZip());
+        user.setBirthDate(form.getBirthDate());
+
+        userDAO.save(user);
+
+        return user;
+    }
+
+
 
     public String getWelcomeMessageForUser(UserDTO user){
         int hour = LocalTime.now().getHour();
