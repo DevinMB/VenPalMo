@@ -3,19 +3,34 @@
 
 <head th:replace="fragments :: main_html_head"></head>
 
-<body>
+<body style="background-color: #4ba1723e ;">
 
 <header th:replace="fragments :: main_header" class="main_header"></header>
-   
+
+
 
     <div class="card">
-        <p>ADMIN PAGE</p>
+        
+        <h3>ADMIN PAGE</h3>
+        
+        <input type="text" id="filter" placeholder="Enter email address" />
+        
+        <select id="user-list"></select>
+        
+        
+
+
+
         <p>Promote User To Admin</p>
         <p>Delete User (inactivate)</p>
         <p>Success message on delete</p>
+
+
+
+
     </div>
 
-
+    <script type="text/javascript" th:src="@{js/admin.js}"></script>
 
 </body>
 

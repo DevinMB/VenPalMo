@@ -41,6 +41,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @ResponseBody
+    @GetMapping(value={"/search"})
+    public String searchForUser()
 
     @GetMapping(value = {"/register", "/register.html"})
     public ModelAndView registerPage() {
