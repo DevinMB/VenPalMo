@@ -32,8 +32,6 @@
     width: 100%;
 }
 
-
-
 .user_list table tbody{
     width: 100%;
     flex-grow: 1;
@@ -51,4 +49,18 @@
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+
+.message_list{
+    display: flex;
+    justify-content: space-between;
+    min-width: 25em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+/* .message_info{
+    
+} */
+.message_text{
+    font-style: italic;
 }

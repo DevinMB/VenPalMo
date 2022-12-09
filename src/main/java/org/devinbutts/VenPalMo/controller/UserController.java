@@ -113,7 +113,6 @@ public class UserController {
         return modelAndView;
     }
 
-
     @RequestMapping(value = {"/search/request","/search/request.html"}, method = RequestMethod.POST)
     public ModelAndView submitSendUserToRequestFrom(@ModelAttribute(value="userDTO") UserDTO searchUser, Principal principal) {
 
@@ -194,7 +193,6 @@ public class UserController {
 
         //TODO: make a new method that only returns active users and users that are not you
         users = displayUserDAO.findByFirstLastEmail("%" + searchUser.getFirstName() + "%", "%" + searchUser.getLastName() + "%", "%" + searchUser.getEmail() + "%",principal.getName());
-
 
         modelAndView.addObject("userDTO", searchUser);
         modelAndView.addObject("users", users);
