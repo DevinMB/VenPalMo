@@ -34,10 +34,10 @@
         <div class="card">
             <div sec:authorize="isAuthenticated()">WE ARE AUTHENTICATED</div>
         
-            <div sec:authorize="hasRole('ROLE_ADMIN')">
+            <div sec:authorize="hasRole('ADMIN')">
                 This content is only shown to administrators.
             </div>
-            <div sec:authorize="hasRole('ROLE_USER')">
+            <div sec:authorize="hasRole('USER')">
                 This content is only shown to users.
             </div>
             <div>

@@ -30,6 +30,7 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/login.html","/register.html","/success.html","/css/**","/js/**","/images/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/register**").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

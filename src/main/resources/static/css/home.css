@@ -354,6 +354,26 @@ body .main_app_container{
     transition: background-color .5s;
 }
 
+.admin_buttons a{
+    min-width: 6em;
+    background-color: #8BC53F;
+    border-radius: .5em;
+    color: white;
+    font-family: 'Roboto';
+    border-style: none;
+    padding: .3em;
+    font-style: italic;
+    margin: .5em;
+    font-size: large;
+    text-align: center;
+    text-decoration: none;
+}
+
+.admin_buttons a:hover{
+    background-color: #75B24C;
+    transition: background-color .5s;
+}
+
 
 
 

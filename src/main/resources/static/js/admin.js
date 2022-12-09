@@ -1,32 +1,23 @@
-// Create an array of items for the dropdown menu
-var userList = ["user1@example.com", "user2@example.com", "user3@example.com"];
+// Get the select element
+const selectElement = document.getElementById('user_list');
 
-// Get the select and input elements
-var select = document.getElementById("user-list");
-var input = document.getElementById("filter");
+// Add an event listener to the select element to listen for changes
+selectElement.addEventListener('change', (event) => {
+  // When the selected option changes, get the selected option element
+  const selectedOption = event.target.selectedOptions[0];
 
-// Create and append the options to the select element
-for (var i = 0; i < userList.length; i++) {
-  var option = document.createElement("option");
-  option.value = userList[i];
-  option.text = userList[i];
-  select.appendChild(option);
-}
+  const deleteUserButton = document.getElementById("delete_user");
+  const promoteUserButton = document.getElementById("promote_user");
 
-// Listen for changes to the input element
-input.addEventListener("input", function() {
-  // Get the current value of the input field
-  var filterValue = input.value;
+  // Get the value (user.id) of the selected option
+  const userId = selectedOption.value;
 
-  // Loop through all the options in the select element
-  for (var i = 0; i < select.options.length; i++) {
-    var option = select.options[i];
+  // Set the href attribute of the a elements to include the userId
+  promoteUserButton.setAttribute('href', `/admin/promote/${userId}`);
+  deleteUserButton.setAttribute('href', `/admin/delete/${userId}`);
 
-    // If the option text does not contain the filter value, hide it
-    if (option.text.indexOf(filterValue) == -1) {
-      option.style.display = "none";
-    } else {
-      option.style.display = "block";
-    }
-  }
+  // Add the a elements to the page
+  adminButtons.appendChild(promoteLink);
+  adminButtons.appendChild(deleteLink);
+  
 });

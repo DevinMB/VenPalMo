@@ -41,10 +41,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @ResponseBody
-    @GetMapping(value={"/search"})
-    public String searchForUser()
-
     @GetMapping(value = {"/register", "/register.html"})
     public ModelAndView registerPage() {
 
@@ -110,6 +106,8 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("search");
         List<UserDTO> users = new ArrayList<>();
+
+        //TODO: make a new method that only returns active users and users that are not you
         users = displayUserDAO.findByFirstLastEmail("%" + searchUser.getFirstName() + "%", "%" + searchUser.getLastName() + "%", "%" + searchUser.getEmail() + "%");
         modelAndView.addObject("userDTO",searchUser);
         modelAndView.addObject("users", users);
@@ -139,6 +137,8 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("search");
         List<UserDTO> users = new ArrayList<>();
+
+        //TODO: same here, fix with new method that only returns users that are not you and active
         users = displayUserDAO.findByFirstLastEmail("%" + searchUser.getFirstName() + "%", "%" + searchUser.getLastName() + "%", "%" + searchUser.getEmail() + "%");
         modelAndView.addObject("userDTO",searchUser);
         modelAndView.addObject("users", users);
