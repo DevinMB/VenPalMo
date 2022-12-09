@@ -263,6 +263,12 @@ body .main_app_container{
     height: 2.55em;
     border-bottom: 1px solid rgba(128, 128, 128, 0.438);
 
+
+}
+
+.activity tr td{
+    padding-left: 1em;
+    align-items: center;
 }
 
 /* .activity table tr:nth-child(even){background-color: #f2f2f2;} */
@@ -274,6 +280,11 @@ body .main_app_container{
     font-size: larger;
     font-weight: 800;
     font-style: italic;
+}
+
+.table_column_discription{
+    font-weight: bold;
+
 }
 
 .users_list{
