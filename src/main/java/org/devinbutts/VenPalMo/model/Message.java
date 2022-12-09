@@ -2,6 +2,7 @@ package org.devinbutts.VenPalMo.model;
 
 
 import lombok.*;
+import org.springframework.data.util.Lazy;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -28,11 +29,11 @@ public class Message {
 
     private String text;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "to_user_id")
     private User toUser;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_user_id")
     private User fromUser;
 

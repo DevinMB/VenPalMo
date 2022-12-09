@@ -56,7 +56,7 @@ public class User {
 
     private Integer active;
 
-    @OneToMany(mappedBy = "userId")
+    @OneToMany(mappedBy = "userId",fetch = FetchType.LAZY)
     private List<Account> accounts;
 
 

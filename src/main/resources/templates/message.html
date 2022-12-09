@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: main_html_head"></head>
+
+<body style="background-color: #4ba1723e ;">
+
+<header th:replace="fragments :: main_header" class="main_header"></header>
+
+
+
+<div class="card">
+
+    <div  class="message_list" th:if="${messages}">
+        <table>
+          <tr th:each="msg: ${messages}">
+                <!-- NEED TO FORMAT/STYLE THIS LIST -->
+              <td th:text="${msg.name}+ ' ' +${msg.text}"></td>
+          </tr>
+        </table>
+
+    </div>
+    
+    <div class="send_form">
+
+        <form method="post" th:object="${messageDTO}">
+    
+        
+            <input type="text" placeholder="Message" th:field="*{text}">
+        
+            <div class="register_button">
+                <button class="" type="submit">Send</button>
+            </div>
+    
+        </form>
+
+       
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

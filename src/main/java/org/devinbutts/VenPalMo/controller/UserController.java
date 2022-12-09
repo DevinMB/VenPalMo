@@ -88,12 +88,7 @@ public class UserController {
     @RequestMapping(value = {"/search/send","/search/send_request.html"}, method = RequestMethod.GET)
     public ModelAndView searchForUserToSendTo() {
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("search");
-        List<UserDTO> users = new ArrayList<>();
-        UserDTO searchUser = new UserDTO();
-        modelAndView.addObject("userDTO",searchUser);
-        modelAndView.addObject("users", users);
+        ModelAndView modelAndView = getSearchModelAndView();
         modelAndView.addObject("searchType", "send");
 
         return modelAndView;
@@ -102,6 +97,13 @@ public class UserController {
     @RequestMapping(value = {"/search/send","/search/send_request.html"}, method = RequestMethod.POST)
     public ModelAndView submitSendUserToSearch(@ModelAttribute(value="userDTO") UserDTO searchUser) {
 
+        ModelAndView modelAndView = getSearchSubmitModelAndView(searchUser);
+        modelAndView.addObject("searchType", "send");
+
+        return modelAndView;
+    }
+
+    private ModelAndView getSearchSubmitModelAndView(UserDTO searchUser) {
         log.debug("Search User to Send Request " + searchUser.getFirstName() + " " + searchUser.getLastName() + " " + searchUser.getEmail());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("search");
@@ -109,39 +111,34 @@ public class UserController {
 
         //TODO: make a new method that only returns active users and users that are not you
         users = displayUserDAO.findByFirstLastEmail("%" + searchUser.getFirstName() + "%", "%" + searchUser.getLastName() + "%", "%" + searchUser.getEmail() + "%");
-        modelAndView.addObject("userDTO",searchUser);
+        modelAndView.addObject("userDTO", searchUser);
         modelAndView.addObject("users", users);
-        modelAndView.addObject("searchType", "send");
-
         return modelAndView;
     }
 
     @RequestMapping(value = {"/search/request","/search/request.html"}, method = RequestMethod.GET)
     public ModelAndView searchForUserToRequestFrom() {
 
+        ModelAndView modelAndView = getSearchModelAndView();
+        modelAndView.addObject("searchType", "request");
+
+        return modelAndView;
+    }
+
+    private ModelAndView getSearchModelAndView() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("search");
         List<UserDTO> users = new ArrayList<>();
         UserDTO searchUser = new UserDTO();
         modelAndView.addObject("userDTO",searchUser);
         modelAndView.addObject("users", users);
-        modelAndView.addObject("searchType", "request");
-
         return modelAndView;
     }
 
     @RequestMapping(value = {"/search/request","/search/request.html"}, method = RequestMethod.POST)
     public ModelAndView submitSendUserToRequestFrom(@ModelAttribute(value="userDTO") UserDTO searchUser) {
 
-        log.debug("Search User to Send Request " + searchUser.getFirstName() + " " + searchUser.getLastName() + " " + searchUser.getEmail());
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("search");
-        List<UserDTO> users = new ArrayList<>();
-
-        //TODO: same here, fix with new method that only returns users that are not you and active
-        users = displayUserDAO.findByFirstLastEmail("%" + searchUser.getFirstName() + "%", "%" + searchUser.getLastName() + "%", "%" + searchUser.getEmail() + "%");
-        modelAndView.addObject("userDTO",searchUser);
-        modelAndView.addObject("users", users);
+        ModelAndView modelAndView = getSearchSubmitModelAndView(searchUser);
         modelAndView.addObject("searchType", "request");
 
         return modelAndView;
@@ -179,6 +176,26 @@ public class UserController {
         }
         return modelAndView;
     }
+
+
+    @RequestMapping(value = {"/search/message","/search/message.html"}, method = RequestMethod.GET)
+    public ModelAndView searchForUserToMessage() {
+
+        ModelAndView modelAndView = getSearchModelAndView();
+        modelAndView.addObject("searchType", "message");
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = {"/search/message","/search/message.html"}, method = RequestMethod.POST)
+    public ModelAndView submitSendUserToMessagePage(@ModelAttribute(value="userDTO") UserDTO searchUser) {
+
+        ModelAndView modelAndView = getSearchSubmitModelAndView(searchUser);
+        modelAndView.addObject("searchType", "message");
+
+        return modelAndView;
+    }
+
 
 
 }

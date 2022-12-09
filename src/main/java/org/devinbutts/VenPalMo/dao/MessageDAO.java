@@ -11,6 +11,9 @@ public interface MessageDAO extends JpaRepository<Message,Integer> {
     @Query("SELECT m FROM Message m WHERE m.toUser.id = :userId OR m.fromUser.id = :userId")
     List<Message> findUserMessages(Integer userId);
 
+    @Query("SELECT m FROM Message m WHERE (m.toUser.id IN (:userOne,:userTwo)) AND (m.fromUser.id IN (:userOne,:userTwo)) ORDER BY m.createdDate")
+    List<Message> findUserConversation(Integer userOne, Integer userTwo );
+
     @Override
     <S extends Message> S save(S entity);
 

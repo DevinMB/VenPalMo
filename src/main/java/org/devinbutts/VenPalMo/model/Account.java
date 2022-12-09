@@ -26,7 +26,7 @@ public class Account {
     @Column(name = "user_id",insertable = false,updatable = false)
     private Integer userId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User user;
 
