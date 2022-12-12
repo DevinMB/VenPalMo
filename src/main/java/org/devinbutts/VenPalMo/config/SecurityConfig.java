@@ -10,14 +10,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import static org.springframework.security.config.Customizer.withDefaults;
-
+/**
+ * This class defines the basic security for users. Granting anyone basic access to the login/register/success pages and css/images/js.
+ * Users must be authenticated for everything else, /admin is locked to only users with ROLE_ADMIN.
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
-    @Bean(name="passwordEncoder")
+    @Bean(name = "passwordEncoder")
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
@@ -28,8 +30,8 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login.html","/register.html","/success.html","/css/**","/js/**","/images/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/register**").permitAll()
+                .antMatchers("/login.html", "/user/register**", "/success.html", "/css/**", "/js/**", "/images/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/user/register**").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()

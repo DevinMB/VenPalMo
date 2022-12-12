@@ -3,33 +3,24 @@ package org.devinbutts.VenPalMo.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.DisplayUserDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
-import org.devinbutts.VenPalMo.model.dto.TransactDTO;
 import org.devinbutts.VenPalMo.model.dto.UserDTO;
 import org.devinbutts.VenPalMo.model.User;
 import org.devinbutts.VenPalMo.model.form.EditUserForm;
 import org.devinbutts.VenPalMo.model.form.UserForm;
 import org.devinbutts.VenPalMo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.annotation.security.PermitAll;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
-
-//TODO: Implement better request mapping, use /User at base
 @Slf4j
 @RestController
+@RequestMapping(value="/user")
 public class UserController {
 
     @Autowired
@@ -68,7 +59,7 @@ public class UserController {
         if (errors.size() > 0) {
             modelAndView.setViewName("register");
         } else {
-            User newUser = userService.createUserFromForm(userForm);
+            User newUser = userService.createUser(userForm);
             userDAO.save(newUser);
             modelAndView = registerSuccessPage(modelAndView);
         }
@@ -103,7 +94,6 @@ public class UserController {
         return modelAndView;
     }
 
-
     @RequestMapping(value = {"/search/request","/search/request.html"}, method = RequestMethod.GET)
     public ModelAndView searchForUserToRequestFrom() {
 
@@ -122,7 +112,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value = {"/user/edit"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/edit"}, method = RequestMethod.GET)
     public ModelAndView editUser(Principal principal) {
 
         ModelAndView modelAndView = new ModelAndView();
@@ -130,14 +120,14 @@ public class UserController {
 
         User loggedInUser = userDAO.findByEmail(principal.getName());
 
-        EditUserForm form = userService.createUserFromEditUserForm(loggedInUser);
+        EditUserForm form = userService.createEditForm(loggedInUser);
 
         modelAndView.addObject("editUserForm", form);
 
         return modelAndView;
     }
 
-    @RequestMapping(value = {"/user/edit"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/edit"}, method = RequestMethod.POST)
     public ModelAndView editUserSubmit(Principal principal, @ModelAttribute(value = "editUserForm") @Valid EditUserForm form, BindingResult bindingResult ) {
 
         ModelAndView modelAndView = new ModelAndView();
@@ -150,7 +140,7 @@ public class UserController {
             modelAndView.setViewName("edit");
             //TODO:add error object?
         } else {
-            userService.updateUserFromForm(loggedInUser,form);
+            userService.updateUser(loggedInUser,form);
             modelAndView.setViewName("redirect:/welcome");
         }
         return modelAndView;

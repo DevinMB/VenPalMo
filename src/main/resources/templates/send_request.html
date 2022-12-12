@@ -14,7 +14,7 @@
 
     <div class="send_request_form">
 
-        <form method="post" th:action="@{/{sendOrRequest} (sendOrRequest=${sendOrRequest})}" th:object="${transactForm}">
+        <form method="post" th:action="@{/transact/{sendOrRequest} (sendOrRequest=${sendOrRequest})}" th:object="${transactForm}">
     
             <h3 th:text="${pageTitle}">Send Money</h3>
 

@@ -15,13 +15,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.security.Principal;
 import java.util.List;
 
+/**
+ * Index controller is responsible for the login page and welcome screen primarily.
+ */
 @Slf4j
 @Controller
-public class MainController {
+public class IndexController {
 
     @Autowired
     TransactService transactService;
@@ -38,7 +40,7 @@ public class MainController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = {"/","/login.html","/login"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/login.html","/login"}, method = RequestMethod.GET)
     public ModelAndView slash() {
         log.debug("Main Controller Login Request");
 
@@ -48,7 +50,7 @@ public class MainController {
         return modelAndView;
     }
 
-    @RequestMapping(value = {"/welcome","/welcome.html"} ,  method = RequestMethod.GET)
+    @RequestMapping(value = {"/","/welcome","/welcome.html"} ,  method = RequestMethod.GET)
     public ModelAndView welcome(Principal principal){
         log.debug("Main Controller Welcome Request");
 
@@ -77,11 +79,7 @@ public class MainController {
             String requestsMessage = "You have "+requestCount+" requests for payment.";
             modelAndView.addObject("requestsMessage",requestsMessage);
         }
-
         modelAndView.addObject("welcomeMessage",userService.getWelcomeMessageForUser(loggedInUser));
-
-
-
 
         //TODO: Create MessageService and DTO to clean up data for chat
         List<Message> userMessages = messageDAO.findUserMessages(loggedInUser.getId());

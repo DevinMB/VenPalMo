@@ -16,7 +16,7 @@
         <div class="card">
             <h3 th:text="${welcomeMessage}">Welcome</h3>
             <div class="welcome_message">
-                <p  th:text="${requestsMessage}"></p><a th:href="@{/pending}" th:if="${requestCount}>0">Pay Here</a>
+                <p  th:text="${requestsMessage}"></p><a th:href="@{/transact/pending}" th:if="${requestCount}>0">Pay Here</a>
             </div>
         </div>
         
@@ -58,8 +58,8 @@
 
         <div class="quick_actions">
             <!-- <p>Quick Actions</p> -->
-            <button><a th:href="@{/search/send}">Send</a></button>
-            <button><a th:href="@{/search/request}">Request</a></button>
+            <button><a th:href="@{/user/search/send}">Send</a></button>
+            <button><a th:href="@{/user/search/request}">Request</a></button>
 
 
             
@@ -93,7 +93,6 @@
 
 </div>
 
-<script type="text/javascript" th:src="@{js/home.js}"></script>
 </body>
 
 </html>

@@ -1,9 +1,9 @@
 package org.devinbutts.VenPalMo.service;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-
 import org.devinbutts.VenPalMo.dao.UserDAO;
 import org.devinbutts.VenPalMo.model.User;
 import org.slf4j.Logger;
@@ -16,7 +16,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-
+/**
+ * This implementation allows for extracting roles for the user and applying it to the session
+ * */
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {
 

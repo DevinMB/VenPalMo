@@ -20,7 +20,7 @@
     <div  class="message_list" th:if="${messages}" th:each="msg: ${messages}">
         
         <div class="message_info">
-            <p th:text="${msg.name} + ' @ ' + ${#dates.format(msg.createdDate,'hh:mm a MM/dd/yyyy')}"></p>
+            <span id="message_to_from" th:text="${msg.name}"></span><span id="message_date_time" th:text="' @ ' + ${#dates.format(msg.createdDate,'hh:mm a MM/dd/yyyy')}"></span>
         </div>
         <div class="message_text">
             <p th:text="${msg.text}"></p>
@@ -28,12 +28,12 @@
 
     </div> 
     
-    <div class="send_form">
+    <div class="message_form">
 
         <form method="post" th:object="${messageDTO}">
             <input type="text" placeholder="Message" th:field="*{text}">
 
-            <div class="register_button">
+            <div class="submit">
                 <button class="" type="submit">Send</button>
             </div>    
         </form>

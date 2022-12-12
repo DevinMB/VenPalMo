@@ -16,16 +16,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * User service class allows for creation of users (passwords encrypted with BCrypt), updating user info, and providing basic welcome message details.
+ */
 @Service
 public class UserService {
+    @Autowired
+    UserDAO userDAO;
     @Autowired
     @Qualifier("passwordEncoder")
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
-    UserDAO userDAO;
-
-    public User createUserFromForm(UserForm userForm) {
+    public User createUser(UserForm userForm) {
 
         User newUser = new User();
 
@@ -51,7 +53,7 @@ public class UserService {
 
     }
 
-    public EditUserForm createUserFromEditUserForm(User user){
+    public EditUserForm createEditForm(User user) {
         EditUserForm editUserForm = new EditUserForm();
 
         editUserForm.setFirstName(user.getFirstName());
@@ -66,8 +68,7 @@ public class UserService {
         return editUserForm;
     }
 
-
-    public User updateUserFromForm(User user, EditUserForm form){
+    public User updateUser(User user, EditUserForm form) {
 
         user.setFirstName(form.getFirstName());
         user.setLastName(form.getLastName());
@@ -83,17 +84,15 @@ public class UserService {
         return user;
     }
 
-
-
-    public String getWelcomeMessageForUser(UserDTO user){
+    public String getWelcomeMessageForUser(UserDTO user) {
         int hour = LocalTime.now().getHour();
 
         if (hour >= 12 && hour < 18) {
-            return "Good afternoon, "+user.getFirstName();
-        } else if(hour>=18) {
-            return "Good evening, "+user.getFirstName();
+            return "Good afternoon, " + user.getFirstName();
+        } else if (hour >= 18) {
+            return "Good evening, " + user.getFirstName();
         } else {
-            return "Good morning, "+user.getFirstName();
+            return "Good morning, " + user.getFirstName();
         }
     }
 

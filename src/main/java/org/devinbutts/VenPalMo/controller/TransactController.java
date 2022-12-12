@@ -22,11 +22,14 @@ import javax.validation.Valid;
 import java.security.Principal;
 import java.util.List;
 
-//TODO: Build Transaction.html file
 //TODO:Edit mapping to include /transaction/ at the front of every transaction request.
 
+/**
+ * Transaction controller is responsible for all requests to send or receive money @ /transact.
+ */
 @Controller
 @Slf4j
+@RequestMapping(value = "/transact")
 public class TransactController {
 
     @Autowired
@@ -114,7 +117,6 @@ public class TransactController {
         return modelAndView;
     }
 
-
     @RequestMapping(value = {"/request/{id}"} ,  method = RequestMethod.GET)
     public ModelAndView requestPage(@PathVariable int id, Principal principal){
 
@@ -141,7 +143,7 @@ public class TransactController {
     }
 
     @RequestMapping(value={"/request"},method = RequestMethod.POST)
-    public ModelAndView sendRequest(@ModelAttribute(value = "transactForm") @Valid TransactForm transactForm, BindingResult bindingResult){
+    public ModelAndView requestSubmit(@ModelAttribute(value = "transactForm") @Valid TransactForm transactForm, BindingResult bindingResult){
         ModelAndView modelAndView  = new ModelAndView();
         log.debug("Request Transact Submitted");
 
@@ -194,7 +196,6 @@ public class TransactController {
         return modelAndView;
 
     }
-
 
     @RequestMapping(value={"/approve/{id}"},method = RequestMethod.GET)
     public ModelAndView approveTransaction(@PathVariable int id, Principal principal){

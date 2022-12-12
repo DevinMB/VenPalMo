@@ -12,6 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 import java.security.Principal;
 import java.util.List;
 
+//TODO: add error handling. Don't send message unless there is message body.
+
+/**
+ * Message controller is responsible for all messaging functionality. This includes getting messages, conversations, and sending messages.
+ */
 @Controller
 @RequestMapping(value = "/message")
 public class MessageController {
@@ -37,7 +42,7 @@ public class MessageController {
     }
 
     @PostMapping(value = "/{id}")
-    public ModelAndView getConversation(Principal principal, @PathVariable int id,@ModelAttribute(value="messageDTO") MessageDTO messageDTO){
+    public ModelAndView sendMessage(Principal principal, @PathVariable int id, @ModelAttribute(value="messageDTO") MessageDTO messageDTO){
         messageDTO.setMessageType("Sent");
         messageDTO.setEmail(userDAO.findByUserId(id).getEmail());
         messageService.saveMessage(messageDTO,principal);

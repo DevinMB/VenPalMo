@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.devinbutts.VenPalMo.validation.EmailUnique;
+import org.devinbutts.VenPalMo.validation.TwoFieldsAreEqual;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
+@TwoFieldsAreEqual(fieldOneName = "confirmPassword",fieldTwoName = "password",message = "Passwords must match!")
 public class UserForm {
 
     @NotEmpty(message = "First name is required.")

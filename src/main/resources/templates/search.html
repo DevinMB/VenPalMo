@@ -33,9 +33,9 @@
             <table>
               <tr th:each="user: ${users}">
                     <!-- NEED TO FORMAT/STYLE THIS LIST -->
-                  <td><a th:href="@{/{searchType}/{userId} (searchType=${searchType}, userId=${user.id}) }" th:text="${user.firstName}">Test</a></td>
-                  <td><a th:href="@{/{searchType}/{userId} (searchType=${searchType}, userId=${user.id}) }" th:text="${user.lastName}">Test</a></td> 
-                  <td><a th:href="@{/{searchType}/{userId} (searchType=${searchType}, userId=${user.id}) }" th:text="${user.email}">Test</a></td> 
+                  <td><a th:href="@{/transact/{searchType}/{userId} (searchType=${searchType}, userId=${user.id}) }" th:text="${user.firstName}">Test</a></td>
+                  <td><a th:href="@{/transact/{searchType}/{userId} (searchType=${searchType}, userId=${user.id}) }" th:text="${user.lastName}">Test</a></td> 
+                  <td><a th:href="@{/transact/{searchType}/{userId} (searchType=${searchType}, userId=${user.id}) }" th:text="${user.email}">Test</a></td> 
               </tr>
             </table>
 
