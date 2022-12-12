@@ -1,13 +1,14 @@
 package org.devinbutts.VenPalMo.model;
 
 import lombok.*;
-import org.devinbutts.VenPalMo.dao.AccountDAO;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
+
+/**
+ * Transact entity stores transaction data between two users. When Transaction has a status of CLEARED it will affect the available balance on the Account entity.
+ */
 @Entity
 @EqualsAndHashCode(exclude = {"sendingUser", "receivingUser"})
 @AllArgsConstructor

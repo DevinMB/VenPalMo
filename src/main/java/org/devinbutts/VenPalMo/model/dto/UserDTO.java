@@ -5,6 +5,9 @@ import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * User DTO used for displaying user list to user in a more useful manner.
+ */
 @Entity
 @EqualsAndHashCode()
 @AllArgsConstructor

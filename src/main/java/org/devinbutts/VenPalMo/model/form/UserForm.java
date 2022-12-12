@@ -13,6 +13,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
 
+/**
+ * Used to create users from the register page. Sent to the User Service to be converted.
+ */
 @Getter
 @Setter
 @ToString

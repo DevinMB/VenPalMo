@@ -5,10 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.devinbutts.VenPalMo.model.User;
-
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * Transact DTO used for displaying transactions to user in a more useful manner.
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

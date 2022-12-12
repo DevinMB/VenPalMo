@@ -1,5 +1,6 @@
 package org.devinbutts.VenPalMo.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.MessageDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
 import org.devinbutts.VenPalMo.model.Message;
@@ -7,15 +8,17 @@ import org.devinbutts.VenPalMo.model.User;
 import org.devinbutts.VenPalMo.model.dto.MessageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Message service used primarily for getting users conversations, converting user message DTO into message entities for saving to the database.
+ */
+@Slf4j
 @Service
 public class MessageService {
-
 
     @Autowired
     UserDAO userDAO;
@@ -23,15 +26,19 @@ public class MessageService {
     @Autowired
     MessageDAO messageDAO;
 
-
     public List<MessageDTO> getUserMessageDTOs(Principal principal){
-        User loggedInUser = userDAO.findByEmail(principal.getName());
-        List<Message> userMessages = messageDAO.findUserMessages(loggedInUser.getId());
+        User loggedInUser = null;
+        List<Message> userMessages = new ArrayList<>();
         List<MessageDTO> messageDTOS = new ArrayList<>();
-
-        for (Message message: userMessages){
-            MessageDTO messageDTO = convertMessageToMessageDTO(loggedInUser,message);
-            messageDTOS.add(messageDTO);
+        try{
+            loggedInUser = userDAO.findByEmail(principal.getName());
+            userMessages = messageDAO.findUserMessages(loggedInUser.getId());
+            for (Message message: userMessages){
+                MessageDTO messageDTO = convertMessageToMessageDTO(loggedInUser,message);
+                messageDTOS.add(messageDTO);
+            }
+        }catch (Exception e){
+            log.error(e.getMessage());
         }
 
         return messageDTOS;
@@ -39,14 +46,21 @@ public class MessageService {
 
     public List<MessageDTO> getUserMessageDTOs(Principal principal, Integer otherUserId){
 
-        User loggedInUser = userDAO.findByEmail(principal.getName());
-        List<Message> userMessages = messageDAO.findUserConversation(loggedInUser.getId(), otherUserId);
+        User loggedInUser = null;
+        List<Message> userMessages = new ArrayList<>();
         List<MessageDTO> messageDTOS = new ArrayList<>();
 
-        for (Message message: userMessages){
-            MessageDTO messageDTO = convertMessageToMessageDTO(loggedInUser,message);
-            messageDTOS.add(messageDTO);
+        try{
+            loggedInUser = userDAO.findByEmail(principal.getName());
+            userMessages = messageDAO.findUserConversation(loggedInUser.getId(), otherUserId);
+            for (Message message: userMessages){
+                MessageDTO messageDTO = convertMessageToMessageDTO(loggedInUser,message);
+                messageDTOS.add(messageDTO);
+            }
+        }catch (Exception e){
+            log.error(e.getMessage());
         }
+
         return messageDTOS;
     }
 
@@ -82,11 +96,16 @@ public class MessageService {
 
 
     public void saveMessage(MessageDTO messageDTO, Principal principal){
-        User loggedInUser = userDAO.findByEmail(principal.getName());
 
-        Message message = convertMessageDTOToMessage(loggedInUser,messageDTO);
+        try{
+            User loggedInUser = userDAO.findByEmail(principal.getName());
 
-        messageDAO.save(message);
+            Message message = convertMessageDTOToMessage(loggedInUser,messageDTO);
+
+            messageDAO.save(message);
+        }catch (Exception e ){
+            log.error(e.getMessage());
+        }
 
     }
 
@@ -94,7 +113,6 @@ public class MessageService {
     public Message convertMessageDTOToMessage(User loggedInUser, MessageDTO messageDTO){
 
         Message message = new Message();
-
         message.setCreatedDate(new Date());
         message.setText(messageDTO.getText());
 

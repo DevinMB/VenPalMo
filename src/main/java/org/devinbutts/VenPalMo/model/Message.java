@@ -2,12 +2,12 @@ package org.devinbutts.VenPalMo.model;
 
 
 import lombok.*;
-import org.springframework.data.util.Lazy;
-
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * Simple Message entity to store message between users.
+ */
 @Entity
 @EqualsAndHashCode(exclude = {"toUser","fromUser"})
 @ToString(exclude = {"toUser","fromUser"})

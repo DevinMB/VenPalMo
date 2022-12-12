@@ -18,6 +18,10 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * User controller handles all /user requests relating to finding, creating, editing, user data.
+ */
 @Slf4j
 @RestController
 @RequestMapping(value="/user")

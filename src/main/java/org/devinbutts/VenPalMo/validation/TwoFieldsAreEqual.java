@@ -4,6 +4,10 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
 
+
+/**
+ * @Interface for TwoFieldsAreEqual entity bean.
+ */
 @Documented
 @Constraint(validatedBy = TwoFieldsAreEqualImpl.class)
 @Target({ ElementType.TYPE, ElementType.ANNOTATION_TYPE })

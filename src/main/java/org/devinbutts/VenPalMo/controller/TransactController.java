@@ -80,7 +80,7 @@ public class TransactController {
 
         User loggedInUser = userDAO.findByEmail(principal.getName());
 
-        Account senderAcct = transactService.getDefaultAccount(loggedInUser);
+        Account senderAcct = accountService.getDefaultAccount(loggedInUser);
 
         List<ObjectError> errors = bindingResult.getAllErrors();
         for (ObjectError e : errors) {

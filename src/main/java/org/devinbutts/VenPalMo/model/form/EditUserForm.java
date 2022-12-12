@@ -3,18 +3,16 @@ package org.devinbutts.VenPalMo.model.form;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.devinbutts.VenPalMo.validation.EmailUnique;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
 import java.util.Date;
 
-
+/**
+ * Form used to edit user profile information. Sent to the User Service.
+ */
 @Getter
 @Setter
 @ToString

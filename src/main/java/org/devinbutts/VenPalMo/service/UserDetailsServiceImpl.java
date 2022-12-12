@@ -17,7 +17,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 /**
- * This implementation allows for extracting roles for the user and applying it to the session
+ * This implementation allows for extracting roles for the user and applying it to the session.
  * */
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {

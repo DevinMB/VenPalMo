@@ -1,5 +1,6 @@
 package org.devinbutts.VenPalMo.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.UserDAO;
 import org.devinbutts.VenPalMo.model.Account;
 import org.devinbutts.VenPalMo.model.User;
@@ -19,6 +20,7 @@ import java.util.List;
 /**
  * User service class allows for creation of users (passwords encrypted with BCrypt), updating user info, and providing basic welcome message details.
  */
+@Slf4j
 @Service
 public class UserService {
     @Autowired
@@ -79,7 +81,11 @@ public class UserService {
         user.setZip(form.getZip());
         user.setBirthDate(form.getBirthDate());
 
-        userDAO.save(user);
+        try{
+            userDAO.save(user);
+        }catch (Exception e){
+            log.error(e.getMessage());
+        }
 
         return user;
     }

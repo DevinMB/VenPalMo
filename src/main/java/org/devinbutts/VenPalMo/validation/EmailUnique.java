@@ -8,6 +8,9 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
+/**
+ * @interface for Email Unique Bean.
+ */
 @Documented
 @Constraint(validatedBy = EmailUniqueValidator.class)
 @Target({ ElementType.METHOD, ElementType.FIELD })

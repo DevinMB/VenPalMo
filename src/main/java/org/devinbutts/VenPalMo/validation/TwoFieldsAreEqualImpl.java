@@ -1,14 +1,12 @@
 package org.devinbutts.VenPalMo.validation;
 
-
-
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-
 import org.apache.commons.beanutils.BeanUtils;
 
-
-
+/**
+ * Logic for Two Fields are Equal bean.
+ */
 public class TwoFieldsAreEqualImpl implements ConstraintValidator<TwoFieldsAreEqual, Object> {
 
     private String fieldOneName;

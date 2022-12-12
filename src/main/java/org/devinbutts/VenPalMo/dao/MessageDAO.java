@@ -3,9 +3,12 @@ package org.devinbutts.VenPalMo.dao;
 import org.devinbutts.VenPalMo.model.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
 import java.util.List;
 
+
+/**
+ * Message Entity DAO, allowing for basic CRUD.
+ */
 public interface MessageDAO extends JpaRepository<Message,Integer> {
 
     @Query("SELECT m FROM Message m WHERE m.toUser.id = :userId OR m.fromUser.id = :userId")

@@ -1,5 +1,6 @@
 package org.devinbutts.VenPalMo.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.devinbutts.VenPalMo.dao.AccountDAO;
 import org.devinbutts.VenPalMo.dao.TransactDAO;
 import org.devinbutts.VenPalMo.dao.UserDAO;
@@ -9,14 +10,17 @@ import org.devinbutts.VenPalMo.model.dto.TransactDTO;
 import org.devinbutts.VenPalMo.model.Transact;
 import org.devinbutts.VenPalMo.model.form.TransactForm;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
+import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Component
+/**
+ * Transact Service primarily used for displaying transactions to user, changing status, and converting between Transact DTO.
+ */
+@Slf4j
+@Service
 public class TransactService  {
 
     @Autowired
@@ -28,14 +32,23 @@ public class TransactService  {
     @Autowired
     AccountDAO accountDAO;
 
+    @Autowired
+    AccountService accountService;
+
     public List<TransactDTO> findClearedTransactionsForDisplayByUserId(Integer userId){
 
-        List<Transact> transactions = transactDAO.findAllClearedUserTransactions(userId);
+        List<Transact> transactions = null;
         List<TransactDTO> transactDTOS = new ArrayList<>();
 
-        for(Transact t : transactions){
-             TransactDTO transactDTO = mapToDisplayTransact(t,userId);
-             transactDTOS.add(transactDTO);
+        try{
+            transactions = transactDAO.findAllClearedUserTransactions(userId);
+
+            for(Transact t : transactions){
+                TransactDTO transactDTO = mapToDisplayTransact(t,userId);
+                transactDTOS.add(transactDTO);
+            }
+        }catch (Exception e){
+            log.error(e.getMessage());
         }
 
         return transactDTOS;
@@ -44,15 +57,20 @@ public class TransactService  {
 
     public List<TransactDTO> findRequestedTransactionsForDisplayByUserId(Integer userId){
 
-        List<Transact> transactions = transactDAO.findAllRequestedUserTransactions(userId);
+        List<Transact> transactions = null;
         List<TransactDTO> transactDTOS = new ArrayList<>();
 
-        for(Transact t : transactions){
-            TransactDTO transactDTO = mapToDisplayTransact(t,userId);
-            transactDTOS.add(transactDTO);
-        }
-        for(TransactDTO t: transactDTOS){
-            t.setTransactionAmount(t.getTransactionAmount().abs());
+        try{
+            transactions = transactDAO.findAllRequestedUserTransactions(userId);
+            for(Transact t : transactions){
+                TransactDTO transactDTO = mapToDisplayTransact(t,userId);
+                transactDTOS.add(transactDTO);
+            }
+            for(TransactDTO t: transactDTOS){
+                t.setTransactionAmount(t.getTransactionAmount().abs());
+            }
+        }catch (Exception e){
+            log.error(e.getMessage());
         }
 
         return transactDTOS;
@@ -109,8 +127,8 @@ public class TransactService  {
 
             BigDecimal transferAmt = transact.getTransactionAmount();
 
-            Account sendingUserDefaultAccount = getDefaultAccount(sendingUser);
-            Account receivingUserDefaultAccount = getDefaultAccount(receivingUser);
+            Account sendingUserDefaultAccount = accountService.getDefaultAccount(sendingUser);
+            Account receivingUserDefaultAccount = accountService.getDefaultAccount(receivingUser);
 
             BigDecimal sendingCurrentBalance = sendingUserDefaultAccount.getAvailableBalance();
             BigDecimal sendingUpdatedBalance = sendingCurrentBalance.subtract(transferAmt);
@@ -131,16 +149,7 @@ public class TransactService  {
 
     }
 
-    public Account getDefaultAccount(User sendingUser) {
-        List<Account> sendingUserAccounts = sendingUser.getAccounts();
-        Account sendingUserDefaultAccount = null;
-        for(Account acct : sendingUserAccounts){
-            if(acct.getDefaultAccount()==1){
-                sendingUserDefaultAccount = acct;
-            }
-        }
-        return sendingUserDefaultAccount;
-    }
+
 
 
 }

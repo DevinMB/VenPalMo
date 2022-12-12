@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 
+/**
+ * Display User Entity DAO, allowing for basic CRUD.
+ */
 @Repository
 public interface DisplayUserDAO extends JpaRepository<UserDTO, Integer> {
 

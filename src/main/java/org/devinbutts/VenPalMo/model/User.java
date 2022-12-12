@@ -6,6 +6,9 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * User entity stores profile information and Spring Boot security role (used in spring security session management).
+ */
 @Entity
 @EqualsAndHashCode()
 @AllArgsConstructor
