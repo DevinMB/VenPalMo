@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
 
 
@@ -16,6 +18,8 @@ public class TransactForm {
 
     private Integer receivingUserId;
 
+
+    @DecimalMin(value = "0.0", inclusive = false)
     private BigDecimal transactionAmount;
 
     private String note;

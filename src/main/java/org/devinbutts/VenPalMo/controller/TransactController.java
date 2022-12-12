@@ -85,7 +85,12 @@ public class TransactController {
         }
 
         if (errors.size() > 0) {
-            modelAndView.setViewName("/send/" + transactForm.getReceivingUserId());
+//            modelAndView.setViewName("redirect:/send/" + transactForm.getReceivingUserId());
+            modelAndView.setViewName("send_request");
+            modelAndView.addObject("noFunds","Not enough funds to send :(");
+            modelAndView.addObject("transactForm",transactForm);
+            modelAndView.addObject("pageTitle","Send Money");
+            modelAndView.addObject("sendOrRequest","send");
         } else {
             Integer compare = senderAcct.getAvailableBalance().compareTo(transactForm.getTransactionAmount());
             //Make sure user has enough money to send
@@ -148,7 +153,10 @@ public class TransactController {
         }
 
         if (errors.size() > 0) {
-            modelAndView.setViewName("/request/" + transactForm.getReceivingUserId());
+//            modelAndView.setViewName("redirect:/request/" + transactForm.getReceivingUserId());
+            modelAndView.setViewName("send_request");
+            modelAndView.addObject("pageTitle","Request Money");
+            modelAndView.addObject("sendOrRequest","request");
         } else {
 
             Transact newTransact = transactService.createTransactionFromForm(transactForm);

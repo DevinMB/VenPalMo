@@ -148,6 +148,7 @@ public class UserController {
 
         if (errors.size() > 0) {
             modelAndView.setViewName("edit");
+            //TODO:add error object?
         } else {
             userService.updateUserFromForm(loggedInUser,form);
             modelAndView.setViewName("redirect:/welcome");
