@@ -245,13 +245,16 @@ body .main_app_container{
 
 
 /* ACTIVITY */
+.activity{
+    justify-content: center;
+}
 
 .activity table{
     border-collapse: collapse;
     
     margin-top: 1em;
     margin-left: 2em;
-    width: 25em;
+    min-width: 25em;
 }
 
 .activity table tbody{

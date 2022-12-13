@@ -59,6 +59,9 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Devin.Butts\Documents\Programming\VenPalMo\src\main\resources" />
+      <recent name="C:\Users\Devin.Butts\Documents\Programming\VenPalMo\src\test\resources" />
+      <recent name="C:\Users\Devin.Butts\Documents\Programming\VenPalMo\src\main\resources\database" />
       <recent name="C:\Users\Devin.Butts\Documents\Programming\2022-TEK-JAVA-DMB\VenPalMo\src\main\resources\database" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -66,19 +69,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.VenPalMoApplication">
-    <configuration name="TestApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.devinbutts.VenPalMo.TestApp" />
-      <module name="VenPalMo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.devinbutts.VenPalMo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="VenPalMoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.devinbutts.VenPalMo.VenPalMoApplication" />
       <module name="VenPalMo" />
@@ -92,10 +82,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MessageServiceTest.convertMessageToMessageDTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VenPalMo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.devinbutts.VenPalMo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.devinbutts.VenPalMo.service" />
+      <option name="MAIN_CLASS_NAME" value="org.devinbutts.VenPalMo.service.MessageServiceTest" />
+      <option name="METHOD_NAME" value="convertMessageToMessageDTO" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransactServiceTest.mapToDisplayTransact" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VenPalMo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.devinbutts.VenPalMo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.devinbutts.VenPalMo.service" />
+      <option name="MAIN_CLASS_NAME" value="org.devinbutts.VenPalMo.service.TransactServiceTest" />
+      <option name="METHOD_NAME" value="mapToDisplayTransact" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.createUserFromForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VenPalMo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.devinbutts.VenPalMo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.devinbutts.VenPalMo.service" />
+      <option name="MAIN_CLASS_NAME" value="org.devinbutts.VenPalMo.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="createUserFromForm" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VenPalMoApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VenPalMo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.devinbutts.VenPalMo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.devinbutts.VenPalMo" />
+      <option name="MAIN_CLASS_NAME" value="org.devinbutts.VenPalMo.VenPalMoApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.VenPalMoApplication" />
-        <item itemvalue="Application.TestApp" />
+        <item itemvalue="JUnit.UserServiceTest.createUserFromForm" />
+        <item itemvalue="JUnit.TransactServiceTest.mapToDisplayTransact" />
+        <item itemvalue="JUnit.VenPalMoApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.MessageServiceTest.convertMessageToMessageDTO" />
       </list>
     </recent_temporary>
   </component>
@@ -112,5 +169,16 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/devinbutts/VenPalMo/dao/AccountDAOTest.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

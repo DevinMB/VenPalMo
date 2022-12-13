@@ -13,8 +13,4 @@ public class VenPalMoApplication {
 
 	}
 
-
-	//TODO: Unit Tests on all methods
-
-
 }

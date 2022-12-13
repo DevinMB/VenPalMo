@@ -16,6 +16,9 @@ public interface AccountDAO extends JpaRepository<Account,Integer> {
     @Override
     List<Account> findAll();
 
+    @Query("SELECT a FROM Account a WHERE a.id = :id")
+    Account findByAccountId(Integer id);
+
     @Override
     List<Account> findAllById(Iterable<Integer> integers);
 
@@ -27,7 +30,6 @@ public interface AccountDAO extends JpaRepository<Account,Integer> {
 
     @Query("SELECT a FROM Account a WHERE a.userId = :id AND a.defaultAccount = 1")
     Account findDefaultAccountByUserId(Integer id);
-
 
     @Override
     void deleteById(Integer integer);

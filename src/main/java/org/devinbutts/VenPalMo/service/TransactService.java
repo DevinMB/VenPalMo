@@ -54,7 +54,6 @@ public class TransactService  {
         return transactDTOS;
     }
 
-
     public List<TransactDTO> findRequestedTransactionsForDisplayByUserId(Integer userId){
 
         List<Transact> transactions = null;
@@ -75,7 +74,6 @@ public class TransactService  {
 
         return transactDTOS;
     }
-
 
     public TransactDTO mapToDisplayTransact(Transact t, Integer userId){
 

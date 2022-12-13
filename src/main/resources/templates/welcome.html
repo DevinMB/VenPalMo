@@ -78,14 +78,16 @@
                     <p>Recent Activity</p>
                 </div>
                 <tr>
-                    <td class="table_column_discription">User</td>
                     <td class="table_column_discription">Activity(Sent/Recieved From)</td>
+                    <td class="table_column_discription">User</td>
                     <td class="table_column_discription">Amount</td>
+                    <td class="table_column_discription">Note</td>
                 </tr>
                 <tr th:each="transaction: ${transactions}">
-                    <td th:text="${transaction.user.firstName}"/>
                     <td th:text="${transaction.transactionType}"/>
+                    <td th:text="${transaction.user.firstName}"/>
                     <td th:text="${#numbers.formatCurrency(transaction.transactionAmount)}"/>
+                    <td th:text="${transaction.note}"/>
                 </tr>
             </table>
         </div>
