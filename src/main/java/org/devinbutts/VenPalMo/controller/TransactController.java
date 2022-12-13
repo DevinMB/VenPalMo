@@ -90,14 +90,13 @@ public class TransactController {
         if (errors.size() > 0) {
 //            modelAndView.setViewName("redirect:/send/" + transactForm.getReceivingUserId());
             modelAndView.setViewName("send_request");
-            modelAndView.addObject("noFunds","Not enough funds to send :(");
             modelAndView.addObject("transactForm",transactForm);
             modelAndView.addObject("pageTitle","Send Money");
             modelAndView.addObject("sendOrRequest","send");
         } else {
-            Integer compare = senderAcct.getAvailableBalance().compareTo(transactForm.getTransactionAmount());
+            int compare = senderAcct.getAvailableBalance().compareTo(transactForm.getTransactionAmount());
             //Make sure user has enough money to send
-            if(compare >= 0){
+            if(compare >= 0 ){
                 //if you have enough money then set to cleared and proceed
                 transactForm.setStatus("CLEARED");
                 Transact newTransact = transactService.createTransactionFromForm(transactForm);
