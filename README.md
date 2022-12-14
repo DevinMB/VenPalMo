@@ -1,5 +1,5 @@
 # VenPalMo
-### My first attempt at a consumer payment platform system.
+### My first attempt at a user payment platform system.
 
 VenPalMo is a digital payment platform that combines the convenience and security of PayPal and Venmo with the added ability to send messages between users. With VenPalMo, you can easily and securely send and receive money from friends and family, and also keep track of your transactions through direct communication with your contacts. VenPalMo makes it easy to manage your finances on the go. Whether you're paying for a group dinner, splitting rent, or sending a gift, VenPalMo has you covered.
 
