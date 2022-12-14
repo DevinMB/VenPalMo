@@ -61,7 +61,7 @@ I'm most proud of the following:
  - Refactoring code
  - Popup chat using javascript/ajax
  - Profile picture upload
- - Transaction deail page
+ - Transaction detail page
 
 
 [^1]: Deletion modifies the active flag in the database
