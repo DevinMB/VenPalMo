@@ -30,7 +30,7 @@ I'm most proud of the following:
 ##### To start the VenPalMo application, follow these steps:
 >######  1. Clone the project repository to your local machine.
 >######  2. Navigate to the project directory in your terminal.
->######  3. Start the application using docker-compose.
+>######  3. Start the application using docker-compose up --build.
 >######  4. This will start the application and all of its services. Once the services are up and running, you can access the application in your web browser at http://localhost:8080.
 >######  5. To stop the application, use the CTRL+C keyboard shortcut in your terminal.
 
