@@ -18,6 +18,7 @@ VenPalMo is a Java Spring Boot application tying to a MySql database. Notable fe
   - Spring Jpa
   - Spring Test / JUnit / h2
   - Lombok
+  - Slf4j Logging
 
 I'm most proud of the following:
   - **Spring Security** : Proud of this because I've built spring applications in the past but never had a chance to touch on spring security. Doing so has helped close a gap in knowlege and will improve my confidence in creating production ready applications.
