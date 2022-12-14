@@ -1,0 +1,49 @@
+.message_form form{
+    width: 100%;
+}
+
+#message_date_time{
+    font-size: small;
+    font-style: italic;
+}
+
+#message_to_from{
+    font-weight: bold;
+}
+
+.card h3{
+    margin-bottom: 1em;
+}
+
+.message_list{
+    border-bottom: solid;
+    border-bottom-right-radius: 1em;
+    border-width: thin;
+    border-color: grey;
+    margin-bottom: .2em;
+}
+
+.message_form form input{
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    flex:1;
+    
+    padding: 2em;
+    
+    padding-left: 0.5em;
+    border-radius: 1em;
+    border-style: none;
+    background-color: rgba(128, 128, 128, 0.165);
+}
+
+.submit button{
+    padding: 1em;
+    width: 10em;
+    border: none;
+    background-color: #8BC53F;
+    border-radius: 2em;
+    font-weight: 800;
+    color: white;
+
+}

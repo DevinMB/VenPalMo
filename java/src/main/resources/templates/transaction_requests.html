@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: main_html_head"></head>
+
+<body style="background-color: #4ba1723e ;">
+
+<header th:replace="fragments :: main_header" class="main_header">
+
+</header>
+
+
+
+<div class="card">
+
+    <h2>Pending Transactions</h2>
+    <p th:if="${noFunds}" th:text="${noFunds}"></p>
+    <p th:text="${pendingMessageToUser}"></p>
+    <div class="transaction_requests_container">
+        <div class="transaction_request" th:each="transaction: ${pendingTransactions}" >
+            <div class="transaction_request_left">
+                <div class="transaction_main">
+                    <p th:text="${#dates.format(transaction.createdDate,'MM/dd/yyyy')}"></p>
+                    <p th:text="${transaction.user.firstName}+'  '+${transaction.user.lastName}+' is requesting: '"></p>
+                    <p id="transaction_amt" th:text="${#numbers.formatCurrency(transaction.transactionAmount)}"></p>
+                </div>
+                <p id="transaction_note" th:text="${transaction.note}"></p>
+            </div>
+            <div class="transaction_approval">
+                <a th:href="@{/transact/approve/{transactionId} (transactionId=${transaction.id}) }">Approve</a>    
+                <a th:href="@{/transact/deny/{transactionId} (transactionId=${transaction.id}) }">Deny</a>    
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+</body>
+
+</html>

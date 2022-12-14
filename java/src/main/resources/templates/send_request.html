@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: main_html_head"></head>
+
+<body style="background-color: #4ba1723e ;">
+
+<header th:replace="fragments :: main_header" class="main_header"></header>
+
+
+
+<div class="card">
+
+    <div class="send_request_form">
+
+        <form method="post" th:action="@{/transact/{sendOrRequest} (sendOrRequest=${sendOrRequest})}" th:object="${transactForm}">
+    
+            <h3 th:text="${pageTitle}">Send Money</h3>
+
+            <p>Please enter an amount:</p>
+            
+            <div class="send_request_inputs">
+
+                <input type="number" step="0.01" id="amount_input" placeholder="0.00" th:field="*{transactionAmount}" />
+                <p class="error" th:errors="*{transactionAmount}"></p> 
+                <p class="error" th:if="${noFunds}" th:text="${noFunds}"></p>
+                
+                <input type="text" id="note_input" placeholder="Add a note about your transaction here!" th:field="*{note}" />
+                <p class="error" th:errors="*{note}"></p> 
+
+            </div>
+            
+            <input type="hidden" id="sendingUserId" th:field="*{sendingUserId}" />
+            <input type="hidden" id="receivingUserId" th:field="*{receivingUserId}" />
+
+            <div class="submit">
+                <button class="" th:text="${#strings.capitalize(sendOrRequest)}" type="submit"></button>
+            </div>
+    
+        </form>
+    
+    
+    
+    
+    </div>
+
+</div>
+
+
+<script type="text/javascript" th:src="@{js/home.js}"></script>
+</body>
+
+</html>

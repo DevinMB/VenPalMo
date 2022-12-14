@@ -1,0 +1,7 @@
+id,first_name,last_name,email,password,phone,address,city,state,zip,joined_date,birth_date,role,active
+1,Devin,Butts,devinmbutts@gmail.com,$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu,2485053913,"1185 Code St.","Grand Rapids",MI,49534,"2022-12-12 00:00:00","1993-07-02 00:00:00",ROLE_ADMIN,1
+2,Nick,Rufus,nick@gmail.com,$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu,2485053913,"1188 Code St.","Grand Rapids",MI,49534,"2022-12-12 00:00:00","1994-02-24 00:00:00",ROLE_USER,1
+3,Chris,Channells,cc@gmail.com,$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu,2485053913,"1185 Code St.","Grand Rapids",MI,49534,"2022-12-12 00:00:00","1992-07-05 00:00:00",ROLE_USER,1
+4,Tori,Butts,tori.butts@gmail.com,$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu,2485053913,"1185 Code St.","Grand Rapids",MI,49534,"2022-12-12 00:00:00","1994-02-24 00:00:00",ROLE_USER,1
+5,Justin,Frank,frankjustin@gmail.com,$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu,2485053913,"1190 Code St.","Grand Rapids",MI,49534,"2022-12-12 00:00:00","1993-06-02 00:00:00",ROLE_USER,1
+6,Cookie,Knopf,knopfcook@gmail.com,$2a$12$j7EGP0lfgt/dDNeCopBKuecqq89TdeJqDOteDRuH12OPXFMX5lwgu,2485053913,"1191 Code St.","Grand Rapids",MI,49534,"2022-12-12 00:00:00","1990-08-04 00:00:00",ROLE_USER,1

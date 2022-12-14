@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="main_html_head">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/search.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/message.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/send_request.css}">
+    <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.png}">
+    <!-- INTERNAL STYLE -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,400;1,500;1,700&display=swap');
+    </style>
+    <title>Welcome</title>
+</head>
+
+<body>
+<header th:fragment="main_header" class="main_header">
+    <div></div>
+    <nav>
+        <div class="nav_logo">
+            <img th:src="@{/images/favicon_white.png}" alt="logo">
+            <div th:if="${welcomeMessage == null}" class="nav_buttons">
+                <ul>
+                    <li>
+                        <a th:href="@{/welcome}">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav_buttons">
+            <ul>
+                <li><a th:href="@{/user/search/message}">Inbox</a></li>
+                <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/admin}">Admin Settings</a></li>
+                <li><a th:href="@{/user/edit}">Profile Settings</a></li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
