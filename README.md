@@ -57,4 +57,11 @@ I'm most proud of the following:
 ![image](https://user-images.githubusercontent.com/63884066/207628374-c58c33e9-82ed-407f-b97c-320bc030fbde.png)
 
 
+### Improvements I'd like to spend more time on:
+ - Refactoring code
+ - Popup chat using javascript/ajax
+ - Profile picture upload
+ - Transaction deail page
+
+
 [^1]: Deletion modifies the active flag in the database
