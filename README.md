@@ -6,7 +6,7 @@ VenPalMo is a digital payment platform that combines the convenience and securit
 ### Main User Features:
 - Welcome info : Shows user their balance, recent activity, and any requests for payement.
 - Send/Request Money : Users can send or request money to/from another user after searching by name or email.
-- Admin : Admins can promote or 'delete' other users. (deletion modifies the active flag in the database)
+- Admin : Admins can promote or delete[^1] other users. (deletion modifies the active flag in the database)
 - Profile edit : users can modify their profile informatin at any time.
 - Messaging : users can send and view messages/conversations from other users. Giving them a space to deliberate on payment or just catch up.
 
@@ -36,21 +36,25 @@ I'm most proud of the following:
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-DB Schema
+## DB Schema
 
 ![image](https://user-images.githubusercontent.com/63884066/207433373-07829274-8d16-4ab0-a0d5-864b40e4c7d6.png)
 
-Welcome Screen
+## Login Screen
+
+![image](https://user-images.githubusercontent.com/63884066/207629924-70bb1f5b-5dfd-4008-b457-7d7dc84ab43f.png)
+
+## Welcome Screen
 
 ![image](https://user-images.githubusercontent.com/63884066/207628757-341d3a04-fb27-4534-942f-6bc819aaf41f.png)
 
-Search For Users
+## Search For Users
 
 ![image](https://user-images.githubusercontent.com/63884066/207628021-7753ff25-5f0b-4d68-b325-ccbdd59668fb.png)
 
-Sending/Requesting Money
+## Sending/Requesting Money
 
 ![image](https://user-images.githubusercontent.com/63884066/207628374-c58c33e9-82ed-407f-b97c-320bc030fbde.png)
 
 
-
+[^1]: Deletion modifies the active flag in the database
