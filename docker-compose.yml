@@ -4,7 +4,7 @@ services:
     # container_name: VenPalMoDatabase
     image: mysql
     command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    restart: always
+    restart: on-failure
     environment:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: W@ffles02
@@ -14,8 +14,8 @@ services:
       - ./mysql-data/8.0.23:/var/lib/mysql
     ports:
       - 3308:3306
-    # expose:
-    #   - 3308
+    expose:
+      - 3308
   spring:
     build: java/
     ports:

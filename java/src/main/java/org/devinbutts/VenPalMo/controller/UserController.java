@@ -84,7 +84,7 @@ public class UserController {
     public ModelAndView searchForUserToSendTo() {
 
         ModelAndView modelAndView = getSearchModelAndView();
-        modelAndView.addObject("searchType", "send");
+        modelAndView.addObject("searchType", "/transact/send");
 
         return modelAndView;
     }
@@ -93,7 +93,7 @@ public class UserController {
     public ModelAndView submitSendUserToSearch(@ModelAttribute(value="userDTO") UserDTO searchUser, Principal principal) {
 
         ModelAndView modelAndView = getSearchSubmitModelAndView(searchUser,principal );
-        modelAndView.addObject("searchType", "send");
+        modelAndView.addObject("searchType", "/transact/send");
 
         return modelAndView;
     }
@@ -102,7 +102,7 @@ public class UserController {
     public ModelAndView searchForUserToRequestFrom() {
 
         ModelAndView modelAndView = getSearchModelAndView();
-        modelAndView.addObject("searchType", "request");
+        modelAndView.addObject("searchType", "/transact/request");
 
         return modelAndView;
     }
@@ -111,7 +111,7 @@ public class UserController {
     public ModelAndView submitSendUserToRequestFrom(@ModelAttribute(value="userDTO") UserDTO searchUser, Principal principal) {
 
         ModelAndView modelAndView = getSearchSubmitModelAndView(searchUser, principal);
-        modelAndView.addObject("searchType", "request");
+        modelAndView.addObject("searchType", "/transact/request");
 
         return modelAndView;
     }
@@ -155,7 +155,7 @@ public class UserController {
     public ModelAndView searchForUserToMessage() {
 
         ModelAndView modelAndView = getSearchModelAndView();
-        modelAndView.addObject("searchType", "message");
+        modelAndView.addObject("searchType", "/message");
 
         return modelAndView;
     }
@@ -164,7 +164,7 @@ public class UserController {
     public ModelAndView submitSendUserToMessagePage(@ModelAttribute(value="userDTO") UserDTO searchUser,Principal principal) {
 
         ModelAndView modelAndView = getSearchSubmitModelAndView(searchUser, principal);
-        modelAndView.addObject("searchType", "message");
+        modelAndView.addObject("searchType", "/message");
 
         return modelAndView;
     }
