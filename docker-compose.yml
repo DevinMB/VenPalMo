@@ -15,3 +15,5 @@ services:
       - 3307:3306
     expose:
       - 3307
+  spring:
+    build:java/
