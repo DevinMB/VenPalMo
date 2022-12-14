@@ -24,7 +24,7 @@ I'm most proud of the following:
   - **Spring Web / Thymeleaf** : Proud of this because it was a whole new way to make a front end, in the past I've made applications using a separate front end using npm and a component based framework (Vue). I feel it has added to my tool kit and will assist me when stepping into older systems.
 
 ## Deploy
-##### The application is built using Docker and Docker Compose, making it easy to run on any system with Docker installed.
+##### The application includes Docker and Docker Compose, making it easy to run on any system with Docker installed.
 
 ##### To start the VenPalMo application, follow these steps:
 >######  1. Clone the project repository to your local machine.
