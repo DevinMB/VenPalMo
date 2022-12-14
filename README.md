@@ -38,7 +38,7 @@ I'm most proud of the following:
 
 ## DB Schema
 
-![image](https://user-images.githubusercontent.com/63884066/207433373-07829274-8d16-4ab0-a0d5-864b40e4c7d6.png)
+![image](https://user-images.githubusercontent.com/63884066/207633245-b6fc36a9-5c56-4679-98cf-cd0c84e2d449.png)
 
 ## Login Screen
 
