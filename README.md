@@ -11,7 +11,7 @@ VenPalMo is a digital payment platform that combines the convenience and securit
 - Messaging : users can send and view messages/conversations from other users. Giving them a space to deliberate on payment or just catch up.
 
 ### Tech Stack and Accomplishments:
-VenPalMo is a Java Spring Boot application tying to a MySql database. Notable features include:
+VenPalMo is a Java Spring Boot application tying to a MySql database. Notable technologies include:
   - Spring Web / Thymeleaf
   - Spring Security
   - Spring Validation
