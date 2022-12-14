@@ -6,7 +6,7 @@ VenPalMo is a digital payment platform that combines the convenience and securit
 ### Main User Features:
 - Welcome info : Shows user their balance, recent activity, and any requests for payement.
 - Send/Request Money : Users can send or request money to/from another user after searching by name or email.
-- Admin : Admins can promote or delete[^1] other users. (deletion modifies the active flag in the database)
+- Admin : Admins can promote or delete[^1] other users.
 - Profile edit : users can modify their profile informatin at any time.
 - Messaging : users can send and view messages/conversations from other users. Giving them a space to deliberate on payment or just catch up.
 
