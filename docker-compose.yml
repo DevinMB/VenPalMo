@@ -1,19 +1,26 @@
 version: "3.3"
 services:
   db:
-    container_name: mysqldb
+    # container_name: VenPalMoDatabase
     image: mysql
     command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     restart: always
     environment:
+      MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: W@ffles02
-      MYSQL_DATABASE: VenPalMoDB
       MYSQL_ROOT_HOST: "%"
     volumes:
+      - ./venpalmo_data_population.sql:/docker-entrypoint-initdb.d/10-schema.sql
       - ./mysql-data/8.0.23:/var/lib/mysql
     ports:
-      - 3307:3306
-    expose:
-      - 3307
+      - 3308:3306
+    # expose:
+    #   - 3308
   spring:
-    build:java/
+    build: java/
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    links: 
+    - db:mysql_db
